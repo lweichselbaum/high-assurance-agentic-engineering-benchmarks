@@ -1,0 +1,107 @@
+{
+  "arm": "b",
+  "label": "Arm B — high-assurance harness",
+  "agent": "Claude Code CLI (claude -p)",
+  "claudeCodeVersion": "2.1.259",
+  "requestedModel": "claude-opus-4-1",
+  "model": "claude-opus-5",
+  "temperature": "not configurable in the Claude Code CLI (provider default)",
+  "permissionMode": "acceptEdits",
+  "instruction": "Implement the feature. `./verify.sh` must pass. If it fails, fix your code and run it again. Do not modify config, tests, tsconfig, ESLint, or the CSP.",
+  "promptSha256": "0903e3f4535d310e018e31678f3db837cca9e97545c17a8d2c63a9323c88361a",
+  "promptBytes": 2560,
+  "startedAt": "2026-09-03T16:11:43.132Z",
+  "finishedAt": "2026-09-03T16:25:38.619Z",
+  "durationMs": 835487,
+  "exitCode": 0,
+  "numTurns": 65,
+  "costUsd": 4.2525794999999995,
+  "usage": {
+    "input_tokens": 102,
+    "cache_creation_input_tokens": 89420,
+    "cache_read_input_tokens": 3764393,
+    "output_tokens": 58960,
+    "output_tokens_details": {
+      "thinking_tokens": 32880
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 89420,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 966,
+        "cache_read_input_tokens": 102057,
+        "cache_creation_input_tokens": 166,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 166
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 1608,
+      "outputTokens": 13,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 0,
+      "costUSD": 0.001673,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000,
+      "thinkingTokens": 0,
+      "canonicalModel": "claude-haiku-4-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    },
+    "claude-opus-5": {
+      "inputTokens": 102,
+      "outputTokens": 58960,
+      "cacheReadInputTokens": 3764393,
+      "cacheCreationInputTokens": 89420,
+      "webSearchRequests": 0,
+      "costUSD": 4.250906499999999,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 64000,
+      "thinkingTokens": 32880,
+      "canonicalModel": "claude-opus-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "toolCalls": {
+    "Bash": 25,
+    "Read": 13,
+    "Write": 14,
+    "Edit": 10,
+    "ToolSearch": 1,
+    "TaskStop": 1
+  },
+  "verifyRuns": 3,
+  "filesWritten": [
+    "index.html",
+    "manual-check.mjs",
+    "shot.mjs",
+    "src/avatar.ts",
+    "src/deeplink.ts",
+    "src/feed.ts",
+    "src/main.ts",
+    "src/richtext.ts",
+    "src/storage.ts",
+    "src/style.css",
+    "src/types.ts",
+    "src/url.ts"
+  ],
+  "finalMessage": "Porto Notes is implemented and `./verify.sh` passes all seven gates.\n\n## What I built\n\n| File | Role |\n|---|---|\n| `index.html` | Static, accessible markup: form, labelled search, results line, feed |\n| `src/richtext.ts` | Tokenises the body and builds real DOM nodes |\n| `src/url.ts` | Shared URL vetting (shape + scheme) |\n| `src/avatar.ts` | Avatar scheme allow-list |\n| `src/feed.ts` | Renders `article.note` entries |\n| `src/deeplink.ts` | `#q=…&note=…` parse/format/sync |\n| `src/storage.ts` | localStorage + fixture seeding |\n| `src/main.ts` | State and wiring |\n\n## The central design decision\n\nRich text takes the \"build nodes\" path from `harness/README.md` rather than `setElementInnerHtml(el, sanitizeHtml(s))`. The body is tokenised and turned into `createElement`/`createTextNode` calls, so **no string ever becomes markup**. The tag allow-list (`b`, `strong`, `i`, `em`, `a`, `br`) is the entire grammar, not a filter applied after parsing — a payload cannot introduce an element or attribute at all, so the DOMPurify boundary is never even reached. Anchors go through `setAnchorHref`, and disallowed tags are dropped while their prose is kept (`<script>`-like tags lose their content too).\n\n## What the gates did not catch\n\nThe gates all passed on my first run, so I drove the built app through a 39-check probe of my own. It surfaced three things the suite let through — all inert, none an XSS, but sloppy:\n\n`safeAvatarUrl` treated anything without a recognised scheme as a relative path, so `<img src=x onerror=alert(1)>` pasted into the avatar field became an `img` `src` attribute containing that literal text (a 404, not an execution). I replaced the permissive fallback with a shared `isUrlShaped` check that rejects whitespace, control characters and RFC 3986–excluded punctuation before any scheme reasoning, and applied it to note links too. After the fix, 11 payload notes contribute zero avatars and the feed's HTML contains no handler-attribute or `javascript:` substrings.\n\nOne probe failure was my test being wrong, not the app: loading `#q=port&note=3` does not display note 3, because note 3 does not match \"port\". I kept filtering authoritative over selection — the selection persists in state and in the URL, and reappears when the query clears — since making the selected note ignore the filter would break \"search filters the feed\". Worth flagging as the one place I resolved spec ambiguity against the literal example in the request.\n\nI also scoped title formatting to bold/italic only, dropping anchors there, because `.note-title` is itself the `<button>` that selects the note and a nested anchor is invalid HTML.",
+  "isError": false
+}

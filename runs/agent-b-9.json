@@ -1,0 +1,108 @@
+{
+  "arm": "b",
+  "label": "Arm B — high-assurance harness",
+  "agent": "Claude Code CLI (claude -p)",
+  "claudeCodeVersion": "2.1.259",
+  "requestedModel": "claude-sonnet-5",
+  "model": "claude-sonnet-5",
+  "temperature": "not configurable in the Claude Code CLI (provider default)",
+  "permissionMode": "acceptEdits",
+  "instruction": "Implement the feature. `./verify.sh` must pass. If it fails, fix your code and run it again. Do not modify config, tests, tsconfig, ESLint, or the CSP.",
+  "promptSha256": "0903e3f4535d310e018e31678f3db837cca9e97545c17a8d2c63a9323c88361a",
+  "promptBytes": 2560,
+  "startedAt": "2026-09-03T12:04:23.828Z",
+  "finishedAt": "2026-09-03T12:09:42.008Z",
+  "durationMs": 318180,
+  "exitCode": 0,
+  "numTurns": 64,
+  "costUsd": 1.2976895000000002,
+  "usage": {
+    "input_tokens": 114,
+    "cache_creation_input_tokens": 57239,
+    "cache_read_input_tokens": 3299409,
+    "output_tokens": 25445,
+    "output_tokens_details": {
+      "thinking_tokens": 11192
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 57239,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 876,
+        "cache_read_input_tokens": 81019,
+        "cache_creation_input_tokens": 116,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 116
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 1608,
+      "outputTokens": 13,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 0,
+      "costUSD": 0.001673,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000,
+      "thinkingTokens": 0,
+      "canonicalModel": "claude-haiku-4-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    },
+    "claude-sonnet-5": {
+      "inputTokens": 132,
+      "outputTokens": 29474,
+      "cacheReadInputTokens": 3407770,
+      "cacheCreationInputTokens": 93440,
+      "webSearchRequests": 0,
+      "costUSD": 1.2960165000000001,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 64000,
+      "thinkingTokens": 11432,
+      "canonicalModel": "claude-sonnet-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "toolCalls": {
+    "Bash": 33,
+    "Read": 25,
+    "Agent": 2,
+    "Write": 11,
+    "Edit": 1,
+    "Skill": 1,
+    "ToolSearch": 1,
+    "TaskStop": 1
+  },
+  "verifyRuns": 1,
+  "filesWritten": [
+    ".scratch-check.mjs",
+    "index.html",
+    "src/avatar.ts",
+    "src/feed.ts",
+    "src/hash.ts",
+    "src/layout.ts",
+    "src/main.ts",
+    "src/richtext.ts",
+    "src/storage.ts",
+    "src/style.css",
+    "src/types.ts"
+  ],
+  "finalMessage": "All 7 gates in `verify.sh` pass. Implementation summary:\n\n- **`src/main.ts`** wires it all together: loads/seeds notes, renders the feed, handles form submit, search input, note selection, and URL-fragment sync (including `hashchange` for back/forward).\n- **`src/storage.ts`** — localStorage persistence with seeding from `src/fixtures.json` (copied from the request's `fixtures.json`) and id sequencing.\n- **`src/richtext.ts`** — renders titles/bodies via `sanitizeHtml` + `setElementInnerHtml` from `safevalues`, converting bare newlines to `<br>`; the default sanitizer allows `b/strong/i/em/br/a[href]` and strips `javascript:` URLs.\n- **`src/avatar.ts`** — validates avatar URLs (`http:`, `https:`, `data:image/*`) before assigning `img.src`.\n- **`src/hash.ts`** — parses/builds `#q=…&note=…` via `URLSearchParams` and syncs with `history.replaceState` (avoids the banned `location.*` assignment lint rule).\n- **`src/layout.ts` / `src/feed.ts`** — builds `.note` articles (`data-note-id`, `.note-title`, `.note-body`, `.note-avatar`, `aria-current`) via `document.createElement`, filtered/sorted newest-first.\n- **`index.html`** — added the static form/search markup (no inline scripts/handlers), kept the harness entry tag.\n- **`src/style.css`** — basic accessible styling, imported from `main.ts`.\n\nNo harness/config files were touched (gate 0 integrity check confirms this). I couldn't do a manual browser click-through myself — the sandbox blocks ad-hoc network/Playwright commands outside `verify.sh` — but gates 5 and 6 already drive the app end-to-end in a real browser under the enforced CSP/Trusted Types, covering the same golden path.",
+  "isError": false
+}

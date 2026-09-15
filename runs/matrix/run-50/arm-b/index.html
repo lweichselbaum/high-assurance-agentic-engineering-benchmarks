@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Porto Notes</title>
+  </head>
+  <body>
+    <div class="app-layout">
+      <header class="app-header">
+        <div class="header-content">
+          <h1>Porto Notes</h1>
+          <p class="subtitle">A shared board for Porto tips, places, and notes</p>
+        </div>
+      </header>
+
+      <main id="app" class="main-content">
+        <section class="controls" aria-label="Search and Note Creation">
+          <div class="search-container">
+            <label for="search" class="visually-hidden">Search notes</label>
+            <input
+              id="search"
+              type="search"
+              placeholder="Search notes..."
+              autocomplete="off"
+            />
+            <p id="results-line" aria-live="polite"></p>
+          </div>
+
+          <div class="form-container">
+            <h2>Add a Note</h2>
+            <form id="note-form" novalidate>
+              <div class="field">
+                <label for="title">Title</label>
+                <input
+                  id="title"
+                  name="title"
+                  type="text"
+                  placeholder="Note title"
+                  autocomplete="off"
+                />
+              </div>
+
+              <div class="field">
+                <label for="body">Body</label>
+                <textarea
+                  id="body"
+                  name="body"
+                  rows="4"
+                  placeholder="Note content (supports bold, italic, links, line breaks)"
+                ></textarea>
+              </div>
+
+              <div class="field">
+                <label for="avatar">Author avatar URL (optional)</label>
+                <input
+                  id="avatar"
+                  name="avatar"
+                  type="text"
+                  placeholder="https://... or data:image/..."
+                  autocomplete="off"
+                />
+              </div>
+
+              <button type="submit" class="submit-btn">Add note</button>
+            </form>
+          </div>
+        </section>
+
+        <section id="feed" aria-label="Notes Feed">
+          <!-- Dynamically populated -->
+        </section>
+      </main>
+    </div>
+
+    <!-- Harness entry: installs the Trusted Types boundary, then runs src/main.ts. Keep this tag as is. -->
+    <script type="module" src="/harness/entry.ts"></script>
+  </body>
+</html>
+

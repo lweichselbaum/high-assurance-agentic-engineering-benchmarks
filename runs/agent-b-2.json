@@ -1,0 +1,106 @@
+{
+  "arm": "b",
+  "label": "Arm B — high-assurance harness",
+  "agent": "Claude Code CLI (claude -p)",
+  "claudeCodeVersion": "2.1.259",
+  "requestedModel": "claude-sonnet-5",
+  "model": "claude-sonnet-5",
+  "temperature": "not configurable in the Claude Code CLI (provider default)",
+  "permissionMode": "acceptEdits",
+  "instruction": "Implement the feature. `./verify.sh` must pass. If it fails, fix your code and run it again. Do not modify config, tests, tsconfig, ESLint, or the CSP.",
+  "promptSha256": "0903e3f4535d310e018e31678f3db837cca9e97545c17a8d2c63a9323c88361a",
+  "promptBytes": 2560,
+  "startedAt": "2026-09-03T11:53:07.725Z",
+  "finishedAt": "2026-09-03T11:59:29.620Z",
+  "durationMs": 381895,
+  "exitCode": 0,
+  "numTurns": 69,
+  "costUsd": 1.3635090000000003,
+  "usage": {
+    "input_tokens": 112,
+    "cache_creation_input_tokens": 73843,
+    "cache_read_input_tokens": 3839200,
+    "output_tokens": 29840,
+    "output_tokens_details": {
+      "thinking_tokens": 14035
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 73843,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 439,
+        "cache_read_input_tokens": 97623,
+        "cache_creation_input_tokens": 116,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 116
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 1608,
+      "outputTokens": 13,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 0,
+      "costUSD": 0.001673,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000,
+      "thinkingTokens": 0,
+      "canonicalModel": "claude-haiku-4-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    },
+    "claude-sonnet-5": {
+      "inputTokens": 112,
+      "outputTokens": 29840,
+      "cacheReadInputTokens": 3839200,
+      "cacheCreationInputTokens": 73843,
+      "webSearchRequests": 0,
+      "costUSD": 1.3618360000000003,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 64000,
+      "thinkingTokens": 14035,
+      "canonicalModel": "claude-sonnet-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "toolCalls": {
+    "Bash": 32,
+    "Read": 20,
+    "ToolSearch": 2,
+    "Write": 12,
+    "Skill": 1
+  },
+  "verifyRuns": 1,
+  "filesWritten": [
+    "../../../../../../../tmp/porto-check.mjs",
+    ".scaffold/porto-check.mjs",
+    "porto-check.mjs",
+    "src/avatar.ts",
+    "src/feed.ts",
+    "src/hash.ts",
+    "src/layout.ts",
+    "src/main.ts",
+    "src/richtext.ts",
+    "src/storage.ts",
+    "src/style.css",
+    "src/types.ts"
+  ],
+  "finalMessage": "All 7 gates of `./verify.sh` pass, and I manually drove the built app in a real browser (via Playwright) to confirm the golden path: seeded notes render newest-first with rich text, search filters and updates the results line + hash, clicking a note title selects it and updates `#note=id`, adding a note sanitizes `<b>`/`<i>`/`<a href>`/line breaks correctly and resets the form, and reloading a deep link like `#q=douro&note=5` restores both the search box and the selection, with notes persisted in `localStorage`.\n\nImplementation lives in `src/`: `types.ts`, `storage.ts` (seed/load/save), `avatar.ts` (scheme allowlist), `richtext.ts` (`sanitizeHtml` + `setElementInnerHtml` from `safevalues`), `hash.ts` (fragment parse/serialize), `layout.ts` (builds the form/search/feed DOM), `feed.ts` (render + filter), and `main.ts` (wiring/state). `index.html` and `fixtures.json` were updated/copied as needed; harness files were left untouched.",
+  "isError": false
+}

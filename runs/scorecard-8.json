@@ -1,0 +1,483 @@
+{
+  "generatedAt": "2026-09-03T12:11:59.719Z",
+  "run": "8",
+  "promptSha256": "0903e3f4535d310e018e31678f3db837cca9e97545c17a8d2c63a9323c88361a",
+  "fixturesSha256": "feedec7cd3fb58c651335f0174e4f83d2de5218f51e28e65668238ca337ab334",
+  "armA": {
+    "label": "Arm A — vibe (no guardrails)",
+    "xssFired": 0,
+    "xssTotal": 8,
+    "xssUntested": 0,
+    "firedIds": [],
+    "payloads": [
+      {
+        "id": "img-onerror",
+        "field": "body",
+        "fired": false,
+        "how": null,
+        "csp": [],
+        "pageErrors": []
+      },
+      {
+        "id": "script-tag",
+        "field": "body",
+        "fired": false,
+        "how": null,
+        "csp": [],
+        "pageErrors": []
+      },
+      {
+        "id": "svg-onload",
+        "field": "body",
+        "fired": false,
+        "how": null,
+        "csp": [],
+        "pageErrors": []
+      },
+      {
+        "id": "js-uri-link",
+        "field": "body",
+        "fired": false,
+        "how": null,
+        "csp": [],
+        "pageErrors": []
+      },
+      {
+        "id": "avatar-js",
+        "field": "avatar",
+        "fired": false,
+        "how": null,
+        "csp": [],
+        "pageErrors": []
+      },
+      {
+        "id": "title-break",
+        "field": "title",
+        "fired": false,
+        "how": null,
+        "csp": [],
+        "pageErrors": []
+      },
+      {
+        "id": "search-refl",
+        "field": "search",
+        "fired": false,
+        "how": null,
+        "csp": [],
+        "pageErrors": []
+      },
+      {
+        "id": "hash-dom",
+        "field": "hash",
+        "fired": false,
+        "how": null,
+        "csp": [],
+        "pageErrors": []
+      }
+    ],
+    "cspPresent": false,
+    "cspStrict": false,
+    "trustedTypes": false,
+    "csp": "",
+    "cspEvaluator": {
+      "high": 0,
+      "medium": 0,
+      "findings": []
+    },
+    "securityHeaders": {},
+    "ttEnforcedAtRuntime": false,
+    "cspViolationsObserved": 0,
+    "dangerousSinkAssignments": 0,
+    "urlSinkAssignments": 2,
+    "sinkFindings": [
+      {
+        "file": "src/main.ts",
+        "line": 104,
+        "kind": "setAttribute(href | src | action)",
+        "category": "url-sink",
+        "snippet": "a.setAttribute('href', isSafeLinkUrl(href) ? href : '#');"
+      },
+      {
+        "file": "src/main.ts",
+        "line": 152,
+        "kind": "src = <non-literal>",
+        "category": "url-sink",
+        "snippet": "img.src = isSafeImageUrl(note.avatar) ? note.avatar : '';"
+      }
+    ],
+    "sinksByKind": {
+      "setAttribute(href | src | action)": 1,
+      "src = <non-literal>": 1
+    },
+    "filesScanned": [
+      "index.html",
+      "src/main.ts"
+    ],
+    "lintErrors": null,
+    "tsecErrors": null,
+    "iterationsToGreen": null,
+    "iterations": null,
+    "trustedSurfaceLines": null,
+    "trustedSurfaceFiles": [],
+    "functionalPass": true,
+    "functional": {
+      "total": 5,
+      "passed": 5,
+      "failed": [],
+      "pass": true
+    },
+    "agent": {
+      "arm": "a",
+      "label": "Arm A — vibe (no guardrails)",
+      "agent": "Claude Code CLI (claude -p)",
+      "claudeCodeVersion": "2.1.259",
+      "requestedModel": "claude-sonnet-5",
+      "model": "claude-sonnet-5",
+      "temperature": "not configurable in the Claude Code CLI (provider default)",
+      "permissionMode": "acceptEdits",
+      "instruction": "Make it work. Ship a build.",
+      "promptSha256": "0903e3f4535d310e018e31678f3db837cca9e97545c17a8d2c63a9323c88361a",
+      "promptBytes": 2436,
+      "startedAt": "2026-09-03T12:06:10.483Z",
+      "finishedAt": "2026-09-03T12:11:20.634Z",
+      "durationMs": 310151,
+      "exitCode": 0,
+      "numTurns": 23,
+      "costUsd": 0.6182982000000001,
+      "usage": {
+        "input_tokens": 32,
+        "cache_creation_input_tokens": 42031,
+        "cache_read_input_tokens": 763196,
+        "output_tokens": 29585,
+        "output_tokens_details": {
+          "thinking_tokens": 18001
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 42031,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 493,
+            "cache_read_input_tokens": 65593,
+            "cache_creation_input_tokens": 334,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 334
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      },
+      "modelUsage": {
+        "claude-haiku-4-5-20251001": {
+          "inputTokens": 1571,
+          "outputTokens": 10,
+          "cacheReadInputTokens": 0,
+          "cacheCreationInputTokens": 0,
+          "webSearchRequests": 0,
+          "costUSD": 0.0016209999999999998,
+          "contextWindow": 200000,
+          "maxOutputTokens": 32000,
+          "thinkingTokens": 0,
+          "canonicalModel": "claude-haiku-4-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        },
+        "claude-sonnet-5": {
+          "inputTokens": 32,
+          "outputTokens": 29585,
+          "cacheReadInputTokens": 763196,
+          "cacheCreationInputTokens": 42031,
+          "webSearchRequests": 0,
+          "costUSD": 0.6166772,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 64000,
+          "thinkingTokens": 18001,
+          "canonicalModel": "claude-sonnet-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "toolCalls": {
+        "Bash": 10,
+        "Read": 8,
+        "Write": 4
+      },
+      "verifyRuns": 0,
+      "filesWritten": [
+        "index.html",
+        "src/fixtures.json",
+        "src/main.ts",
+        "src/style.css"
+      ],
+      "finalMessage": "That directory doesn't exist anyway — no cleanup needed, nothing was written there.\n\n## Summary\n\nImplemented Porto Notes in `src/main.ts` (single-file app), `src/style.css`, `src/fixtures.json`, and `index.html`:\n\n- **Rich text**: a hand-rolled tokenizer builds DOM nodes directly (no `innerHTML`) for `<b>`, `<strong>`, `<i>`, `<em>`, `<a href=\"...\">`, `<br>`, and literal newlines — everything else renders as inert text. Link/avatar URLs are scheme-checked to block `javascript:` etc.\n- **Seed data**: loads `src/fixtures.json` into `localStorage` on first run; new notes continue the id sequence.\n- **Element contract**: `#note-form`/`#title`/`#body`/`#avatar`, `#search`/`#results-line`, `#feed` with `article.note[data-note-id]`, `.note-title`/`.note-body`/`.note-avatar` — all matched to spec.\n- **Deep links**: query and selected note live in `#q=...&note=...`, synced via `history.replaceState` and restored on load/`hashchange`.\n\nVerified with `pnpm build`, `pnpm smoke` (passes: form/feed found, 6 notes rendered, no console errors), plus manual Playwright checks for search filtering, note selection + reload restore, rich-text rendering, and XSS-safe link sanitization.",
+      "isError": false
+    }
+  },
+  "armB": {
+    "label": "Arm B — high-assurance harness",
+    "xssFired": 0,
+    "xssTotal": 8,
+    "xssUntested": 0,
+    "firedIds": [],
+    "payloads": [
+      {
+        "id": "img-onerror",
+        "field": "body",
+        "fired": false,
+        "how": null,
+        "csp": [],
+        "pageErrors": []
+      },
+      {
+        "id": "script-tag",
+        "field": "body",
+        "fired": false,
+        "how": null,
+        "csp": [],
+        "pageErrors": []
+      },
+      {
+        "id": "svg-onload",
+        "field": "body",
+        "fired": false,
+        "how": null,
+        "csp": [],
+        "pageErrors": []
+      },
+      {
+        "id": "js-uri-link",
+        "field": "body",
+        "fired": false,
+        "how": null,
+        "csp": [],
+        "pageErrors": []
+      },
+      {
+        "id": "avatar-js",
+        "field": "avatar",
+        "fired": false,
+        "how": null,
+        "csp": [],
+        "pageErrors": []
+      },
+      {
+        "id": "title-break",
+        "field": "title",
+        "fired": false,
+        "how": null,
+        "csp": [],
+        "pageErrors": []
+      },
+      {
+        "id": "search-refl",
+        "field": "search",
+        "fired": false,
+        "how": null,
+        "csp": [],
+        "pageErrors": []
+      },
+      {
+        "id": "hash-dom",
+        "field": "hash",
+        "fired": false,
+        "how": null,
+        "csp": [],
+        "pageErrors": []
+      }
+    ],
+    "cspPresent": true,
+    "cspStrict": true,
+    "trustedTypes": true,
+    "csp": "script-src 'nonce-rm6XXHG2lpc3T0r2ixhKtg==' 'strict-dynamic'; object-src 'none'; base-uri 'none'; require-trusted-types-for 'script'; trusted-types default google#safe dompurify; report-uri /csp-report",
+    "cspEvaluator": {
+      "high": 0,
+      "medium": 0,
+      "findings": []
+    },
+    "securityHeaders": {
+      "x-content-type-options": "nosniff",
+      "x-frame-options": "DENY",
+      "cross-origin-opener-policy": "same-origin",
+      "cross-origin-resource-policy": "same-origin",
+      "referrer-policy": "no-referrer"
+    },
+    "ttEnforcedAtRuntime": true,
+    "cspViolationsObserved": 0,
+    "dangerousSinkAssignments": 0,
+    "urlSinkAssignments": 1,
+    "sinkFindings": [
+      {
+        "file": "src/feed.ts",
+        "line": 31,
+        "kind": "src = <non-literal>",
+        "category": "url-sink",
+        "snippet": "img.src = note.avatar;"
+      }
+    ],
+    "sinksByKind": {
+      "src = <non-literal>": 1
+    },
+    "filesScanned": [
+      "index.html",
+      "src/avatar.ts",
+      "src/feed.ts",
+      "src/hash.ts",
+      "src/layout.ts",
+      "src/main.ts",
+      "src/richtext.ts",
+      "src/storage.ts",
+      "src/types.ts"
+    ],
+    "lintErrors": 0,
+    "tsecErrors": 0,
+    "iterationsToGreen": 1,
+    "iterations": {
+      "total": 1,
+      "toGreen": 1,
+      "history": [
+        {
+          "iter": 1,
+          "green": true,
+          "firstFailingGate": null,
+          "firstError": null,
+          "seconds": 34
+        }
+      ]
+    },
+    "trustedSurfaceLines": 29,
+    "trustedSurfaceFiles": [
+      "harness/trusted-boundary.ts"
+    ],
+    "functionalPass": true,
+    "functional": {
+      "total": 5,
+      "passed": 5,
+      "failed": [],
+      "pass": true
+    },
+    "agent": {
+      "arm": "b",
+      "label": "Arm B — high-assurance harness",
+      "agent": "Claude Code CLI (claude -p)",
+      "claudeCodeVersion": "2.1.259",
+      "requestedModel": "claude-sonnet-5",
+      "model": "claude-sonnet-5",
+      "temperature": "not configurable in the Claude Code CLI (provider default)",
+      "permissionMode": "acceptEdits",
+      "instruction": "Implement the feature. `./verify.sh` must pass. If it fails, fix your code and run it again. Do not modify config, tests, tsconfig, ESLint, or the CSP.",
+      "promptSha256": "0903e3f4535d310e018e31678f3db837cca9e97545c17a8d2c63a9323c88361a",
+      "promptBytes": 2560,
+      "startedAt": "2026-09-03T12:06:10.483Z",
+      "finishedAt": "2026-09-03T12:11:29.426Z",
+      "durationMs": 318943,
+      "exitCode": 0,
+      "numTurns": 51,
+      "costUsd": 0.9255576000000001,
+      "usage": {
+        "input_tokens": 78,
+        "cache_creation_input_tokens": 55649,
+        "cache_read_input_tokens": 2190863,
+        "output_tokens": 26296,
+        "output_tokens_details": {
+          "thinking_tokens": 16222
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 55649,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 131,
+            "cache_read_input_tokens": 80305,
+            "cache_creation_input_tokens": 0,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 0
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      },
+      "modelUsage": {
+        "claude-haiku-4-5-20251001": {
+          "inputTokens": 1608,
+          "outputTokens": 13,
+          "cacheReadInputTokens": 0,
+          "cacheCreationInputTokens": 0,
+          "webSearchRequests": 0,
+          "costUSD": 0.001673,
+          "contextWindow": 200000,
+          "maxOutputTokens": 32000,
+          "thinkingTokens": 0,
+          "canonicalModel": "claude-haiku-4-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        },
+        "claude-sonnet-5": {
+          "inputTokens": 78,
+          "outputTokens": 26296,
+          "cacheReadInputTokens": 2190863,
+          "cacheCreationInputTokens": 55649,
+          "webSearchRequests": 0,
+          "costUSD": 0.9238846000000001,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 64000,
+          "thinkingTokens": 16222,
+          "canonicalModel": "claude-sonnet-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "toolCalls": {
+        "Bash": 20,
+        "Read": 19,
+        "Write": 9,
+        "Edit": 2
+      },
+      "verifyRuns": 1,
+      "filesWritten": [
+        "src/avatar.ts",
+        "src/feed.ts",
+        "src/hash.ts",
+        "src/layout.ts",
+        "src/main.ts",
+        "src/richtext.ts",
+        "src/storage.ts",
+        "src/style.css",
+        "src/types.ts"
+      ],
+      "finalMessage": "All 7 gates pass on the first iteration. Porto Notes is implemented in `src/` (types, storage, hash, avatar, richtext, feed, layout, main, style) with rich text rendered through `safevalues`' sanitizer, avatar URLs scheme-validated before assignment, and deep-link state synced via `history.replaceState` — `./verify.sh` is green end-to-end.",
+      "isError": false
+    }
+  },
+  "toolchain": {
+    "node": "v22.22.2",
+    "vite": "7.3.6",
+    "typescript": "5.9.3",
+    "tsec": "0.2.9",
+    "safetyWeb": "0.4.1-alpha.15",
+    "eslint": "9.39.5",
+    "safevalues": "1.2.0",
+    "dompurify": "3.4.14",
+    "playwright": "1.56.1",
+    "cspEvaluator": "1.1.8"
+  }
+}

@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Porto Notes</title>
+  </head>
+  <body>
+    <main id="app">
+      <header class="app-header">
+        <h1>Porto Notes</h1>
+        <p class="tagline">A shared notes board for the OWASP AppSec Days Porto crew</p>
+      </header>
+
+      <section class="controls-section" aria-label="Search and filter notes">
+        <div class="search-bar-wrapper">
+          <label for="search" class="visually-hidden">Search notes</label>
+          <input id="search" type="search" placeholder="Search notes..." autocomplete="off" />
+        </div>
+        <p id="results-line" aria-live="polite"></p>
+      </section>
+
+      <section class="form-section" aria-label="Create a new note">
+        <form id="note-form">
+          <h2>Add a Note</h2>
+          <div class="form-group">
+            <label for="title">Title</label>
+            <input id="title" type="text" placeholder="Note title" required />
+          </div>
+          <div class="form-group">
+            <label for="body">Body (supports &lt;b&gt;, &lt;i&gt;, &lt;a&gt;, &lt;br&gt;)</label>
+            <textarea id="body" rows="4" placeholder="Write your note here..." required></textarea>
+          </div>
+          <div class="form-group">
+            <label for="avatar">Avatar URL (optional)</label>
+            <input id="avatar" type="text" placeholder="https://... or data:image/..." />
+          </div>
+          <button type="submit" id="submit-btn">Post Note</button>
+        </form>
+      </section>
+
+      <section id="feed" aria-label="Notes Feed"></section>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

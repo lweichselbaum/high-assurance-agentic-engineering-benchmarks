@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Porto Notes</title>
+  </head>
+  <body>
+    <div class="app-container">
+      <header class="app-header">
+        <h1>Porto Notes</h1>
+        <p class="tagline">A shared notes board</p>
+      </header>
+
+      <main id="app">
+        <section class="card form-card" aria-labelledby="form-title">
+          <h2 id="form-title">New Note</h2>
+          <form id="note-form">
+            <div class="field">
+              <label for="title">Title</label>
+              <input id="title" type="text" placeholder="Note title" autocomplete="off" />
+            </div>
+
+            <div class="field">
+              <label for="body">Body</label>
+              <textarea id="body" placeholder="Note body (supports <b>, <i>, <a href=&quot;...&quot;>, <br>)"></textarea>
+            </div>
+
+            <div class="field">
+              <label for="avatar">Avatar URL</label>
+              <input id="avatar" type="text" placeholder="Avatar URL (optional)" autocomplete="off" />
+            </div>
+
+            <div class="form-actions">
+              <button type="submit">Add Note</button>
+            </div>
+          </form>
+        </section>
+
+        <section class="card search-card" aria-label="Search notes">
+          <div class="search-field">
+            <label for="search">Search</label>
+            <input id="search" type="search" placeholder="Search notes..." autocomplete="off" />
+          </div>
+          <p id="results-line"></p>
+        </section>
+
+        <section id="feed" aria-label="Notes Feed"></section>
+      </main>
+    </div>
+    <!-- Harness entry: installs the Trusted Types boundary, then runs src/main.ts. Keep this tag as is. -->
+    <script type="module" src="/harness/entry.ts"></script>
+  </body>
+</html>

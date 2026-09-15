@@ -1,0 +1,11 @@
+Legend: production dependency, optional only, dev only
+
+high-assurance-agentic-engineering-benchmarks@1.0.0 /workspace/benchmark (PRIVATE)
+│
+│   devDependencies:
+├── @playwright/test@1.56.1
+├── @types/node@22.20.1
+├── csp_evaluator@1.1.8
+└── typescript@5.9.3
+
+4 packages

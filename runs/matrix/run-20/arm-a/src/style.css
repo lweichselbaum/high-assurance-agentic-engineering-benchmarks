@@ -1,0 +1,135 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  line-height: 1.5;
+  color: #1f2937;
+  background: #f9fafb;
+  padding: 2rem;
+}
+
+#app {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #111827;
+}
+
+#note-form {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+#note-form > div {
+  margin-bottom: 1rem;
+}
+
+#note-form label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: #374151;
+}
+
+#note-form input,
+#note-form textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+#note-form button {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+#note-form button:hover {
+  background: #1d4ed8;
+}
+
+#search {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+#results-line {
+  font-style: italic;
+  color: #6b7280;
+  margin-bottom: 1rem;
+}
+
+#feed {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.note {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.note[aria-current="true"] {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+}
+
+.note-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  float: right;
+  margin-left: 1rem;
+}
+
+.note-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #111827;
+}
+
+.note-title:hover {
+  color: #2563eb;
+}
+
+.note-body {
+  color: #4b5563;
+  word-wrap: break-word;
+}
+
+.note-body a {
+  color: #2563eb;
+  text-decoration: underline;
+}
+
+.note-body a:hover {
+  color: #1d4ed8;
+}

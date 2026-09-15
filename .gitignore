@@ -1,0 +1,14 @@
+node_modules/
+dist/
+*.log
+safety-web.log
+.DS_Store
+# Per-test Playwright output (videos/traces for every test) is large; the curated recordings in runs/ are committed.
+runs/pw-*/
+runs/tmp/
+runs/lanes/
+# Playwright per-test output anywhere under runs/ (videos/traces of every test) is not committed.
+**/pw-*/
+# run-external.sh bookkeeping (one stamp per prepared/finished arm) is local state, not a result
+runs/external/started-*
+runs/external/bench-*

@@ -1,0 +1,119 @@
+:root {
+  color-scheme: light dark;
+  font-family: system-ui, sans-serif;
+}
+
+body {
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: 1rem;
+  line-height: 1.5;
+}
+
+#note-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-block-end: 1.5rem;
+  padding-block-end: 1.5rem;
+  border-block-end: 1px solid #8888;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.field label {
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+input,
+textarea,
+button {
+  font: inherit;
+}
+
+input,
+textarea {
+  padding: 0.4rem 0.5rem;
+  border: 1px solid #8888;
+  border-radius: 0.25rem;
+}
+
+button {
+  align-self: flex-start;
+  padding: 0.5rem 1rem;
+  border: 1px solid #8888;
+  border-radius: 0.25rem;
+  background: #6366f1;
+  color: #fff;
+  cursor: pointer;
+}
+
+.search {
+  margin-block-end: 1rem;
+}
+
+#results-line {
+  color: #666;
+  font-size: 0.875rem;
+  min-height: 1.25em;
+}
+
+#feed {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.note {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.25rem 0.75rem;
+  padding: 0.75rem;
+  border: 1px solid #8888;
+  border-radius: 0.5rem;
+}
+
+.note[aria-current='true'] {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 2px #6366f1;
+}
+
+.note-avatar {
+  grid-row: 1 / span 2;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.note-title {
+  grid-column: 2;
+  text-align: left;
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: transparent;
+}
+
+.note-title:hover,
+.note-title:focus-visible {
+  text-decoration-color: currentColor;
+}
+
+.note-body {
+  grid-column: 2;
+}
+
+.note-body a {
+  color: #6366f1;
+}

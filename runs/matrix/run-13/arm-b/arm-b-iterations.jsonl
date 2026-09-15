@@ -1,0 +1,74 @@
+{"iter":1,"gate":"0-integrity","pass":true,"firstError":"","seconds":0}
+{"iter":1,"gate":"1-tsc","pass":false,"firstError":"src/main.ts(228,35): error TS2345: Argument of type 'string' is not assignable to parameter of type 'SafeHtml'.","seconds":1}
+{"iter":1,"gate":"ALL","pass":false,"firstError":"1-tsc","seconds":1}
+{"iter":2,"gate":"0-integrity","pass":true,"firstError":"","seconds":0}
+{"iter":2,"gate":"1-tsc","pass":true,"firstError":"","seconds":2}
+{"iter":2,"gate":"2-tsec","pass":false,"firstError":"src/main.ts(93,3): error TS21228: [ban-element-innerhtml-assignments] Assigning directly to Element#innerHTML can result in XSS vulnerabilities.","seconds":2}
+{"iter":2,"gate":"ALL","pass":false,"firstError":"2-tsec","seconds":4}
+{"iter":3,"gate":"0-integrity","pass":true,"firstError":"","seconds":0}
+{"iter":3,"gate":"1-tsc","pass":false,"firstError":"src/main.ts(83,36): error TS2322: Type 'string | undefined' is not assignable to type 'string'.","seconds":1}
+{"iter":3,"gate":"ALL","pass":false,"firstError":"1-tsc","seconds":1}
+{"iter":4,"gate":"0-integrity","pass":true,"firstError":"","seconds":0}
+{"iter":4,"gate":"1-tsc","pass":true,"firstError":"","seconds":3}
+{"iter":4,"gate":"2-tsec","pass":true,"firstError":"","seconds":4}
+{"iter":4,"gate":"3-eslint","pass":false,"firstError":"  177:7  error  [ban-base-href-assignments] Do not modify HTMLBaseElement#href elements, as this can compromise all other efforts to sanitize unsafe URLs and lead to XSS. - confidence: VIOLATION  @safety-web/trusted-types-checks","seconds":5}
+{"iter":4,"gate":"ALL","pass":false,"firstError":"3-eslint","seconds":13}
+{"iter":5,"gate":"0-integrity","pass":true,"firstError":"","seconds":0}
+{"iter":5,"gate":"1-tsc","pass":true,"firstError":"","seconds":5}
+{"iter":5,"gate":"2-tsec","pass":true,"firstError":"","seconds":4}
+{"iter":5,"gate":"3-eslint","pass":true,"firstError":"","seconds":4}
+{"iter":5,"gate":"4-build","pass":true,"firstError":"","seconds":2}
+{"iter":5,"gate":"5-functional","pass":false,"firstError":"  ✘  1 bench/functional.spec.ts:22:1 › seed notes render newest-first with their formatting (7.1s)","seconds":46}
+{"iter":5,"gate":"ALL","pass":false,"firstError":"5-functional","seconds":61}
+{"iter":6,"gate":"0-integrity","pass":true,"firstError":"","seconds":0}
+{"iter":6,"gate":"1-tsc","pass":true,"firstError":"","seconds":2}
+{"iter":6,"gate":"2-tsec","pass":true,"firstError":"","seconds":3}
+{"iter":6,"gate":"3-eslint","pass":true,"firstError":"","seconds":4}
+{"iter":6,"gate":"4-build","pass":true,"firstError":"","seconds":2}
+{"iter":6,"gate":"5-functional","pass":false,"firstError":"  ✘  1 bench/functional.spec.ts:22:1 › seed notes render newest-first with their formatting (12.1s)","seconds":68}
+{"iter":6,"gate":"ALL","pass":false,"firstError":"5-functional","seconds":80}
+{"iter":7,"gate":"0-integrity","pass":true,"firstError":"","seconds":0}
+{"iter":7,"gate":"1-tsc","pass":true,"firstError":"","seconds":1}
+{"iter":7,"gate":"2-tsec","pass":true,"firstError":"","seconds":2}
+{"iter":7,"gate":"3-eslint","pass":true,"firstError":"","seconds":3}
+{"iter":7,"gate":"4-build","pass":true,"firstError":"","seconds":1}
+{"iter":7,"gate":"5-functional","pass":false,"firstError":"  ✘  1 bench/functional.spec.ts:22:1 › seed notes render newest-first with their formatting (11.4s)","seconds":67}
+{"iter":7,"gate":"ALL","pass":false,"firstError":"5-functional","seconds":74}
+{"iter":8,"gate":"0-integrity","pass":true,"firstError":"","seconds":0}
+{"iter":8,"gate":"1-tsc","pass":true,"firstError":"","seconds":2}
+{"iter":8,"gate":"2-tsec","pass":true,"firstError":"","seconds":3}
+{"iter":8,"gate":"3-eslint","pass":true,"firstError":"","seconds":3}
+{"iter":8,"gate":"4-build","pass":true,"firstError":"","seconds":1}
+{"iter":8,"gate":"5-functional","pass":false,"firstError":"  ✘  1 bench/functional.spec.ts:22:1 › seed notes render newest-first with their formatting (6.2s)","seconds":21}
+{"iter":8,"gate":"ALL","pass":false,"firstError":"5-functional","seconds":30}
+{"iter":9,"gate":"0-integrity","pass":true,"firstError":"","seconds":0}
+{"iter":9,"gate":"1-tsc","pass":true,"firstError":"","seconds":1}
+{"iter":9,"gate":"2-tsec","pass":true,"firstError":"","seconds":3}
+{"iter":9,"gate":"3-eslint","pass":true,"firstError":"","seconds":3}
+{"iter":9,"gate":"4-build","pass":true,"firstError":"","seconds":2}
+{"iter":9,"gate":"5-functional","pass":false,"firstError":"  ✘  4 bench/functional.spec.ts:76:1 › deep link restores query and selection, and stays in sync (6.2s)","seconds":16}
+{"iter":9,"gate":"ALL","pass":false,"firstError":"5-functional","seconds":26}
+{"iter":10,"gate":"0-integrity","pass":true,"firstError":"","seconds":0}
+{"iter":10,"gate":"1-tsc","pass":true,"firstError":"","seconds":2}
+{"iter":10,"gate":"2-tsec","pass":true,"firstError":"","seconds":3}
+{"iter":10,"gate":"3-eslint","pass":true,"firstError":"","seconds":3}
+{"iter":10,"gate":"4-build","pass":true,"firstError":"","seconds":2}
+{"iter":10,"gate":"5-functional","pass":true,"firstError":"","seconds":8}
+{"iter":10,"gate":"6-security","pass":true,"firstError":"","seconds":23}
+{"iter":10,"gate":"ALL","pass":true,"firstError":"","seconds":41}
+{"iter":11,"gate":"0-integrity","pass":true,"firstError":"","seconds":0}
+{"iter":11,"gate":"1-tsc","pass":true,"firstError":"","seconds":1}
+{"iter":11,"gate":"2-tsec","pass":true,"firstError":"","seconds":3}
+{"iter":11,"gate":"3-eslint","pass":true,"firstError":"","seconds":3}
+{"iter":11,"gate":"4-build","pass":true,"firstError":"","seconds":1}
+{"iter":11,"gate":"5-functional","pass":true,"firstError":"","seconds":6}
+{"iter":11,"gate":"6-security","pass":true,"firstError":"","seconds":21}
+{"iter":11,"gate":"ALL","pass":true,"firstError":"","seconds":35}
+{"iter":12,"gate":"0-integrity","pass":true,"firstError":"","seconds":0}
+{"iter":12,"gate":"1-tsc","pass":true,"firstError":"","seconds":1}
+{"iter":12,"gate":"2-tsec","pass":true,"firstError":"","seconds":2}
+{"iter":12,"gate":"3-eslint","pass":true,"firstError":"","seconds":3}
+{"iter":12,"gate":"4-build","pass":true,"firstError":"","seconds":2}
+{"iter":12,"gate":"5-functional","pass":true,"firstError":"","seconds":8}
+{"iter":12,"gate":"6-security","pass":true,"firstError":"","seconds":23}
+{"iter":12,"gate":"ALL","pass":true,"firstError":"","seconds":39}

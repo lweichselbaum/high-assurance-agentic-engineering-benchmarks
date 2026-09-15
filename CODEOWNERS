@@ -1,0 +1,10 @@
+# The security invariants live outside the agent loop. Changes to the harness and the benchmark are the
+# reviewed exception path; everything else (the app code under the arms' src/) is the agent's.
+/arm-b-harness/harness/            @lweichselbaum
+/arm-b-harness/verify.sh           @lweichselbaum
+/arm-b-harness/tsconfig*.json      @lweichselbaum
+/arm-b-harness/tsec-exemptions.json @lweichselbaum
+/arm-b-harness/eslint.config.js    @lweichselbaum
+/arm-b-harness/.claude/            @lweichselbaum
+/bench/                            @lweichselbaum
+/app-spec/                         @lweichselbaum

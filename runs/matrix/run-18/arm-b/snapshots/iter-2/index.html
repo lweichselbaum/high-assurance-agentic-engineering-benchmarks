@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Porto Notes</title>
+  </head>
+  <body>
+    <main id="app">
+      <h1>Porto Notes</h1>
+
+      <form id="note-form">
+        <input id="title" type="text" placeholder="Note title" required />
+        <textarea id="body" placeholder="Note body (use <b>, <i>, <a href=&quot;...&quot;>, <br> for formatting)" rows="4"></textarea>
+        <input id="avatar" type="text" placeholder="Avatar URL (optional)" />
+        <button type="submit">Add Note</button>
+      </form>
+
+      <input id="search" type="search" placeholder="Search notes..." />
+      <p id="results-line"></p>
+
+      <section id="feed"></section>
+    </main>
+    <!-- Harness entry: installs the Trusted Types boundary, then runs src/main.ts. Keep this tag as is. -->
+    <script type="module" src="/harness/entry.ts"></script>
+  </body>
+</html>

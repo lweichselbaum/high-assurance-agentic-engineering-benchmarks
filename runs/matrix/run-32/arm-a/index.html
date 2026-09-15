@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Porto Notes</title>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <main id="app">
+      <header class="app-header">
+        <h1>Porto Notes</h1>
+        <p class="subtitle">Shared notes board</p>
+      </header>
+
+      <section class="search-section">
+        <input type="search" id="search" placeholder="Search notes..." aria-label="Search notes" />
+        <p id="results-line"></p>
+      </section>
+
+      <section class="form-section">
+        <h2>Add a Note</h2>
+        <form id="note-form">
+          <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" id="title" required placeholder="Note title" />
+          </div>
+          <div class="form-group">
+            <label for="body">Body (supports &lt;b&gt;, &lt;i&gt;, &lt;a href="..."&gt;, &lt;br&gt; & newlines)</label>
+            <textarea id="body" rows="3" required placeholder="Write your note here..."></textarea>
+          </div>
+          <div class="form-group">
+            <label for="avatar">Avatar URL (optional)</label>
+            <input type="url" id="avatar" placeholder="https://example.com/avatar.svg" />
+          </div>
+          <button type="submit">Add Note</button>
+        </form>
+      </section>
+
+      <section id="feed">
+        <!-- Notes rendered here -->
+      </section>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

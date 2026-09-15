@@ -1,0 +1,16 @@
+{"iter":1,"gate":"0-integrity","pass":false,"firstError":"package.json: FAILED","seconds":0}
+{"iter":1,"gate":"ALL","pass":false,"firstError":"0-integrity","seconds":0}
+{"iter":2,"gate":"0-integrity","pass":true,"firstError":"","seconds":0}
+{"iter":2,"gate":"1-tsc","pass":true,"firstError":"","seconds":1}
+{"iter":2,"gate":"2-tsec","pass":true,"firstError":"","seconds":2}
+{"iter":2,"gate":"3-eslint","pass":true,"firstError":"","seconds":3}
+{"iter":2,"gate":"4-build","pass":false,"firstError":"\u001b[31m✗\u001b[39m Build failed in 127ms","seconds":1}
+{"iter":2,"gate":"ALL","pass":false,"firstError":"4-build","seconds":7}
+{"iter":3,"gate":"0-integrity","pass":true,"firstError":"","seconds":0}
+{"iter":3,"gate":"1-tsc","pass":true,"firstError":"","seconds":2}
+{"iter":3,"gate":"2-tsec","pass":true,"firstError":"","seconds":2}
+{"iter":3,"gate":"3-eslint","pass":true,"firstError":"","seconds":2}
+{"iter":3,"gate":"4-build","pass":true,"firstError":"","seconds":1}
+{"iter":3,"gate":"5-functional","pass":true,"firstError":"","seconds":6}
+{"iter":3,"gate":"6-security","pass":true,"firstError":"","seconds":20}
+{"iter":3,"gate":"ALL","pass":true,"firstError":"","seconds":34}

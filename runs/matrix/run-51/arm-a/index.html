@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Porto Notes</title>
+    <style>
+      body { font-family: system-ui, sans-serif; max-width: 800px; margin: 0 auto; padding: 1rem; }
+      #note-form { display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1rem; padding: 1rem; border: 1px solid #ccc; border-radius: 4px; }
+      #search { width: 100%; padding: 0.5rem; margin-bottom: 0.5rem; }
+      .note { padding: 1rem; border: 1px solid #eee; margin-bottom: 1rem; border-radius: 4px; }
+      .note[aria-current="true"] { border-color: #0f766e; background: #f0fdfa; }
+      .note-avatar { width: 40px; height: 40px; border-radius: 20px; float: left; margin-right: 1rem; }
+      .note-title { margin: 0 0 0.5rem 0; cursor: pointer; }
+      .note-body { white-space: pre-wrap; margin-left: 0; clear: none; }
+      #results-line { margin: 0 0 1rem 0; font-style: italic; color: #666; min-height: 1.5em; }
+    </style>
+  </head>
+  <body>
+    <main id="app">
+      <form id="note-form">
+        <input id="title" placeholder="Title" required>
+        <textarea id="body" placeholder="Body" required></textarea>
+        <input id="avatar" placeholder="Avatar URL">
+        <button type="submit">Add Note</button>
+      </form>
+      <input id="search" placeholder="Search notes...">
+      <p id="results-line"></p>
+      <section id="feed"></section>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

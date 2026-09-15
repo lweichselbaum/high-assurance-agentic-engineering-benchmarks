@@ -1,0 +1,225 @@
+:root {
+  --bg: #f6f5f2;
+  --surface: #ffffff;
+  --ink: #1c1b19;
+  --ink-soft: #55524d;
+  --line: #d9d5cd;
+  --accent: #0f766e;
+  --accent-ink: #0b544e;
+  --focus: #b45309;
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 16px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+}
+
+#app {
+  max-width: 46rem;
+  margin: 0 auto;
+  padding: 2rem 1rem 4rem;
+  display: grid;
+  gap: 2rem;
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 1.9rem;
+  letter-spacing: -0.01em;
+}
+
+.tagline {
+  margin: 0.25rem 0 0;
+  color: var(--ink-soft);
+}
+
+h2 {
+  margin: 0 0 0.75rem;
+  font-size: 1.15rem;
+}
+
+/* ---- form ---- */
+
+.note-form {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 1.25rem;
+}
+
+.field {
+  display: grid;
+  gap: 0.3rem;
+  margin-bottom: 1rem;
+}
+
+label {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.optional {
+  font-weight: 400;
+  color: var(--ink-soft);
+}
+
+input,
+textarea {
+  font: inherit;
+  color: inherit;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  padding: 0.5rem 0.6rem;
+  width: 100%;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 5.5rem;
+}
+
+.help {
+  margin: 0;
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+}
+
+button.primary {
+  font: inherit;
+  font-weight: 600;
+  color: #fff;
+  background: var(--accent);
+  border: 1px solid var(--accent-ink);
+  border-radius: 7px;
+  padding: 0.55rem 1.1rem;
+  cursor: pointer;
+}
+
+button.primary:hover {
+  background: var(--accent-ink);
+}
+
+/* ---- search ---- */
+
+.search-panel {
+  display: grid;
+  gap: 0.3rem;
+  margin-bottom: 1.25rem;
+}
+
+#results-line {
+  margin: 0;
+  min-height: 1.4rem;
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+}
+
+#results-line:empty {
+  min-height: 0;
+}
+
+/* ---- feed ---- */
+
+#feed {
+  display: grid;
+  gap: 1rem;
+}
+
+.note {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-left: 4px solid transparent;
+  border-radius: 10px;
+  padding: 1rem 1.1rem;
+}
+
+.note[aria-current="true"] {
+  border-left-color: var(--accent);
+  box-shadow: 0 1px 10px rgb(15 118 110 / 18%);
+}
+
+.note-header {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.note-avatar {
+  flex: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: var(--bg);
+}
+
+.note-title {
+  margin: 0;
+  flex: 1 1 auto;
+  font-size: 1.05rem;
+}
+
+/* The whole heading is the click target; the button carries the keyboard affordance. */
+.note-title-button {
+  display: block;
+  width: 100%;
+  font: inherit;
+  color: inherit;
+  text-align: left;
+  background: none;
+  border: 0;
+  border-radius: 5px;
+  padding: 0.1rem 0;
+  cursor: pointer;
+}
+
+.note-title-button:hover {
+  color: var(--accent-ink);
+}
+
+.note-body {
+  margin-top: 0.6rem;
+  overflow-wrap: anywhere;
+}
+
+.note-body a {
+  color: var(--accent-ink);
+}
+
+.note-date {
+  display: block;
+  margin-top: 0.7rem;
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+}
+
+.feed-empty {
+  margin: 0;
+  padding: 1.5rem;
+  text-align: center;
+  color: var(--ink-soft);
+  background: var(--surface);
+  border: 1px dashed var(--line);
+  border-radius: 10px;
+}
+
+/* ---- accessibility ---- */
+
+:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .note {
+    transition: border-left-color 120ms ease-out, box-shadow 120ms ease-out;
+  }
+}

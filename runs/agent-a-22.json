@@ -1,0 +1,104 @@
+{
+  "arm": "a",
+  "label": "Arm A — vibe (no guardrails)",
+  "agent": "Claude Code CLI (claude -p)",
+  "claudeCodeVersion": "2.1.259",
+  "requestedModel": "claude-opus-4-1",
+  "model": "claude-opus-5",
+  "temperature": "not configurable in the Claude Code CLI (provider default)",
+  "permissionMode": "acceptEdits",
+  "instruction": "Make it work. Ship a build.",
+  "promptSha256": "0903e3f4535d310e018e31678f3db837cca9e97545c17a8d2c63a9323c88361a",
+  "promptBytes": 2436,
+  "startedAt": "2026-09-03T16:11:43.125Z",
+  "finishedAt": "2026-09-03T16:21:13.059Z",
+  "durationMs": 569934,
+  "exitCode": 0,
+  "numTurns": 46,
+  "costUsd": 2.8802424999999996,
+  "usage": {
+    "input_tokens": 86,
+    "cache_creation_input_tokens": 64011,
+    "cache_read_input_tokens": 2183343,
+    "output_tokens": 45856,
+    "output_tokens_details": {
+      "thinking_tokens": 14188
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 64011,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 1096,
+        "cache_read_input_tokens": 76628,
+        "cache_creation_input_tokens": 186,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 186
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 1571,
+      "outputTokens": 12,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 0,
+      "costUSD": 0.0016309999999999999,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000,
+      "thinkingTokens": 0,
+      "canonicalModel": "claude-haiku-4-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    },
+    "claude-opus-5": {
+      "inputTokens": 86,
+      "outputTokens": 45856,
+      "cacheReadInputTokens": 2183343,
+      "cacheCreationInputTokens": 64011,
+      "webSearchRequests": 0,
+      "costUSD": 2.8786115,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 64000,
+      "thinkingTokens": 14188,
+      "canonicalModel": "claude-opus-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "toolCalls": {
+    "Bash": 20,
+    "Read": 4,
+    "Write": 13,
+    "Edit": 8
+  },
+  "verifyRuns": 0,
+  "filesWritten": [
+    "../../../../../../../tmp/verify-lane1-arma.mjs",
+    "../../../../../../../tmp/verify.mjs",
+    "index.html",
+    "shot.tmp.mjs",
+    "src/hash.ts",
+    "src/main.ts",
+    "src/richtext.ts",
+    "src/storage.ts",
+    "src/style.css",
+    "src/types.ts",
+    "verify.tmp.mjs"
+  ],
+  "finalMessage": "Built and shipped. Final state:\n\n**Files**\n- `index.html` — static shell with the full element contract (`#note-form` with `#title`/`#body`/`#avatar` + submit, `#search`, `#results-line`, `#feed`), labelled fields and a formatting hint.\n- `src/main.ts` — state, feed rendering, search, selection, fragment sync.\n- `src/richtext.ts` — the rich-text renderer.\n- `src/storage.ts` — localStorage load/save, seeding from `fixtures.json`.\n- `src/hash.ts` — `#q=…&note=…` parse/build.\n- `src/types.ts`, `src/style.css`, `src/fixtures.json`.\n- `dist/` — production build (2.1 kB HTML, 8.5 kB JS, 2.9 kB CSS; no dependencies added).\n\n**How the rich text works.** Bodies are escaped first, then only the allow-listed tags are re-introduced by pattern — `<b> <strong> <i> <em> <br>` and `<a href=\"…\">`, plus newlines as breaks. Because the only markup in the output is markup the renderer emitted, nothing the user typed can become a tag or an attribute: `<b onclick=…>` doesn't match the pattern and stays visible as text. Link and avatar URLs are resolved through the `URL` API and restricted to `http`/`https`/`mailto` (`data:image/…` also allowed for avatars, which the seed data uses).\n\nTitles render emphasis but not links — the title *is* the button that selects the note, so a nested anchor would be invalid HTML.\n\n**Verification.** Beyond `pnpm smoke` (OK) and a clean `tsc --noEmit`, I drove the built app in a headless browser against a 36-check script covering the whole contract: seed order, `<b>`/`<i>`/`<a>` actually rendering bold/italic/clickable, avatars only where given, case-insensitive filtering, `results for \"…\"`, `#q=douro&note=5` round-tripping in both key orders, add-and-clear with id 7, persistence across reload, and 12 injection probes (script tags, `onerror`, event handlers on allowed tags, `javascript:` hrefs, entity- and tab-smuggled schemes, attribute break-out in both body and avatar, iframe/svg). All 36 pass: no script ran, no `on*` attribute exists in the feed, and only allow-listed tags appear. Two initial failures were bugs in my test — a regex matching escaped *text* that looks like an attribute, and `example.com` being unreachable in the sandbox — not in the app; I tightened both to inspect real DOM attributes instead. The check script was temporary and is removed.\n\nOne judgment call worth flagging: search matches the *visible* text of a note, so a query like `href` won't match markup the user never sees. If the shared suite expects raw-source matching, that's the line to change (`matches()` in `src/main.ts:28`).",
+  "isError": false
+}

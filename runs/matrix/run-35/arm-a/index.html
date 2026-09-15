@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Porto Notes</title>
+    <style>
+      :root {
+        --primary: #0f766e;
+        --primary-hover: #115e59;
+        --bg: #f8fafc;
+        --card-bg: #ffffff;
+        --text: #1e293b;
+        --text-muted: #64748b;
+        --border: #cbd5e1;
+        --border-focus: #0f766e;
+        --selected-bg: #f0fdf4;
+        --selected-border: #14b8a6;
+      }
+      body {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        background-color: var(--bg);
+        color: var(--text);
+        margin: 0;
+        padding: 0;
+        line-height: 1.5;
+      }
+      header {
+        background-color: var(--card-bg);
+        border-bottom: 1px solid var(--border);
+        padding: 1.5rem 2rem;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+      }
+      header h1 {
+        margin: 0 0 0.25rem 0;
+        font-size: 1.75rem;
+        color: var(--primary);
+      }
+      header p {
+        margin: 0;
+        color: var(--text-muted);
+        font-size: 0.95rem;
+      }
+      main#app {
+        max-width: 900px;
+        margin: 2rem auto;
+        padding: 0 1rem;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      @media (min-width: 768px) {
+        main#app {
+          grid-template-columns: 350px 1fr;
+          align-items: start;
+        }
+        aside {
+          position: sticky;
+          top: 2rem;
+        }
+      }
+      section.card {
+        background: var(--card-bg);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        padding: 1.5rem;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+      }
+      section.card h2 {
+        margin-top: 0;
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+      }
+      form#note-form {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+      form#note-form label {
+        font-weight: 600;
+        font-size: 0.875rem;
+        margin-bottom: -0.5rem;
+      }
+      form#note-form input,
+      form#note-form textarea {
+        padding: 0.75rem;
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        font-size: 1rem;
+        font-family: inherit;
+        background: #fff;
+      }
+      form#note-form input:focus,
+      form#note-form textarea:focus,
+      input#search:focus {
+        outline: none;
+        border-color: var(--border-focus);
+        box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.15);
+      }
+      form#note-form textarea {
+        min-height: 100px;
+        resize: vertical;
+      }
+      form#note-form button[type="submit"] {
+        background-color: var(--primary);
+        color: white;
+        border: none;
+        padding: 0.75rem 1rem;
+        border-radius: 6px;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background-color 0.2s;
+      }
+      form#note-form button[type="submit"]:hover {
+        background-color: var(--primary-hover);
+      }
+      .feed-container {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+      .search-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+      input#search {
+        padding: 0.75rem;
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        font-size: 1rem;
+        width: 100%;
+        box-sizing: border-box;
+      }
+      #results-line {
+        margin: 0;
+        font-size: 0.9rem;
+        color: var(--text-muted);
+        font-style: italic;
+      }
+      #feed {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+      article.note {
+        background: var(--card-bg);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        padding: 1.25rem;
+        position: relative;
+        transition: border-color 0.2s, background-color 0.2s;
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 1rem;
+        align-items: start;
+      }
+      article.note[aria-current="true"] {
+        border-color: var(--selected-border);
+        background-color: var(--selected-bg);
+        box-shadow: 0 0 0 2px rgba(20, 184, 166, 0.2);
+      }
+      .note-avatar {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        object-fit: cover;
+        grid-row: span 2;
+      }
+      .note-header-content {
+        grid-column: 2;
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+      }
+      .note-title {
+        margin: 0;
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: var(--primary);
+        cursor: pointer;
+      }
+      .note-title:hover {
+        text-decoration: underline;
+      }
+      .note-meta {
+        font-size: 0.75rem;
+        color: var(--text-muted);
+      }
+      .note-body {
+        grid-column: 1 / -1;
+        margin-top: 0.5rem;
+        word-break: break-word;
+      }
+      @media (min-width: 500px) {
+        article.note:has(.note-avatar) .note-body {
+          grid-column: 2;
+          margin-top: 0;
+        }
+      }
+      .no-notes {
+        text-align: center;
+        color: var(--text-muted);
+        padding: 2rem;
+        font-style: italic;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Porto Notes</h1>
+      <p>A shared notes board for OWASP AppSec Days Porto</p>
+    </header>
+    <main id="app">
+      <aside>
+        <section class="card">
+          <h2>Add a Note</h2>
+          <form id="note-form">
+            <div>
+              <label for="title">Title</label>
+              <input id="title" type="text" placeholder="Note title" required />
+            </div>
+            <div>
+              <label for="body">Body (rich text)</label>
+              <textarea id="body" placeholder="Use &lt;b&gt;, &lt;i&gt;, &lt;a href=&quot;...&quot;&gt;, &lt;br&gt;" required></textarea>
+            </div>
+            <div>
+              <label for="avatar">Author Avatar URL (optional)</label>
+              <input id="avatar" type="url" placeholder="https://example.com/avatar.jpg" />
+            </div>
+            <button type="submit">Add Note</button>
+          </form>
+        </section>
+      </aside>
+      <section class="feed-container">
+        <div class="search-wrapper">
+          <input id="search" type="search" placeholder="Search notes by title or body..." />
+          <p id="results-line"></p>
+        </div>
+        <section id="feed">
+          <!-- Notes rendered here -->
+        </section>
+      </section>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

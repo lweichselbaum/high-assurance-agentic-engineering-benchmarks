@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Porto Notes</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        background: #f5f5f5;
+        color: #333;
+        line-height: 1.6;
+      }
+
+      main {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      h1 {
+        font-size: 28px;
+        margin-bottom: 30px;
+        color: #1a1a1a;
+      }
+
+      form#note-form {
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        margin-bottom: 30px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      }
+
+      form#note-form div {
+        margin-bottom: 15px;
+      }
+
+      form#note-form label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: 500;
+        color: #555;
+        font-size: 14px;
+      }
+
+      form#note-form input[type="text"],
+      form#note-form textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-family: inherit;
+        font-size: 14px;
+      }
+
+      form#note-form textarea {
+        resize: vertical;
+        min-height: 100px;
+      }
+
+      form#note-form button {
+        background: #0f766e;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: 500;
+      }
+
+      form#note-form button:hover {
+        background: #0d5e56;
+      }
+
+      #search-container {
+        margin-bottom: 20px;
+        background: white;
+        padding: 15px;
+        border-radius: 8px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      }
+
+      #search {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 14px;
+      }
+
+      #results-line {
+        margin-top: 10px;
+        font-size: 13px;
+        color: #666;
+        min-height: 20px;
+      }
+
+      #feed {
+        display: grid;
+        gap: 15px;
+      }
+
+      .note {
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        transition: all 0.2s;
+      }
+
+      .note[aria-current="true"] {
+        border-left: 4px solid #0f766e;
+        background: #f0f9f8;
+      }
+
+      .note:hover {
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+      }
+
+      .note-title {
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 10px;
+        color: #1a1a1a;
+        cursor: pointer;
+        transition: color 0.2s;
+      }
+
+      .note-title:hover {
+        color: #0f766e;
+      }
+
+      .note-avatar {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: block;
+        margin-bottom: 10px;
+      }
+
+      .note-body {
+        font-size: 14px;
+        color: #555;
+        line-height: 1.6;
+      }
+
+      .note-body b,
+      .note-body strong {
+        font-weight: 600;
+        color: #333;
+      }
+
+      .note-body i,
+      .note-body em {
+        font-style: italic;
+      }
+
+      .note-body a {
+        color: #0f766e;
+        text-decoration: none;
+        border-bottom: 1px solid #0f766e;
+      }
+
+      .note-body a:hover {
+        color: #0d5e56;
+      }
+
+      .note-body br {
+        display: block;
+        content: '';
+      }
+    </style>
+  </head>
+  <body>
+    <main id="app">
+      <h1>Porto Notes</h1>
+
+      <form id="note-form">
+        <div>
+          <label for="title">Title</label>
+          <input id="title" type="text" required />
+        </div>
+        <div>
+          <label for="body">Note</label>
+          <textarea id="body" required></textarea>
+        </div>
+        <div>
+          <label for="avatar">Avatar URL (optional)</label>
+          <input id="avatar" type="text" />
+        </div>
+        <button type="submit">Add Note</button>
+      </form>
+
+      <div id="search-container">
+        <input id="search" type="text" placeholder="Search notes..." />
+        <p id="results-line"></p>
+      </div>
+
+      <section id="feed"></section>
+    </main>
+    <!-- Harness entry: installs the Trusted Types boundary, then runs src/main.ts. Keep this tag as is. -->
+    <script type="module" src="/harness/entry.ts"></script>
+  </body>
+</html>

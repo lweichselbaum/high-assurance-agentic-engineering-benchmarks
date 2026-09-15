@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Porto Notes</title>
+    <style>
+      body {
+        font-family: system-ui, sans-serif;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      #note-form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 20px;
+        padding: 15px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+      }
+      .note {
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        margin-bottom: 15px;
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .note[aria-current="true"] {
+        border-color: #0b57d0;
+        box-shadow: 0 0 0 1px #0b57d0;
+      }
+      .note-title {
+        margin: 0;
+        color: #0b57d0;
+      }
+      .note-title:hover {
+        text-decoration: underline;
+      }
+      .note-body {
+        white-space: pre-wrap; /* to support lines if needed, though we use <br> */
+      }
+      .note-avatar {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+      #search {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 10px;
+        box-sizing: border-box;
+      }
+      #results-line:empty {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <main id="app">
+      <h1>Porto Notes</h1>
+      
+      <form id="note-form">
+        <input id="title" type="text" placeholder="Title" required>
+        <textarea id="body" rows="4" placeholder="Body..." required></textarea>
+        <input id="avatar" type="text" placeholder="Avatar URL (optional)">
+        <button type="submit">Add Note</button>
+      </form>
+
+      <input id="search" type="text" placeholder="Search notes...">
+      <p id="results-line"></p>
+
+      <section id="feed"></section>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

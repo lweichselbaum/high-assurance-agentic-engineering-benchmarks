@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Porto Notes</title>
+  </head>
+  <body>
+    <main id="app">
+      <header class="app-header">
+        <div class="header-inner">
+          <div class="brand">
+            <span class="brand-icon" aria-hidden="true">📝</span>
+            <div class="brand-text">
+              <h1 class="app-title">Porto Notes</h1>
+              <p class="app-subtitle">Shared board for notes, recommendations, and links</p>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div class="container">
+        <aside class="sidebar">
+          <section class="panel form-panel" aria-labelledby="form-heading">
+            <h2 id="form-heading" class="panel-heading">Add a Note</h2>
+            <form id="note-form">
+              <div class="form-group">
+                <label for="title">Title</label>
+                <input
+                  id="title"
+                  name="title"
+                  type="text"
+                  placeholder="e.g. Douro sunset spot"
+                  required
+                  autocomplete="off"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="body">
+                  Body
+                  <span class="label-hint">Supports &lt;b&gt;, &lt;i&gt;, &lt;a href="..."&gt;, &lt;br&gt; and newlines</span>
+                </label>
+                <textarea
+                  id="body"
+                  name="body"
+                  rows="4"
+                  placeholder="Write your note here. Format with <b>bold</b>, <i>italic</i>, or <a href=&quot;...&quot;>links</a>..."
+                  required
+                ></textarea>
+              </div>
+
+              <div class="form-group">
+                <label for="avatar">
+                  Avatar URL
+                  <span class="label-hint">Optional (https:// or data:image/...)</span>
+                </label>
+                <input
+                  id="avatar"
+                  name="avatar"
+                  type="url"
+                  placeholder="https://example.com/avatar.png"
+                  autocomplete="off"
+                />
+              </div>
+
+              <button type="submit" class="submit-button">Add Note</button>
+            </form>
+          </section>
+        </aside>
+
+        <main class="feed-column">
+          <section class="search-panel" aria-label="Search notes">
+            <div class="search-box">
+              <input
+                id="search"
+                type="search"
+                placeholder="Search notes by title or body..."
+                aria-label="Search notes"
+                autocomplete="off"
+              />
+            </div>
+            <p id="results-line" aria-live="polite"></p>
+          </section>
+
+          <section id="feed" aria-label="Notes feed">
+            <!-- Notes rendered here dynamically -->
+          </section>
+        </main>
+      </div>
+    </main>
+    <!-- Harness entry: installs the Trusted Types boundary, then runs src/main.ts. Keep this tag as is. -->
+    <script type="module" src="/harness/entry.ts"></script>
+  </body>
+</html>
+

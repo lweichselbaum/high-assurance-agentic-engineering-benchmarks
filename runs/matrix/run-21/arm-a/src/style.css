@@ -1,0 +1,218 @@
+:root {
+  --bg: #f6f7f9;
+  --surface: #ffffff;
+  --text: #16232b;
+  --muted: #4d6070;
+  --line: #d3dbe2;
+  --accent: #0f766e;
+  --accent-text: #ffffff;
+  --focus: #b45309;
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0f1720;
+    --surface: #17222c;
+    --text: #e8eef3;
+    --muted: #a5b6c3;
+    --line: #2b3a47;
+    --accent: #2dd4bf;
+    --accent-text: #06211e;
+    --focus: #fbbf24;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 16px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+#app {
+  max-width: 44rem;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 4rem;
+}
+
+.page-header h1 {
+  margin: 0;
+  font-size: 1.75rem;
+  letter-spacing: -0.01em;
+}
+
+.tagline {
+  margin: 0.25rem 0 1.5rem;
+  color: var(--muted);
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.card-title {
+  margin: 0 0 0.75rem;
+  font-size: 1.05rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  margin: 0 0 0.9rem;
+}
+
+.field:last-of-type {
+  margin-bottom: 0.4rem;
+}
+
+label {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.optional {
+  font-weight: 400;
+  color: var(--muted);
+}
+
+.help {
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+input,
+textarea {
+  font: inherit;
+  color: inherit;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 0.5rem 0.6rem;
+  width: 100%;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 5.5rem;
+}
+
+.actions {
+  margin: 0;
+}
+
+button.primary {
+  font: inherit;
+  font-weight: 600;
+  background: var(--accent);
+  color: var(--accent-text);
+  border: 1px solid transparent;
+  border-radius: 6px;
+  padding: 0.5rem 1.1rem;
+  cursor: pointer;
+}
+
+button.primary:hover {
+  filter: brightness(1.08);
+}
+
+:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
+#results-line {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+  min-height: 1.4rem;
+}
+
+#feed {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.note {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-left: 4px solid transparent;
+  border-radius: 10px;
+  padding: 0.9rem 1.1rem;
+}
+
+.note.is-selected {
+  border-left-color: var(--accent);
+}
+
+.note-header {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.note-heading {
+  margin: 0;
+  flex: 1 1 12rem;
+  font-size: 1.1rem;
+}
+
+.note-title {
+  font: inherit;
+  font-weight: 700;
+  color: inherit;
+  background: none;
+  border: 0;
+  border-radius: 4px;
+  padding: 0;
+  text-align: left;
+  cursor: pointer;
+}
+
+.note-title:hover {
+  color: var(--accent);
+}
+
+.note-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: var(--line);
+  flex: none;
+}
+
+.note-avatar.is-broken {
+  display: none;
+}
+
+.note-date {
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.note-body {
+  margin-top: 0.5rem;
+  overflow-wrap: anywhere;
+}
+
+.note-body a {
+  color: var(--accent);
+}
+
+.empty {
+  color: var(--muted);
+  margin: 0;
+  padding: 0.5rem 0;
+}

@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Porto Notes</title>
+  </head>
+  <body>
+    <main id="app">
+      <header class="page-header">
+        <h1>Porto Notes</h1>
+        <p class="tagline">A shared board for the OWASP AppSec Days Porto crew.</p>
+      </header>
+
+      <form id="note-form" aria-labelledby="note-form-heading">
+        <h2 id="note-form-heading">Add a note</h2>
+        <div class="field">
+          <label for="title">Title</label>
+          <input id="title" name="title" type="text" autocomplete="off" />
+        </div>
+        <div class="field">
+          <label for="body">Body</label>
+          <textarea id="body" name="body" rows="4" aria-describedby="body-hint"></textarea>
+          <p class="hint" id="body-hint">
+            Basic rich text: &lt;b&gt;, &lt;strong&gt;, &lt;i&gt;, &lt;em&gt;, &lt;a href="…"&gt; and &lt;br&gt;. A new
+            line is a line break.
+          </p>
+        </div>
+        <div class="field">
+          <label for="avatar">Author avatar URL <span class="optional">(optional)</span></label>
+          <input id="avatar" name="avatar" type="text" inputmode="url" autocomplete="off" placeholder="https://…" />
+        </div>
+        <button type="submit" class="primary">Add note</button>
+      </form>
+
+      <section class="board" aria-labelledby="board-heading">
+        <h2 id="board-heading">Notes</h2>
+        <div class="field search-field">
+          <label for="search">Search notes</label>
+          <input id="search" name="search" type="search" autocomplete="off" placeholder="Search titles and bodies" />
+        </div>
+        <p id="results-line" role="status" aria-live="polite"></p>
+        <section id="feed" aria-label="Notes feed"></section>
+      </section>
+    </main>
+    <!-- Harness entry: installs the Trusted Types boundary, then runs src/main.ts. Keep this tag as is. -->
+    <script type="module" src="/harness/entry.ts"></script>
+  </body>
+</html>

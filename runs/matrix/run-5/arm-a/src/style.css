@@ -1,0 +1,175 @@
+:root {
+  color-scheme: light dark;
+  --border: #d8d8d8;
+  --accent: #0f766e;
+  --bg-subtle: #f7f7f7;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 1.5rem;
+  display: flex;
+  justify-content: center;
+  background: var(--bg-subtle);
+  color: #1a1a1a;
+}
+
+#app {
+  width: 100%;
+  max-width: 640px;
+}
+
+.app-header h1 {
+  margin-bottom: 0.1rem;
+}
+
+.tagline {
+  margin-top: 0;
+  color: #555;
+}
+
+#note-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.field label {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+input,
+textarea,
+button {
+  font: inherit;
+}
+
+input[type="text"],
+textarea {
+  padding: 0.5rem;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  resize: vertical;
+}
+
+#note-form button {
+  align-self: flex-start;
+  padding: 0.5rem 1.25rem;
+  border: none;
+  border-radius: 4px;
+  background: var(--accent);
+  color: white;
+  cursor: pointer;
+}
+
+#note-form button:hover {
+  filter: brightness(1.1);
+}
+
+.search-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-bottom: 1rem;
+}
+
+.search-wrap label {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+#results-line {
+  margin: 0;
+  color: #555;
+  font-size: 0.9rem;
+  min-height: 1.1em;
+}
+
+#feed {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.note {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.85rem 1rem;
+  display: flex;
+  gap: 0.75rem;
+}
+
+.note[aria-current="true"] {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+.note-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.note-main {
+  min-width: 0;
+  flex: 1;
+}
+
+.note-title-btn {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  padding: 0;
+  margin-bottom: 0.25rem;
+  cursor: pointer;
+}
+
+.note-title {
+  margin: 0;
+  font-size: 1.05rem;
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+.note-title-btn:hover .note-title {
+  color: #0b544e;
+}
+
+.note-body {
+  margin: 0;
+  white-space: normal;
+  word-wrap: break-word;
+}
+
+.note-meta {
+  margin: 0.35rem 0 0;
+  font-size: 0.75rem;
+  color: #888;
+}
+
+.empty-state {
+  color: #666;
+  font-style: italic;
+}

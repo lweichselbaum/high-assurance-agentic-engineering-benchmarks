@@ -1,0 +1,5 @@
+{
+  "24": "Independence caveat: the vibe-arm agent wrote an auto-memory note (lane port collision) and read the deep-link note from run 26 in its last ten events, after its build. Feature-level only; security scores unaffected. See FINDINGS.md §8.",
+  "27": "Independence caveat: the harness-arm agent read the auto-memory notes written during runs 24 and 26 (a lane port collision; the feature spec's deep-link example conflicting with the fixtures) in its first twenty events. Feature-level only; security scores unaffected. See FINDINGS.md §8.",
+  "29": "Independence caveat: the harness-arm agent read both auto-memory notes early in the session and the vibe-arm agent read the deep-link note mid-session. Feature-level only; security scores unaffected. See FINDINGS.md §8."
+}

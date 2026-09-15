@@ -1,0 +1,497 @@
+{
+  "generatedAt": "2026-09-03T12:40:23.431Z",
+  "run": "20",
+  "promptSha256": "0903e3f4535d310e018e31678f3db837cca9e97545c17a8d2c63a9323c88361a",
+  "fixturesSha256": "feedec7cd3fb58c651335f0174e4f83d2de5218f51e28e65668238ca337ab334",
+  "armA": {
+    "label": "Arm A — vibe (no guardrails)",
+    "xssFired": 0,
+    "xssTotal": 8,
+    "xssUntested": 0,
+    "firedIds": [],
+    "payloads": [
+      {
+        "id": "img-onerror",
+        "field": "body",
+        "fired": false,
+        "how": null,
+        "csp": [],
+        "pageErrors": []
+      },
+      {
+        "id": "script-tag",
+        "field": "body",
+        "fired": false,
+        "how": null,
+        "csp": [],
+        "pageErrors": []
+      },
+      {
+        "id": "svg-onload",
+        "field": "body",
+        "fired": false,
+        "how": null,
+        "csp": [],
+        "pageErrors": []
+      },
+      {
+        "id": "js-uri-link",
+        "field": "body",
+        "fired": false,
+        "how": null,
+        "csp": [],
+        "pageErrors": []
+      },
+      {
+        "id": "avatar-js",
+        "field": "avatar",
+        "fired": false,
+        "how": null,
+        "csp": [],
+        "pageErrors": []
+      },
+      {
+        "id": "title-break",
+        "field": "title",
+        "fired": false,
+        "how": null,
+        "csp": [],
+        "pageErrors": []
+      },
+      {
+        "id": "search-refl",
+        "field": "search",
+        "fired": false,
+        "how": null,
+        "csp": [],
+        "pageErrors": []
+      },
+      {
+        "id": "hash-dom",
+        "field": "hash",
+        "fired": false,
+        "how": null,
+        "csp": [],
+        "pageErrors": []
+      }
+    ],
+    "cspPresent": false,
+    "cspStrict": false,
+    "trustedTypes": false,
+    "csp": "",
+    "cspEvaluator": {
+      "high": 0,
+      "medium": 0,
+      "findings": []
+    },
+    "securityHeaders": {},
+    "ttEnforcedAtRuntime": false,
+    "cspViolationsObserved": 0,
+    "dangerousSinkAssignments": 2,
+    "urlSinkAssignments": 1,
+    "sinkFindings": [
+      {
+        "file": "src/main.ts",
+        "line": 115,
+        "kind": "innerHTML =",
+        "category": "html-sink",
+        "snippet": "feed.innerHTML = '';"
+      },
+      {
+        "file": "src/main.ts",
+        "line": 129,
+        "kind": "src = <non-literal>",
+        "category": "url-sink",
+        "snippet": "avatar.src = note.avatar;"
+      },
+      {
+        "file": "src/main.ts",
+        "line": 145,
+        "kind": "innerHTML =",
+        "category": "html-sink",
+        "snippet": "body.innerHTML = renderRichText(note.body);"
+      }
+    ],
+    "sinksByKind": {
+      "innerHTML =": 2,
+      "src = <non-literal>": 1
+    },
+    "filesScanned": [
+      "index.html",
+      "src/main.ts"
+    ],
+    "lintErrors": null,
+    "tsecErrors": null,
+    "iterationsToGreen": null,
+    "iterations": null,
+    "trustedSurfaceLines": null,
+    "trustedSurfaceFiles": [],
+    "functionalPass": true,
+    "functional": {
+      "total": 5,
+      "passed": 5,
+      "failed": [],
+      "pass": true
+    },
+    "agent": {
+      "arm": "a",
+      "label": "Arm A — vibe (no guardrails)",
+      "agent": "Claude Code CLI (claude -p)",
+      "claudeCodeVersion": "2.1.259",
+      "requestedModel": "claude-sonnet-4-5",
+      "model": "claude-sonnet-4-5",
+      "temperature": "not configurable in the Claude Code CLI (provider default)",
+      "permissionMode": "acceptEdits",
+      "instruction": "Make it work. Ship a build.",
+      "promptSha256": "0903e3f4535d310e018e31678f3db837cca9e97545c17a8d2c63a9323c88361a",
+      "promptBytes": 2436,
+      "startedAt": "2026-09-03T12:35:35.968Z",
+      "finishedAt": "2026-09-03T12:37:35.373Z",
+      "durationMs": 119405,
+      "exitCode": 0,
+      "numTurns": 15,
+      "costUsd": 0.27033399999999996,
+      "usage": {
+        "input_tokens": 105,
+        "cache_creation_input_tokens": 14632,
+        "cache_read_input_tokens": 363355,
+        "output_tokens": 6216,
+        "output_tokens_details": {
+          "thinking_tokens": 1101
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 5014,
+          "ephemeral_5m_input_tokens": 9618
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 8,
+            "output_tokens": 526,
+            "cache_read_input_tokens": 31988,
+            "cache_creation_input_tokens": 240,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 240,
+              "ephemeral_1h_input_tokens": 0
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      },
+      "modelUsage": {
+        "claude-haiku-4-5-20251001": {
+          "inputTokens": 1571,
+          "outputTokens": 10,
+          "cacheReadInputTokens": 0,
+          "cacheCreationInputTokens": 0,
+          "webSearchRequests": 0,
+          "costUSD": 0.0016209999999999998,
+          "contextWindow": 200000,
+          "maxOutputTokens": 32000,
+          "thinkingTokens": 0,
+          "canonicalModel": "claude-haiku-4-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        },
+        "claude-sonnet-4-5": {
+          "inputTokens": 105,
+          "outputTokens": 6216,
+          "cacheReadInputTokens": 363355,
+          "cacheCreationInputTokens": 14632,
+          "webSearchRequests": 0,
+          "costUSD": 0.2687129999999999,
+          "contextWindow": 200000,
+          "maxOutputTokens": 32000,
+          "thinkingTokens": 1101,
+          "canonicalModel": "claude-sonnet-4-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "toolCalls": {
+        "Read": 3,
+        "Edit": 3,
+        "Write": 1,
+        "Bash": 7
+      },
+      "verifyRuns": 0,
+      "filesWritten": [
+        "index.html",
+        "src/main.ts",
+        "src/style.css"
+      ],
+      "finalMessage": "Perfect! The Porto Notes app is fully implemented and working. Here's what I've built:\n\n## Implementation Summary\n\n✅ **Core Features:**\n- Form with title, body (rich text), and optional avatar URL\n- Notes render newest-first in the feed\n- Search box with \"results for...\" line\n- Deep linking with URL fragments (`#q=query&note=id`)\n- localStorage persistence with seed data from fixtures.json\n\n✅ **Rich Text Support:**\n- Safe rendering of `<b>`, `<strong>`, `<i>`, `<em>`, `<a href=\"\">`, `<br>` tags\n- Newlines converted to line breaks\n- All other HTML escaped to prevent XSS\n\n✅ **Element Contract:**\n- All required IDs, classes, and attributes implemented\n- `#note-form`, `#title`, `#body`, `#avatar`, `#search`\n- `#results-line`, `#feed`\n- `.note`, `.note-title`, `.note-body`, `.note-avatar`\n- `data-note-id`, `aria-current` attributes\n\n✅ **Build:**\n- Production build created in `dist/`\n- Smoke test passed: 6 notes rendered from fixtures\n- Ready to serve as static files\n\nThe app is complete and functional!",
+      "isError": false
+    }
+  },
+  "armB": {
+    "label": "Arm B — high-assurance harness",
+    "xssFired": 0,
+    "xssTotal": 8,
+    "xssUntested": 0,
+    "firedIds": [],
+    "payloads": [
+      {
+        "id": "img-onerror",
+        "field": "body",
+        "fired": false,
+        "how": null,
+        "csp": [],
+        "pageErrors": []
+      },
+      {
+        "id": "script-tag",
+        "field": "body",
+        "fired": false,
+        "how": null,
+        "csp": [],
+        "pageErrors": []
+      },
+      {
+        "id": "svg-onload",
+        "field": "body",
+        "fired": false,
+        "how": null,
+        "csp": [],
+        "pageErrors": []
+      },
+      {
+        "id": "js-uri-link",
+        "field": "body",
+        "fired": false,
+        "how": null,
+        "csp": [],
+        "pageErrors": []
+      },
+      {
+        "id": "avatar-js",
+        "field": "avatar",
+        "fired": false,
+        "how": null,
+        "csp": [],
+        "pageErrors": []
+      },
+      {
+        "id": "title-break",
+        "field": "title",
+        "fired": false,
+        "how": null,
+        "csp": [],
+        "pageErrors": []
+      },
+      {
+        "id": "search-refl",
+        "field": "search",
+        "fired": false,
+        "how": null,
+        "csp": [],
+        "pageErrors": []
+      },
+      {
+        "id": "hash-dom",
+        "field": "hash",
+        "fired": false,
+        "how": null,
+        "csp": [],
+        "pageErrors": []
+      }
+    ],
+    "cspPresent": true,
+    "cspStrict": true,
+    "trustedTypes": true,
+    "csp": "script-src 'nonce-GXHlGxhXD6dt5AKIGUI7uQ==' 'strict-dynamic'; object-src 'none'; base-uri 'none'; require-trusted-types-for 'script'; trusted-types default google#safe dompurify; report-uri /csp-report",
+    "cspEvaluator": {
+      "high": 0,
+      "medium": 0,
+      "findings": []
+    },
+    "securityHeaders": {
+      "x-content-type-options": "nosniff",
+      "x-frame-options": "DENY",
+      "cross-origin-opener-policy": "same-origin",
+      "cross-origin-resource-policy": "same-origin",
+      "referrer-policy": "no-referrer"
+    },
+    "ttEnforcedAtRuntime": true,
+    "cspViolationsObserved": 0,
+    "dangerousSinkAssignments": 0,
+    "urlSinkAssignments": 1,
+    "sinkFindings": [
+      {
+        "file": "src/main.ts",
+        "line": 128,
+        "kind": "src = <non-literal>",
+        "category": "url-sink",
+        "snippet": "avatarImg.src = note.avatar;"
+      }
+    ],
+    "sinksByKind": {
+      "src = <non-literal>": 1
+    },
+    "filesScanned": [
+      "index.html",
+      "src/main.ts"
+    ],
+    "lintErrors": 0,
+    "tsecErrors": 0,
+    "iterationsToGreen": 4,
+    "iterations": {
+      "total": 4,
+      "toGreen": 4,
+      "history": [
+        {
+          "iter": 1,
+          "green": false,
+          "firstFailingGate": "1-tsc",
+          "firstError": "src/main.ts(2,37): error TS2307: Cannot find module 'safevalues/dom/elements/element' or its corresponding type declarations.",
+          "seconds": 3
+        },
+        {
+          "iter": 2,
+          "green": false,
+          "firstFailingGate": "2-tsec",
+          "firstError": "src/main.ts(141,3): error TS21228: [ban-element-innerhtml-assignments] Assigning directly to Element#innerHTML can result in XSS vulnerabilities.",
+          "seconds": 5
+        },
+        {
+          "iter": 3,
+          "green": false,
+          "firstFailingGate": "5-functional",
+          "firstError": "  ✘  1 bench/functional.spec.ts:22:1 › seed notes render newest-first with their formatting (6.0s)",
+          "seconds": 26
+        },
+        {
+          "iter": 4,
+          "green": true,
+          "firstFailingGate": null,
+          "firstError": null,
+          "seconds": 35
+        }
+      ]
+    },
+    "trustedSurfaceLines": 29,
+    "trustedSurfaceFiles": [
+      "harness/trusted-boundary.ts"
+    ],
+    "functionalPass": true,
+    "functional": {
+      "total": 5,
+      "passed": 5,
+      "failed": [],
+      "pass": true
+    },
+    "agent": {
+      "arm": "b",
+      "label": "Arm B — high-assurance harness",
+      "agent": "Claude Code CLI (claude -p)",
+      "claudeCodeVersion": "2.1.259",
+      "requestedModel": "claude-sonnet-4-5",
+      "model": "claude-sonnet-4-5",
+      "temperature": "not configurable in the Claude Code CLI (provider default)",
+      "permissionMode": "acceptEdits",
+      "instruction": "Implement the feature. `./verify.sh` must pass. If it fails, fix your code and run it again. Do not modify config, tests, tsconfig, ESLint, or the CSP.",
+      "promptSha256": "0903e3f4535d310e018e31678f3db837cca9e97545c17a8d2c63a9323c88361a",
+      "promptBytes": 2560,
+      "startedAt": "2026-09-03T12:35:35.873Z",
+      "finishedAt": "2026-09-03T12:38:59.953Z",
+      "durationMs": 204080,
+      "exitCode": 1,
+      "numTurns": 22,
+      "costUsd": 0.35958034999999994,
+      "usage": {
+        "input_tokens": 129,
+        "cache_creation_input_tokens": 21193,
+        "cache_read_input_tokens": 496417,
+        "output_tokens": 7838,
+        "output_tokens_details": {
+          "thinking_tokens": 1331
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 5134,
+          "ephemeral_5m_input_tokens": 16059
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 8,
+            "output_tokens": 119,
+            "cache_read_input_tokens": 38188,
+            "cache_creation_input_tokens": 601,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 601,
+              "ephemeral_1h_input_tokens": 0
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      },
+      "modelUsage": {
+        "claude-haiku-4-5-20251001": {
+          "inputTokens": 1608,
+          "outputTokens": 13,
+          "cacheReadInputTokens": 0,
+          "cacheCreationInputTokens": 0,
+          "webSearchRequests": 0,
+          "costUSD": 0.001673,
+          "contextWindow": 200000,
+          "maxOutputTokens": 32000,
+          "thinkingTokens": 0,
+          "canonicalModel": "claude-haiku-4-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        },
+        "claude-sonnet-4-5": {
+          "inputTokens": 129,
+          "outputTokens": 7838,
+          "cacheReadInputTokens": 496417,
+          "cacheCreationInputTokens": 21193,
+          "webSearchRequests": 0,
+          "costUSD": 0.35790734999999996,
+          "contextWindow": 200000,
+          "maxOutputTokens": 32000,
+          "thinkingTokens": 1331,
+          "canonicalModel": "claude-sonnet-4-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "toolCalls": {
+        "Bash": 9,
+        "Read": 6,
+        "Write": 1,
+        "Edit": 5
+      },
+      "verifyRuns": 4,
+      "filesWritten": [
+        "index.html",
+        "src/main.ts"
+      ],
+      "finalMessage": "You've hit your org's monthly spend limit · ask your admin to raise it at claude.ai/settings/usage?from=cc_cli_limit_message · your session limit resets 4pm (UTC)",
+      "isError": true
+    }
+  },
+  "toolchain": {
+    "node": "v22.22.2",
+    "vite": "7.3.6",
+    "typescript": "5.9.3",
+    "tsec": "0.2.9",
+    "safetyWeb": "0.4.1-alpha.15",
+    "eslint": "9.39.5",
+    "safevalues": "1.2.0",
+    "dompurify": "3.4.14",
+    "playwright": "1.56.1",
+    "cspEvaluator": "1.1.8"
+  }
+}

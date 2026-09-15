@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Porto Notes</title>
+  </head>
+  <body>
+    <main id="app">
+      <header class="app-header">
+        <h1 class="app-title">
+          <span class="icon">📌</span> Porto Notes
+        </h1>
+        <p class="app-tagline">A shared notes board for the OWASP AppSec Days Porto crew</p>
+      </header>
+
+      <section class="composer-card" aria-label="Add a note">
+        <h2 class="composer-title">Add a Note</h2>
+        <form id="note-form">
+          <div class="form-group">
+            <label for="title" class="form-label">Title</label>
+            <input id="title" name="title" placeholder="Note title" required />
+          </div>
+
+          <div class="form-group">
+            <label for="body" class="form-label">Body</label>
+            <textarea id="body" name="body" placeholder="Write your note here. Basic rich text supported: <b>bold</b>, <i>italic</i>, <a href='...'>links</a>..." required></textarea>
+            <span class="form-hint">Supports basic rich text tags (b, strong, i, em, a, br) and line breaks</span>
+          </div>
+
+          <div class="form-group">
+            <label for="avatar" class="form-label">Author Avatar URL (optional)</label>
+            <input id="avatar" name="avatar" placeholder="https://example.com/avatar.png" />
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn-primary">Add Note</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="search-container" aria-label="Search notes">
+        <label for="search" class="form-label">Search notes</label>
+        <input id="search" name="search" type="search" placeholder="Type to filter notes by title or body..." />
+        <p id="results-line"></p>
+      </section>
+
+      <section id="feed" aria-label="Notes feed"></section>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

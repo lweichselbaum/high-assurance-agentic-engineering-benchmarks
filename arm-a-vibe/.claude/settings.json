@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "defaultMode": "acceptEdits",
+    "allow": [
+      "Read", "Glob", "Grep", "Edit", "Write", "MultiEdit",
+      "Bash(pnpm *)", "Bash(npx *)", "Bash(node *)",
+      "Bash(ls)", "Bash(ls *)", "Bash(cat *)", "Bash(head *)", "Bash(tail *)", "Bash(wc *)", "Bash(grep *)", "Bash(rg *)",
+      "Bash(find *)", "Bash(tree *)", "Bash(diff *)", "Bash(pwd)", "Bash(echo *)", "Bash(true)", "Bash(date *)", "Bash(sleep *)",
+      "Bash(mkdir *)", "Bash(cp *)", "Bash(mv *)", "Bash(rm *)", "Bash(touch *)", "Bash(cd *)", "Bash(kill *)", "Bash(sha256sum *)"
+    ],
+    "deny": [
+      "Edit(package.json)", "Write(package.json)",
+      "Edit(CLAUDE.md)", "Write(CLAUDE.md)", "Edit(AGENTS.md)", "Write(AGENTS.md)",
+      "Edit(.claude/**)", "Write(.claude/**)",
+      "Edit(.scaffold/**)", "Write(.scaffold/**)",
+      "Edit(../**)", "Write(../**)",
+      "Bash(git *)",
+      "Bash(pnpm add *)", "Bash(pnpm install *)", "Bash(pnpm i *)", "Bash(pnpm remove *)", "Bash(pnpm rm *)", "Bash(pnpm up*)", "Bash(pnpm update*)",
+      "Bash(npm *)", "Bash(npx playwright install*)", "Bash(curl *)", "Bash(wget *)",
+      "WebFetch", "WebSearch"
+    ]
+  }
+}

@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Porto Notes</title>
+    <meta name="description" content="Porto Notes — a shared notes board." />
+  </head>
+  <body>
+    <main id="app">
+      <header class="app-header">
+        <h1>Porto Notes</h1>
+        <p class="tagline">A shared board. Add a note, search it, share the link.</p>
+      </header>
+
+      <form id="note-form" aria-labelledby="add-note-heading">
+        <h2 id="add-note-heading">Add a note</h2>
+
+        <p class="field">
+          <label for="title">Title</label>
+          <input id="title" name="title" type="text" autocomplete="off" required />
+        </p>
+
+        <p class="field">
+          <label for="body">Body</label>
+          <textarea id="body" name="body" rows="4" aria-describedby="body-hint"></textarea>
+          <span class="hint" id="body-hint">
+            Basic formatting:
+            <code>&lt;b&gt;</code>, <code>&lt;i&gt;</code>, <code>&lt;a href="…"&gt;</code> and
+            <code>&lt;br&gt;</code>. New lines are line breaks.
+          </span>
+        </p>
+
+        <p class="field">
+          <label for="avatar">Author avatar URL <span class="optional">(optional)</span></label>
+          <input
+            id="avatar"
+            name="avatar"
+            type="text"
+            inputmode="url"
+            autocomplete="off"
+            placeholder="https://example.com/avatar.png"
+          />
+        </p>
+
+        <button type="submit">Add note</button>
+      </form>
+
+      <section class="board" aria-labelledby="board-heading">
+        <h2 id="board-heading">Notes</h2>
+
+        <p class="field">
+          <label for="search">Search notes</label>
+          <input
+            id="search"
+            name="search"
+            type="search"
+            autocomplete="off"
+            placeholder="Search titles and bodies"
+          />
+        </p>
+
+        <p id="results-line" role="status" aria-live="polite"></p>
+
+        <section id="feed" aria-label="Notes, newest first"></section>
+      </section>
+    </main>
+    <!-- Harness entry: installs the Trusted Types boundary, then runs src/main.ts. Keep this tag as is. -->
+    <script type="module" src="/harness/entry.ts"></script>
+  </body>
+</html>

@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Porto Notes</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: system-ui, -apple-system, sans-serif;
+        line-height: 1.6;
+        padding: 1rem;
+        max-width: 800px;
+        margin: 0 auto;
+        background: #f5f5f5;
+      }
+
+      #app {
+        background: white;
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      }
+
+      h1 {
+        margin-bottom: 1.5rem;
+        color: #333;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        margin-bottom: 2rem;
+        padding-bottom: 2rem;
+        border-bottom: 2px solid #eee;
+      }
+
+      label {
+        font-weight: 500;
+        color: #555;
+      }
+
+      input[type="text"],
+      input[type="url"],
+      input[type="search"],
+      textarea {
+        width: 100%;
+        padding: 0.5rem;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-family: inherit;
+        font-size: 1rem;
+      }
+
+      textarea {
+        min-height: 100px;
+        resize: vertical;
+      }
+
+      button {
+        padding: 0.75rem 1.5rem;
+        background: #0f766e;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        font-size: 1rem;
+        cursor: pointer;
+        font-weight: 500;
+      }
+
+      button:hover {
+        background: #0d5c55;
+      }
+
+      #search {
+        margin-bottom: 1rem;
+      }
+
+      #results-line {
+        color: #666;
+        font-style: italic;
+        margin-bottom: 1rem;
+        min-height: 1.5rem;
+      }
+
+      #feed {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .note {
+        padding: 1.5rem;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        background: #fafafa;
+        position: relative;
+      }
+
+      .note[aria-current="true"] {
+        border-color: #0f766e;
+        background: #f0fdfa;
+      }
+
+      .note-title {
+        font-size: 1.25rem;
+        margin-bottom: 0.5rem;
+        color: #0f766e;
+        cursor: pointer;
+      }
+
+      .note-title:hover {
+        text-decoration: underline;
+      }
+
+      .note-avatar {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+      }
+
+      .note-body {
+        color: #333;
+      }
+
+      .note-body a {
+        color: #0f766e;
+        text-decoration: underline;
+      }
+
+      .note-body a:hover {
+        color: #0d5c55;
+      }
+
+      .note-body b,
+      .note-body strong {
+        font-weight: 600;
+      }
+
+      .note-body i,
+      .note-body em {
+        font-style: italic;
+      }
+    </style>
+  </head>
+  <body>
+    <main id="app"></main>
+    <!-- Harness entry: installs the Trusted Types boundary, then runs src/main.ts. Keep this tag as is. -->
+    <script type="module" src="/harness/entry.ts"></script>
+  </body>
+</html>

@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Porto Notes</title>
+  </head>
+  <body>
+    <main id="app">
+      <header class="page-head">
+        <h1>Porto Notes</h1>
+        <p class="tagline">A shared board. Add a note, search, share the link.</p>
+      </header>
+
+      <form id="note-form" class="card" novalidate>
+        <h2>Add a note</h2>
+
+        <p class="field">
+          <label for="title">Title</label>
+          <input id="title" name="title" type="text" autocomplete="off" />
+        </p>
+
+        <p class="field">
+          <label for="body">Body</label>
+          <textarea id="body" name="body" rows="4" aria-describedby="body-help"></textarea>
+          <span id="body-help" class="help">
+            Formatting: <code>&lt;b&gt;</code>, <code>&lt;strong&gt;</code>, <code>&lt;i&gt;</code>,
+            <code>&lt;em&gt;</code>, <code>&lt;a href="…"&gt;</code>, <code>&lt;br&gt;</code>. New lines break too.
+          </span>
+        </p>
+
+        <p class="field">
+          <label for="avatar">Author avatar URL <span class="optional">(optional)</span></label>
+          <input id="avatar" name="avatar" type="url" autocomplete="off" placeholder="https://…" />
+        </p>
+
+        <p class="actions">
+          <button type="submit">Add note</button>
+        </p>
+
+        <p id="form-error" class="error" role="alert"></p>
+      </form>
+
+      <section class="card" aria-labelledby="search-heading">
+        <h2 id="search-heading">Search</h2>
+        <p class="field">
+          <label for="search">Filter notes</label>
+          <input id="search" name="search" type="search" autocomplete="off" placeholder="Search titles and bodies" />
+        </p>
+        <p id="results-line" role="status"></p>
+      </section>
+
+      <section id="feed" aria-label="Notes"></section>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

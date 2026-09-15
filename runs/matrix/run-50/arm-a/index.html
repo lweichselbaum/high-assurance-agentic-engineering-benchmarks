@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Porto Notes</title>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <main id="app">
+      <header class="app-header">
+        <h1>Porto Notes</h1>
+        <p class="tagline">A shared notes board for the OWASP AppSec Days Porto crew</p>
+      </header>
+
+      <section class="controls-container" aria-label="Note controls">
+        <form id="note-form" novalidate>
+          <h2>Add a note</h2>
+          <div class="field">
+            <label for="title">Title</label>
+            <input id="title" type="text" placeholder="Note title" />
+          </div>
+          <div class="field">
+            <label for="body">Body</label>
+            <textarea id="body" rows="4" placeholder="Note body (supports <b>, <i>, <a>, <br>)"></textarea>
+          </div>
+          <div class="field">
+            <label for="avatar">Author avatar URL</label>
+            <input id="avatar" type="text" placeholder="Avatar URL (optional)" />
+          </div>
+          <button type="submit">Add note</button>
+        </form>
+
+        <div class="search-bar">
+          <label for="search">Search notes</label>
+          <input id="search" type="text" placeholder="Filter by title or body..." />
+          <p id="results-line"></p>
+        </div>
+      </section>
+
+      <section id="feed" aria-label="Notes feed"></section>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

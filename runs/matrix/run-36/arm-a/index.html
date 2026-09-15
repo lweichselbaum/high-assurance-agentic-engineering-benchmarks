@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Porto Notes</title>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <div class="app-container">
+      <header class="header">
+        <div class="header-content">
+          <h1 class="app-title">Porto Notes</h1>
+          <p class="app-subtitle">A shared notes board for the team</p>
+        </div>
+      </header>
+
+      <main class="main-content">
+        <section class="form-section">
+          <form id="note-form">
+            <h2>Add a Note</h2>
+
+            <div class="form-group">
+              <label for="title">Title</label>
+              <input
+                id="title"
+                type="text"
+                placeholder="Note title"
+                required
+                autocomplete="off"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="body">Body (supports bold, italic, links, line breaks)</label>
+              <textarea
+                id="body"
+                placeholder="Write your note here..."
+                rows="4"
+                required
+              ></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="avatar">Author Avatar URL (optional)</label>
+              <input
+                id="avatar"
+                type="url"
+                placeholder="https://example.com/avatar.png"
+                autocomplete="off"
+              />
+            </div>
+
+            <button type="submit" class="btn-primary">Add Note</button>
+          </form>
+        </section>
+
+        <section class="feed-section">
+          <div class="search-bar">
+            <label for="search" class="sr-only">Search notes</label>
+            <input
+              id="search"
+              type="search"
+              placeholder="Search notes..."
+              autocomplete="off"
+            />
+          </div>
+          <p id="results-line" class="results-line"></p>
+
+          <main id="app">
+            <section id="feed" aria-label="Notes Feed"></section>
+          </main>
+        </section>
+      </main>
+    </div>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

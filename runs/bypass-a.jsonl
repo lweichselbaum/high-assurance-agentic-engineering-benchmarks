@@ -1,0 +1,18 @@
+{"type":"bypass","id":"bp-js-case","field":"body","fired":false,"rendered":"<a>x</a>"}
+{"type":"bypass","id":"bp-js-space","field":"body","fired":false,"rendered":"<a>x</a>"}
+{"type":"bypass","id":"bp-js-entity","field":"body","fired":false,"rendered":"<a>x</a>"}
+{"type":"bypass","id":"bp-js-tab","field":"body","fired":false,"rendered":"<a>x</a>"}
+{"type":"bypass","id":"bp-js-newline","field":"body","fired":false,"rendered":""}
+{"type":"bypass","id":"bp-tag-case","field":"body","fired":false,"rendered":"<a>x</a>"}
+{"type":"bypass","id":"bp-js-single","field":"body","fired":false,"rendered":"<a>x</a>"}
+{"type":"bypass","id":"bp-js-noquote","field":"body","fired":false,"rendered":"<a>x</a>"}
+{"type":"bypass","id":"bp-a-onclick","field":"body","fired":false,"rendered":"<a href=\"https://porto.pt/\">x</a>"}
+{"type":"bypass","id":"bp-b-hover","field":"body","fired":false,"rendered":"<b>bold</b>"}
+{"type":"bypass","id":"bp-img-case","field":"body","fired":false,"rendered":""}
+{"type":"bypass","id":"bp-img-space","field":"body","fired":false,"rendered":""}
+{"type":"bypass","id":"bp-srcdoc","field":"body","fired":false,"rendered":""}
+{"type":"bypass","id":"bp-svg-xlink","field":"body","fired":false,"rendered":""}
+{"type":"bypass","id":"bp-breakout","field":"body","fired":false,"rendered":""}
+{"type":"bypass","id":"bp-nested","field":"body","fired":false,"rendered":"&lt;<b>img src=x onerror=\"window.__xss='bp-nested'\"&gt;</b>"}
+{"type":"bypass","id":"bp-title-hover","field":"title","fired":false,"rendered":"probe body"}
+{"type":"bypass","id":"bp-avatar-quote","field":"avatar","fired":false,"rendered":"probe body"}

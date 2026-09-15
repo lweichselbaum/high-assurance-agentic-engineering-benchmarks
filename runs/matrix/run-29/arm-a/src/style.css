@@ -1,0 +1,224 @@
+:root {
+  --bg: #f6f5f2;
+  --surface: #ffffff;
+  --ink: #1c1917;
+  --muted: #57534e;
+  --line: #e0dcd5;
+  --accent: #0f766e;
+  --accent-ink: #ffffff;
+  --danger: #b91c1c;
+  color-scheme: light dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0 1rem 4rem;
+  background: var(--bg);
+  color: var(--ink);
+  font: 16px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+.site-header,
+#app {
+  max-width: 44rem;
+  margin: 0 auto;
+}
+
+.site-header {
+  padding: 2rem 0 1rem;
+}
+
+h1 {
+  margin: 0;
+  font-size: 1.75rem;
+  letter-spacing: -0.01em;
+}
+
+.tagline {
+  margin: 0.25rem 0 0;
+  color: var(--muted);
+}
+
+h2 {
+  margin: 0 0 0.75rem;
+  font-size: 1.05rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+}
+
+.panel {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  margin-bottom: 0.85rem;
+}
+
+label {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.optional {
+  font-weight: 400;
+  color: var(--muted);
+}
+
+input,
+textarea {
+  font: inherit;
+  color: inherit;
+  background: var(--surface);
+  padding: 0.5rem 0.6rem;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+}
+
+textarea {
+  resize: vertical;
+}
+
+input:focus-visible,
+textarea:focus-visible,
+button:focus-visible,
+#feed:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.help {
+  margin: 0;
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+
+code {
+  font-size: 0.95em;
+}
+
+.error {
+  margin: 0 0 0.5rem;
+  color: var(--danger);
+  font-size: 0.9rem;
+  min-height: 1.2em;
+}
+
+button.primary {
+  font: inherit;
+  font-weight: 600;
+  padding: 0.55rem 1.1rem;
+  color: var(--accent-ink);
+  background: var(--accent);
+  border: 1px solid transparent;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button.primary:hover {
+  filter: brightness(1.08);
+}
+
+#results-line {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+  min-height: 1.2em;
+}
+
+#feed {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.empty {
+  color: var(--muted);
+}
+
+.note {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-left: 4px solid transparent;
+  border-radius: 10px;
+  padding: 0.9rem 1rem;
+}
+
+.note[aria-current="true"] {
+  border-left-color: var(--accent);
+  box-shadow: 0 1px 10px rgb(15 118 110 / 0.14);
+}
+
+.note-header {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.note-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: var(--line);
+  flex: none;
+}
+
+.note-heading {
+  margin: 0;
+  font-size: 1.15rem;
+}
+
+.note-title {
+  font: inherit;
+  color: inherit;
+  text-align: left;
+  padding: 0;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+.note-title:hover {
+  color: var(--accent);
+}
+
+.note-body {
+  margin-top: 0.4rem;
+  overflow-wrap: anywhere;
+}
+
+.note-body a {
+  color: var(--accent);
+}
+
+.note-time {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #17161a;
+    --surface: #201f24;
+    --ink: #f4f2ee;
+    --muted: #a8a29e;
+    --line: #35333a;
+    --accent: #5eead4;
+    --accent-ink: #10201d;
+    --danger: #fca5a5;
+  }
+}

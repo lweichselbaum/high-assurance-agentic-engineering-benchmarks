@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Porto Notes</title>
+  </head>
+  <body>
+    <div class="app-container">
+      <header class="app-header">
+        <div class="header-content">
+          <h1>Porto Notes</h1>
+          <p class="subtitle">A shared notes board</p>
+        </div>
+      </header>
+
+      <main id="app">
+        <div class="controls-panel">
+          <section class="search-section" aria-label="Search Notes">
+            <label for="search" class="sr-only">Search notes</label>
+            <input
+              id="search"
+              type="search"
+              placeholder="Search notes by title or body..."
+              autocomplete="off"
+            />
+            <p id="results-line" aria-live="polite"></p>
+          </section>
+
+          <section class="form-section" aria-label="Add a Note">
+            <h2>Add a Note</h2>
+            <form id="note-form">
+              <div class="form-group">
+                <label for="title">Title</label>
+                <input
+                  id="title"
+                  type="text"
+                  placeholder="Note title..."
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="body">Body (supports bold, italic, links, line breaks)</label>
+                <textarea
+                  id="body"
+                  rows="4"
+                  placeholder="Note content... You can use <b>bold</b>, <i>italic</i>, <a href='...'>links</a>, or newlines."
+                  required
+                ></textarea>
+              </div>
+
+              <div class="form-group">
+                <label for="avatar">Author Avatar URL (optional)</label>
+                <input
+                  id="avatar"
+                  type="url"
+                  placeholder="https://example.com/avatar.png"
+                />
+              </div>
+
+              <button type="submit" class="submit-btn">Add Note</button>
+            </form>
+          </section>
+        </div>
+
+        <div class="feed-container">
+          <h2>Notes Feed</h2>
+          <section id="feed" aria-label="Notes Feed"></section>
+        </div>
+      </main>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

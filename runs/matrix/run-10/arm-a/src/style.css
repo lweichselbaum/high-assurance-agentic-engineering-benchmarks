@@ -1,0 +1,142 @@
+:root {
+  color-scheme: light dark;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  --border: #d8d8d8;
+  --accent: #0f766e;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 1.5rem;
+  display: flex;
+  justify-content: center;
+  background: canvas;
+  color: canvastext;
+}
+
+#app {
+  width: 100%;
+  max-width: 640px;
+}
+
+h1 {
+  margin-top: 0;
+}
+
+.field {
+  margin-bottom: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+label {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+input,
+textarea {
+  font: inherit;
+  padding: 0.5rem;
+  border: 1px solid var(--border);
+  border-radius: 0.375rem;
+  background: canvas;
+  color: canvastext;
+}
+
+.hint {
+  margin: 0;
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
+
+button[type="submit"] {
+  font: inherit;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--accent);
+  border-radius: 0.375rem;
+  background: var(--accent);
+  color: white;
+  cursor: pointer;
+}
+
+.search-wrap {
+  margin: 2rem 0 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+#results-line {
+  margin: 0;
+  font-size: 0.85rem;
+  opacity: 0.75;
+}
+
+#feed {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.note {
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.5rem 0.75rem;
+  align-items: start;
+}
+
+.note[aria-current="true"] {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px var(--accent);
+}
+
+.note-avatar {
+  grid-row: 1 / span 2;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.note h2 {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.note-title {
+  font: inherit;
+  font-weight: 700;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: var(--accent);
+  text-align: left;
+  text-decoration: underline;
+}
+
+.note-body {
+  margin: 0;
+  line-height: 1.4;
+}
+
+.note-meta {
+  grid-column: 2;
+  margin: 0;
+  font-size: 0.75rem;
+  opacity: 0.6;
+}
+
+.empty-state {
+  opacity: 0.7;
+  font-style: italic;
+}

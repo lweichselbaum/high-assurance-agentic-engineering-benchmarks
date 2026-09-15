@@ -1,0 +1,45 @@
+# Gate 02 — commit time. Every push re-runs the harness and the shared benchmark against the committed
+# agent output, and checks that the harness itself was not changed to make a check pass.
+name: verify
+on:
+  push:
+  pull_request:
+jobs:
+  harness-integrity:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: harness files match the reviewed manifest
+        run: cd arm-b-harness && sha256sum -c ../bench/harness-manifest.sha256
+  benchmark:
+    runs-on: ubuntu-24.04
+    needs: harness-integrity
+    strategy:
+      fail-fast: false
+      matrix:
+        arm: [a, b]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm exec playwright install --with-deps chromium
+      - name: arm B must pass verify.sh (all gates)
+        if: matrix.arm == 'b'
+        run: PLAYWRIGHT_BROWSERS_PATH="$HOME/.cache/ms-playwright" bash arm-b-harness/verify.sh
+      - name: shared benchmark (arm ${{ matrix.arm }})
+        run: PLAYWRIGHT_BROWSERS_PATH="$HOME/.cache/ms-playwright" bash bench/run.sh ${{ matrix.arm }}
+      - name: arm B fires 0 payloads and passes the functional suite
+        if: matrix.arm == 'b'
+        run: node -e "const c=require('./runs/scorecard.json').armB; if(!c||c.xssFired!==0||!c.functionalPass||!c.cspStrict||!c.trustedTypes){console.error(JSON.stringify(c,null,1));process.exit(1)}"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: runs-arm-${{ matrix.arm }}
+          path: |
+            runs/scorecard.json
+            runs/security-*.jsonl
+            runs/arm-b-iterations.jsonl
+          if-no-files-found: ignore

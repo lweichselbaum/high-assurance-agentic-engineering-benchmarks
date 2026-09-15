@@ -1,0 +1,35 @@
+{"iter":1,"gate":"0-integrity","pass":true,"firstError":"","seconds":0}
+{"iter":1,"gate":"1-tsc","pass":true,"firstError":"","seconds":1}
+{"iter":1,"gate":"2-tsec","pass":true,"firstError":"","seconds":2}
+{"iter":1,"gate":"3-eslint","pass":true,"firstError":"","seconds":3}
+{"iter":1,"gate":"4-build","pass":true,"firstError":"","seconds":1}
+{"iter":2,"gate":"0-integrity","pass":true,"firstError":"","seconds":0}
+{"iter":2,"gate":"1-tsc","pass":true,"firstError":"","seconds":2}
+{"iter":2,"gate":"2-tsec","pass":true,"firstError":"","seconds":2}
+{"iter":2,"gate":"3-eslint","pass":true,"firstError":"","seconds":2}
+{"iter":2,"gate":"4-build","pass":true,"firstError":"","seconds":2}
+{"iter":2,"gate":"5-functional","pass":false,"firstError":"Error: http://127.0.0.1:4174/ is already used, make sure that nothing is running on the port/url or set reuseExistingServer:true in config.webServer.","seconds":2}
+{"iter":2,"gate":"ALL","pass":false,"firstError":"5-functional","seconds":10}
+{"iter":3,"gate":"0-integrity","pass":true,"firstError":"","seconds":0}
+{"iter":3,"gate":"1-tsc","pass":true,"firstError":"","seconds":1}
+{"iter":3,"gate":"2-tsec","pass":true,"firstError":"","seconds":2}
+{"iter":3,"gate":"3-eslint","pass":true,"firstError":"","seconds":3}
+{"iter":3,"gate":"4-build","pass":true,"firstError":"","seconds":1}
+{"iter":3,"gate":"5-functional","pass":false,"firstError":"  ✘  1 bench/functional.spec.ts:22:1 › seed notes render newest-first with their formatting (6.1s)","seconds":20}
+{"iter":3,"gate":"ALL","pass":false,"firstError":"5-functional","seconds":27}
+{"iter":4,"gate":"0-integrity","pass":true,"firstError":"","seconds":0}
+{"iter":4,"gate":"1-tsc","pass":true,"firstError":"","seconds":1}
+{"iter":4,"gate":"2-tsec","pass":true,"firstError":"","seconds":2}
+{"iter":4,"gate":"3-eslint","pass":true,"firstError":"","seconds":3}
+{"iter":4,"gate":"4-build","pass":true,"firstError":"","seconds":1}
+{"iter":4,"gate":"5-functional","pass":true,"firstError":"","seconds":6}
+{"iter":4,"gate":"6-security","pass":true,"firstError":"","seconds":20}
+{"iter":4,"gate":"ALL","pass":true,"firstError":"","seconds":34}
+{"iter":5,"gate":"0-integrity","pass":true,"firstError":"","seconds":0}
+{"iter":5,"gate":"1-tsc","pass":true,"firstError":"","seconds":1}
+{"iter":5,"gate":"2-tsec","pass":true,"firstError":"","seconds":2}
+{"iter":5,"gate":"3-eslint","pass":true,"firstError":"","seconds":3}
+{"iter":5,"gate":"4-build","pass":true,"firstError":"","seconds":1}
+{"iter":5,"gate":"5-functional","pass":true,"firstError":"","seconds":7}
+{"iter":5,"gate":"6-security","pass":true,"firstError":"","seconds":20}
+{"iter":5,"gate":"ALL","pass":true,"firstError":"","seconds":34}

@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Porto Notes</title>
+    <style>
+      body {
+        font-family: system-ui, -apple-system, sans-serif;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 2rem;
+        background: #f8fafc;
+        color: #0f172a;
+      }
+      h1 { margin-top: 0; color: #0f766e; }
+      .search-box { margin-bottom: 1.5rem; }
+      #search {
+        width: 100%;
+        padding: 0.75rem;
+        font-size: 1rem;
+        border: 1px solid #cbd5e1;
+        border-radius: 0.375rem;
+        box-sizing: border-box;
+      }
+      #results-line {
+        font-style: italic;
+        color: #64748b;
+        margin-top: 0.5rem;
+        min-height: 1.5rem;
+      }
+      #note-form {
+        background: white;
+        padding: 1.5rem;
+        border-radius: 0.5rem;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        margin-bottom: 2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+      #note-form label {
+        font-weight: 600;
+        font-size: 0.875rem;
+        margin-bottom: 0.25rem;
+        display: block;
+      }
+      #note-form input[type="text"],
+      #note-form input[type="url"],
+      #note-form textarea {
+        width: 100%;
+        padding: 0.5rem;
+        border: 1px solid #cbd5e1;
+        border-radius: 0.25rem;
+        font-family: inherit;
+        font-size: 1rem;
+        box-sizing: border-box;
+      }
+      #note-form textarea {
+        min-height: 100px;
+        resize: vertical;
+      }
+      #note-form button {
+        background: #0f766e;
+        color: white;
+        border: none;
+        padding: 0.75rem 1.5rem;
+        border-radius: 0.375rem;
+        font-weight: 600;
+        cursor: pointer;
+        align-self: flex-start;
+      }
+      #note-form button:hover {
+        background: #115e59;
+      }
+      #feed {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .note {
+        background: white;
+        padding: 1.5rem;
+        border-radius: 0.5rem;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        position: relative;
+        border: 2px solid transparent;
+      }
+      .note[aria-current="true"] {
+        border-color: #0f766e;
+        box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.15);
+      }
+      .note-header {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 0.75rem;
+      }
+      .note-avatar {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+      .note-title {
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: #0f766e;
+        cursor: pointer;
+        margin: 0;
+      }
+      .note-title:hover {
+        text-decoration: underline;
+      }
+      .note-body {
+        line-height: 1.5;
+        overflow-wrap: break-word;
+      }
+    </style>
+  </head>
+  <body>
+    <main id="app">
+      <h1>Porto Notes</h1>
+      <div class="search-box">
+        <input id="search" type="search" placeholder="Search notes by title or body..." />
+        <p id="results-line"></p>
+      </div>
+      <form id="note-form">
+        <div>
+          <label for="title">Title</label>
+          <input id="title" type="text" required />
+        </div>
+        <div>
+          <label for="body">Body</label>
+          <textarea id="body" required></textarea>
+        </div>
+        <div>
+          <label for="avatar">Avatar URL (optional)</label>
+          <input id="avatar" type="text" />
+        </div>
+        <button type="submit">Add Note</button>
+      </form>
+      <section id="feed">
+        <!-- Feed items -->
+      </section>
+    </main>
+    <!-- Harness entry: installs the Trusted Types boundary, then runs src/main.ts. Keep this tag as is. -->
+    <script type="module" src="/harness/entry.ts"></script>
+  </body>
+</html>

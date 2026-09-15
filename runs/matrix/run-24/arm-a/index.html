@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!--
+      The app builds every note as DOM nodes and never assigns HTML, so this policy is
+      a backstop rather than the defence. It costs nothing: the build emits one module
+      script and one stylesheet, both same-origin.
+    -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data: https:; connect-src 'self'; base-uri 'none'; object-src 'none'; form-action 'none'"
+    />
+    <title>Porto Notes</title>
+  </head>
+  <body>
+    <main id="app">
+      <header class="page-header">
+        <h1>Porto Notes</h1>
+        <p class="tagline">A shared board for the Porto crew.</p>
+      </header>
+
+      <section class="panel" aria-labelledby="compose-heading">
+        <h2 id="compose-heading">Add a note</h2>
+        <form id="note-form" novalidate>
+          <div class="field">
+            <label for="title">Title</label>
+            <input id="title" name="title" type="text" autocomplete="off" />
+          </div>
+
+          <div class="field">
+            <label for="body">Body</label>
+            <textarea id="body" name="body" rows="4" aria-describedby="body-hint"></textarea>
+            <p id="body-hint" class="hint">
+              Formatting:
+              <code>&lt;b&gt;</code>, <code>&lt;strong&gt;</code>, <code>&lt;i&gt;</code>,
+              <code>&lt;em&gt;</code>, <code>&lt;a href="…"&gt;</code> and <code>&lt;br&gt;</code>.
+              New lines become line breaks.
+            </p>
+          </div>
+
+          <div class="field">
+            <label for="avatar">Author avatar URL <span class="optional">(optional)</span></label>
+            <input id="avatar" name="avatar" type="text" autocomplete="off" inputmode="url" />
+          </div>
+
+          <button type="submit" class="primary">Add note</button>
+        </form>
+      </section>
+
+      <section class="panel" aria-labelledby="search-heading">
+        <h2 id="search-heading">Search</h2>
+        <div class="field">
+          <label for="search">Filter notes</label>
+          <input id="search" name="search" type="search" autocomplete="off" placeholder="Search titles and bodies" />
+        </div>
+        <p id="results-line" role="status" aria-live="polite"></p>
+      </section>
+
+      <h2 id="feed-heading">Notes</h2>
+      <section id="feed" aria-labelledby="feed-heading"></section>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

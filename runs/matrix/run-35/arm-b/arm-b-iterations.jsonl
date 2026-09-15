@@ -1,0 +1,29 @@
+{"iter":1,"gate":"0-integrity","pass":true,"firstError":"","seconds":0}
+{"iter":1,"gate":"1-tsc","pass":true,"firstError":"","seconds":1}
+{"iter":1,"gate":"2-tsec","pass":false,"firstError":"src/main.ts(115,3): error TS21228: [ban-element-innerhtml-assignments] Assigning directly to Element#innerHTML can result in XSS vulnerabilities.","seconds":1}
+{"iter":1,"gate":"ALL","pass":false,"firstError":"2-tsec","seconds":3}
+{"iter":2,"gate":"0-integrity","pass":true,"firstError":"","seconds":0}
+{"iter":2,"gate":"1-tsc","pass":true,"firstError":"","seconds":2}
+{"iter":2,"gate":"2-tsec","pass":false,"firstError":"src/main.ts(194,3): error TS21228: [ban-element-innerhtml-assignments] Assigning directly to Element#innerHTML can result in XSS vulnerabilities.","seconds":2}
+{"iter":2,"gate":"ALL","pass":false,"firstError":"2-tsec","seconds":4}
+{"iter":3,"gate":"0-integrity","pass":true,"firstError":"","seconds":0}
+{"iter":3,"gate":"1-tsc","pass":true,"firstError":"","seconds":1}
+{"iter":3,"gate":"2-tsec","pass":true,"firstError":"","seconds":2}
+{"iter":3,"gate":"3-eslint","pass":false,"firstError":"  96:5  error  Navigating via location.* from a string can inject javascript: URLs. Use setLocationHref(location, url) from safevalues/dom (it rejects javascript: URLs). See harness/README.md  no-restricted-syntax","seconds":3}
+{"iter":3,"gate":"ALL","pass":false,"firstError":"3-eslint","seconds":6}
+{"iter":4,"gate":"0-integrity","pass":true,"firstError":"","seconds":0}
+{"iter":4,"gate":"1-tsc","pass":true,"firstError":"","seconds":2}
+{"iter":4,"gate":"2-tsec","pass":true,"firstError":"","seconds":2}
+{"iter":4,"gate":"3-eslint","pass":true,"firstError":"","seconds":2}
+{"iter":4,"gate":"4-build","pass":true,"firstError":"","seconds":2}
+{"iter":4,"gate":"5-functional","pass":true,"firstError":"","seconds":6}
+{"iter":4,"gate":"6-security","pass":true,"firstError":"","seconds":20}
+{"iter":4,"gate":"ALL","pass":true,"firstError":"","seconds":34}
+{"iter":5,"gate":"0-integrity","pass":true,"firstError":"","seconds":0}
+{"iter":5,"gate":"1-tsc","pass":true,"firstError":"","seconds":1}
+{"iter":5,"gate":"2-tsec","pass":true,"firstError":"","seconds":2}
+{"iter":5,"gate":"3-eslint","pass":true,"firstError":"","seconds":3}
+{"iter":5,"gate":"4-build","pass":true,"firstError":"","seconds":1}
+{"iter":5,"gate":"5-functional","pass":true,"firstError":"","seconds":6}
+{"iter":5,"gate":"6-security","pass":true,"firstError":"","seconds":20}
+{"iter":5,"gate":"ALL","pass":true,"firstError":"","seconds":33}

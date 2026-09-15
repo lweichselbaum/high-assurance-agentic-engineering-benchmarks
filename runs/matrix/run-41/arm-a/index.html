@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Porto Notes</title>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <div id="app" class="app-container">
+      <header class="app-header">
+        <div class="app-title-group">
+          <svg class="app-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <line x1="10" y1="9" x2="8" y2="9"></line>
+          </svg>
+          <h1 class="app-title">Porto Notes</h1>
+        </div>
+        <p class="app-tagline">Shared notes board for the OWASP AppSec Days Porto crew</p>
+      </header>
+
+      <main>
+        <section class="form-card" aria-labelledby="form-heading">
+          <h2 id="form-heading" class="section-title">Add a note</h2>
+          <form id="note-form">
+            <div class="form-field">
+              <label for="title">Title</label>
+              <input id="title" type="text" placeholder="e.g. Francesinha ranking" required />
+            </div>
+
+            <div class="form-field">
+              <label for="body">
+                Body
+                <span class="field-hint">(supports &lt;b&gt;, &lt;strong&gt;, &lt;i&gt;, &lt;em&gt;, &lt;a href="..."&gt;, &lt;br&gt;)</span>
+              </label>
+              <textarea id="body" placeholder="Write your note here..." required></textarea>
+            </div>
+
+            <div class="form-field">
+              <label for="avatar">Author Avatar URL (optional)</label>
+              <input id="avatar" type="text" placeholder="https://... or data:image/..." />
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" class="btn-submit">Add Note</button>
+            </div>
+          </form>
+        </section>
+
+        <section class="search-card" aria-label="Search and Filter">
+          <div class="search-wrapper">
+            <label for="search" class="sr-only">Search notes</label>
+            <svg class="search-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input id="search" type="search" placeholder="Search notes by title or content..." autocomplete="off" />
+            <p id="results-line" aria-live="polite"></p>
+          </div>
+        </section>
+
+        <section id="feed" aria-label="Notes Feed"></section>
+      </main>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

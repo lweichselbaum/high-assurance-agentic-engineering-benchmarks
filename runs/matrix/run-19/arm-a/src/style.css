@@ -1,0 +1,130 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  line-height: 1.5;
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  background: #f9fafb;
+  color: #111827;
+}
+
+h1 {
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  color: #0f766e;
+}
+
+#note-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+#note-form input,
+#note-form textarea {
+  padding: 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+#note-form textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+#note-form button {
+  padding: 0.75rem 1.5rem;
+  background: #0f766e;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+#note-form button:hover {
+  background: #0d9488;
+}
+
+#search {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 0.5rem;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+#results-line {
+  margin-bottom: 1rem;
+  font-style: italic;
+  color: #6b7280;
+  min-height: 1.5rem;
+}
+
+#feed {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.note {
+  padding: 1.5rem;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.note[aria-current="true"] {
+  outline: 3px solid #0f766e;
+  outline-offset: 2px;
+}
+
+.note-title {
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+  color: #0f766e;
+  cursor: pointer;
+}
+
+.note-title:hover {
+  text-decoration: underline;
+}
+
+.note-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+}
+
+.note-body {
+  color: #374151;
+  word-wrap: break-word;
+}
+
+.note-body a {
+  color: #1d4ed8;
+  text-decoration: underline;
+}
+
+.note-body a:hover {
+  color: #2563eb;
+}

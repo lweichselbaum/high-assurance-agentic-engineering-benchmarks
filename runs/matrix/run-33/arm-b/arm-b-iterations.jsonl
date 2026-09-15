@@ -1,0 +1,69 @@
+{"iter":1,"gate":"0-integrity","pass":true,"firstError":"","seconds":0}
+{"iter":1,"gate":"1-tsc","pass":true,"firstError":"","seconds":1}
+{"iter":1,"gate":"2-tsec","pass":true,"firstError":"","seconds":2}
+{"iter":1,"gate":"3-eslint","pass":true,"firstError":"","seconds":2}
+{"iter":1,"gate":"4-build","pass":true,"firstError":"","seconds":1}
+{"iter":2,"gate":"0-integrity","pass":true,"firstError":"","seconds":0}
+{"iter":2,"gate":"1-tsc","pass":true,"firstError":"","seconds":1}
+{"iter":2,"gate":"2-tsec","pass":false,"firstError":"src/main.ts(106,5): error TS21228: [ban-element-innerhtml-assignments] Assigning directly to Element#innerHTML can result in XSS vulnerabilities.","seconds":2}
+{"iter":2,"gate":"ALL","pass":false,"firstError":"2-tsec","seconds":3}
+{"iter":3,"gate":"0-integrity","pass":true,"firstError":"","seconds":0}
+{"iter":3,"gate":"1-tsc","pass":true,"firstError":"","seconds":1}
+{"iter":3,"gate":"2-tsec","pass":true,"firstError":"","seconds":2}
+{"iter":3,"gate":"3-eslint","pass":true,"firstError":"","seconds":3}
+{"iter":3,"gate":"4-build","pass":true,"firstError":"","seconds":1}
+{"iter":3,"gate":"5-functional","pass":false,"firstError":"Error: http://127.0.0.1:4174/ is already used, make sure that nothing is running on the port/url or set reuseExistingServer:true in config.webServer.","seconds":2}
+{"iter":3,"gate":"ALL","pass":false,"firstError":"5-functional","seconds":9}
+{"iter":4,"gate":"0-integrity","pass":true,"firstError":"","seconds":0}
+{"iter":4,"gate":"1-tsc","pass":true,"firstError":"","seconds":1}
+{"iter":4,"gate":"2-tsec","pass":true,"firstError":"","seconds":2}
+{"iter":4,"gate":"3-eslint","pass":true,"firstError":"","seconds":3}
+{"iter":4,"gate":"4-build","pass":true,"firstError":"","seconds":2}
+{"iter":4,"gate":"5-functional","pass":false,"firstError":"Error: http://127.0.0.1:4174/ is already used, make sure that nothing is running on the port/url or set reuseExistingServer:true in config.webServer.","seconds":1}
+{"iter":4,"gate":"ALL","pass":false,"firstError":"5-functional","seconds":9}
+{"iter":5,"gate":"0-integrity","pass":true,"firstError":"","seconds":0}
+{"iter":5,"gate":"1-tsc","pass":true,"firstError":"","seconds":2}
+{"iter":5,"gate":"2-tsec","pass":true,"firstError":"","seconds":2}
+{"iter":5,"gate":"3-eslint","pass":true,"firstError":"","seconds":2}
+{"iter":5,"gate":"4-build","pass":true,"firstError":"","seconds":2}
+{"iter":6,"gate":"0-integrity","pass":true,"firstError":"","seconds":0}
+{"iter":6,"gate":"1-tsc","pass":true,"firstError":"","seconds":1}
+{"iter":6,"gate":"2-tsec","pass":true,"firstError":"","seconds":2}
+{"iter":6,"gate":"3-eslint","pass":true,"firstError":"","seconds":3}
+{"iter":6,"gate":"4-build","pass":true,"firstError":"","seconds":1}
+{"iter":6,"gate":"5-functional","pass":false,"firstError":"Error: http://127.0.0.1:4174/ is already used, make sure that nothing is running on the port/url or set reuseExistingServer:true in config.webServer.","seconds":2}
+{"iter":6,"gate":"ALL","pass":false,"firstError":"5-functional","seconds":9}
+{"iter":7,"gate":"0-integrity","pass":true,"firstError":"","seconds":1}
+{"iter":7,"gate":"1-tsc","pass":true,"firstError":"","seconds":1}
+{"iter":7,"gate":"2-tsec","pass":true,"firstError":"","seconds":2}
+{"iter":7,"gate":"3-eslint","pass":true,"firstError":"","seconds":3}
+{"iter":7,"gate":"4-build","pass":true,"firstError":"","seconds":1}
+{"iter":8,"gate":"0-integrity","pass":true,"firstError":"","seconds":0}
+{"iter":8,"gate":"1-tsc","pass":true,"firstError":"","seconds":2}
+{"iter":8,"gate":"2-tsec","pass":true,"firstError":"","seconds":2}
+{"iter":8,"gate":"3-eslint","pass":true,"firstError":"","seconds":2}
+{"iter":8,"gate":"4-build","pass":true,"firstError":"","seconds":1}
+{"iter":9,"gate":"0-integrity","pass":true,"firstError":"","seconds":0}
+{"iter":9,"gate":"1-tsc","pass":true,"firstError":"","seconds":1}
+{"iter":9,"gate":"2-tsec","pass":true,"firstError":"","seconds":2}
+{"iter":8,"gate":"5-functional","pass":false,"firstError":"  ✘  1 bench/functional.spec.ts:22:1 › seed notes render newest-first with their formatting (11.1s)","seconds":53}
+{"iter":8,"gate":"ALL","pass":false,"firstError":"5-functional","seconds":61}
+{"iter":9,"gate":"3-eslint","pass":true,"firstError":"","seconds":3}
+{"iter":9,"gate":"4-build","pass":true,"firstError":"","seconds":2}
+{"iter":10,"gate":"0-integrity","pass":true,"firstError":"","seconds":0}
+{"iter":10,"gate":"1-tsc","pass":true,"firstError":"","seconds":2}
+{"iter":10,"gate":"2-tsec","pass":true,"firstError":"","seconds":2}
+{"iter":10,"gate":"3-eslint","pass":true,"firstError":"","seconds":3}
+{"iter":10,"gate":"4-build","pass":true,"firstError":"","seconds":1}
+{"iter":9,"gate":"5-functional","pass":false,"firstError":"  ✘  1 bench/functional.spec.ts:22:1 › seed notes render newest-first with their formatting (11.2s)","seconds":20}
+{"iter":9,"gate":"ALL","pass":false,"firstError":"5-functional","seconds":28}
+{"iter":11,"gate":"0-integrity","pass":true,"firstError":"","seconds":0}
+{"iter":11,"gate":"1-tsc","pass":true,"firstError":"","seconds":2}
+{"iter":10,"gate":"5-functional","pass":false,"firstError":"  ✘  1 bench/functional.spec.ts:22:1 › seed notes render newest-first with their formatting (11.2s)","seconds":53}
+{"iter":10,"gate":"ALL","pass":false,"firstError":"5-functional","seconds":61}
+{"iter":11,"gate":"2-tsec","pass":true,"firstError":"","seconds":2}
+{"iter":11,"gate":"3-eslint","pass":true,"firstError":"","seconds":2}
+{"iter":11,"gate":"4-build","pass":true,"firstError":"","seconds":1}
+{"iter":11,"gate":"5-functional","pass":true,"firstError":"","seconds":6}
+{"iter":11,"gate":"6-security","pass":true,"firstError":"","seconds":20}
+{"iter":11,"gate":"ALL","pass":true,"firstError":"","seconds":34}

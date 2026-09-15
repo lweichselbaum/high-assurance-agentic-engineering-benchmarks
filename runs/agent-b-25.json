@@ -1,0 +1,104 @@
+{
+  "arm": "b",
+  "label": "Arm B — high-assurance harness",
+  "agent": "Claude Code CLI (claude -p)",
+  "claudeCodeVersion": "2.1.259",
+  "requestedModel": "claude-opus-5",
+  "model": "claude-opus-5",
+  "temperature": "not configurable in the Claude Code CLI (provider default)",
+  "permissionMode": "acceptEdits",
+  "instruction": "Implement the feature. `./verify.sh` must pass. If it fails, fix your code and run it again. Do not modify config, tests, tsconfig, ESLint, or the CSP.",
+  "promptSha256": "0903e3f4535d310e018e31678f3db837cca9e97545c17a8d2c63a9323c88361a",
+  "promptBytes": 2560,
+  "startedAt": "2026-09-03T21:33:13.516Z",
+  "finishedAt": "2026-09-03T21:41:06.911Z",
+  "durationMs": 473395,
+  "exitCode": 0,
+  "numTurns": 44,
+  "costUsd": 2.6367575000000003,
+  "usage": {
+    "input_tokens": 74,
+    "cache_creation_input_tokens": 72650,
+    "cache_read_input_tokens": 2095579,
+    "output_tokens": 34417,
+    "output_tokens_details": {
+      "thinking_tokens": 15115
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 72650,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 1081,
+        "cache_read_input_tokens": 85321,
+        "cache_creation_input_tokens": 132,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 132
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 1608,
+      "outputTokens": 13,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 0,
+      "costUSD": 0.001673,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000,
+      "thinkingTokens": 0,
+      "canonicalModel": "claude-haiku-4-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    },
+    "claude-opus-5": {
+      "inputTokens": 74,
+      "outputTokens": 34417,
+      "cacheReadInputTokens": 2095579,
+      "cacheCreationInputTokens": 72650,
+      "webSearchRequests": 0,
+      "costUSD": 2.6350845,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 64000,
+      "thinkingTokens": 15115,
+      "canonicalModel": "claude-opus-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "toolCalls": {
+    "Bash": 20,
+    "Read": 11,
+    "Write": 12
+  },
+  "verifyRuns": 2,
+  "filesWritten": [
+    "../../../../../../../tmp/porto-404-b.mjs",
+    "../../../../../../../tmp/porto-smoke-b.mjs",
+    "../../../../../../../tmp/smoke.mjs",
+    "index.html",
+    "src/avatar.ts",
+    "src/feed.ts",
+    "src/fragment.ts",
+    "src/main.ts",
+    "src/richtext.ts",
+    "src/storage.ts",
+    "src/style.css",
+    "src/types.ts"
+  ],
+  "finalMessage": "Done — `./verify.sh` passes all 7 gates on the first run (integrity → tsc → tsec → eslint → build → functional → security, 32s).\n\n## What I built\n\n**`index.html`** — static, CSP-clean shell holding the element contract: `#note-form` with `#title`/`#body`/`#avatar` + submit, `#search`, `#results-line`, `#feed`. Labels on every field, `role=\"status\"` on the results line. The harness entry tag is untouched.\n\n**`src/`** — six small modules:\n\n| file | role |\n|---|---|\n| `types.ts` | `Note`, `FragmentState` |\n| `storage.ts` | localStorage load/save; seeds from `fixtures.json` only when the key is absent; validates every stored record |\n| `richtext.ts` | the one path from user text to markup — newlines → `<br>`, then `sanitizeHtml` + `setElementInnerHtml`; memoized, plus `toPlainText` for search |\n| `avatar.ts` | scheme allowlist (`http:`, `https:`, `data:image/…`) before `img.src` |\n| `fragment.ts` | `#q=…&note=…` parse/format |\n| `feed.ts` | newest-first ordering, filtering, `<article class=\"note\">` rendering |\n| `main.ts` | wiring: submit, search input, `hashchange`, `history.replaceState` sync |\n\n## Notable decisions\n\n- **Rich text via `safevalues`' sanitizer**, not a hand-rolled tag parser — `<b>/<i>/<a href>/<br>` survive, `<script>`, `onerror=` and `javascript:` hrefs don't. Verified: an injected `<a href=\"javascript:…\">` renders as `about:invalid#zClosurez`, `<script>` is gone, `<img onerror>` keeps the img but loses the handler. Titles go through the same renderer, since the request says titles show the user's formatting.\n- **Search matches the raw source *and* the rendered text**, so a query never has to step around markup (`douro` finds `<b>Douro</b>` either way).\n- **`.note-title` is a `<button>` inside an `<h2>`** — clickable and keyboard-reachable, while the heading keeps its semantics and accessible name.\n- **`replaceState` for fragment sync**, since `location.href =` is banned by the lint gate and this avoids stacking a history entry per keystroke.\n\nSmoke-checked in the real browser beyond the gates: 6 seeded notes ordered `6,5,4,3,2,1`; `douro` → 2 notes and `#q=douro`, clicking note 5 → `#q=douro&note=5` with `aria-current=\"true\"`; `#q=port&note=3` restores query and filter on load; a new note gets id 7, clears the form, and survives reload. No console or page errors on a clean load.\n\nOne thing worth flagging: with `#q=port&note=3`, note 3 doesn't match \"port\", so it's filtered out and no rendered article carries `aria-current` — the selection is still held and kept in the fragment. That follows from filtering being filtering, but it does mean the spec's own example URL shows a selected note that isn't visible.",
+  "isError": false
+}

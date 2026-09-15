@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Porto Notes</title>
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <h1>Porto Notes</h1>
+        <p>A shared notes board for Porto</p>
+      </header>
+      <div class="container">
+        <aside class="sidebar">
+          <section class="card">
+            <h2>Add Note</h2>
+            <form id="note-form">
+              <div class="field">
+                <label for="title">Title</label>
+                <input id="title" type="text" placeholder="Note title..." required />
+              </div>
+              <div class="field">
+                <label for="body">Body</label>
+                <textarea id="body" rows="4" placeholder="Note body (supports &lt;b&gt;, &lt;i&gt;, &lt;a&gt;, &lt;br&gt;)..." required></textarea>
+              </div>
+              <div class="field">
+                <label for="avatar">Author Avatar URL</label>
+                <input id="avatar" type="url" placeholder="https://example.com/avatar.png" />
+              </div>
+              <button type="submit">Add Note</button>
+            </form>
+          </section>
+
+          <section class="card">
+            <h2>Search Notes</h2>
+            <div class="field">
+              <input id="search" type="search" placeholder="Search notes..." />
+            </div>
+            <p id="results-line"></p>
+          </section>
+        </aside>
+
+        <main class="main-content">
+          <section id="feed">
+            <!-- Notes rendered dynamically -->
+          </section>
+        </main>
+      </div>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

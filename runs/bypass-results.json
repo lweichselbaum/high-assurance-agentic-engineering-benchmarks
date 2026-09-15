@@ -1,0 +1,777 @@
+[
+  {
+    "run": "1",
+    "arm": "a",
+    "model": "claude-sonnet-5",
+    "total": 18,
+    "fired": []
+  },
+  {
+    "run": "1",
+    "arm": "b",
+    "model": "claude-sonnet-5",
+    "total": 18,
+    "fired": []
+  },
+  {
+    "run": "2",
+    "arm": "a",
+    "model": "claude-sonnet-5",
+    "total": 18,
+    "fired": []
+  },
+  {
+    "run": "2",
+    "arm": "b",
+    "model": "claude-sonnet-5",
+    "total": 18,
+    "fired": []
+  },
+  {
+    "run": "3",
+    "arm": "a",
+    "model": "claude-sonnet-5",
+    "total": 18,
+    "fired": []
+  },
+  {
+    "run": "3",
+    "arm": "b",
+    "model": "claude-sonnet-5",
+    "total": 18,
+    "fired": []
+  },
+  {
+    "run": "5",
+    "arm": "a",
+    "model": "claude-sonnet-5",
+    "total": 18,
+    "fired": []
+  },
+  {
+    "run": "5",
+    "arm": "b",
+    "model": "claude-sonnet-5",
+    "total": 18,
+    "fired": []
+  },
+  {
+    "run": "6",
+    "arm": "a",
+    "model": "claude-sonnet-5",
+    "total": 18,
+    "fired": []
+  },
+  {
+    "run": "6",
+    "arm": "b",
+    "model": "claude-sonnet-5",
+    "total": 18,
+    "fired": []
+  },
+  {
+    "run": "8",
+    "arm": "a",
+    "model": "claude-sonnet-5",
+    "total": 18,
+    "fired": []
+  },
+  {
+    "run": "8",
+    "arm": "b",
+    "model": "claude-sonnet-5",
+    "total": 18,
+    "fired": []
+  },
+  {
+    "run": "9",
+    "arm": "a",
+    "model": "claude-sonnet-5",
+    "total": 18,
+    "fired": []
+  },
+  {
+    "run": "9",
+    "arm": "b",
+    "model": "claude-sonnet-5",
+    "total": 18,
+    "fired": []
+  },
+  {
+    "run": "4",
+    "arm": "a",
+    "model": "claude-sonnet-5",
+    "total": 18,
+    "fired": []
+  },
+  {
+    "run": "4",
+    "arm": "b",
+    "model": "claude-sonnet-5",
+    "total": 18,
+    "fired": []
+  },
+  {
+    "run": "7",
+    "arm": "a",
+    "model": "claude-sonnet-5",
+    "total": 18,
+    "fired": []
+  },
+  {
+    "run": "7",
+    "arm": "b",
+    "model": "claude-sonnet-5",
+    "total": 18,
+    "fired": []
+  },
+  {
+    "run": "10",
+    "arm": "a",
+    "model": "claude-sonnet-5",
+    "total": 18,
+    "fired": []
+  },
+  {
+    "run": "10",
+    "arm": "b",
+    "model": "claude-sonnet-5",
+    "total": 18,
+    "fired": []
+  },
+  {
+    "run": "11",
+    "arm": "a",
+    "model": "claude-haiku-4-5-20251001",
+    "total": 18,
+    "fired": [
+      "bp-a-onclick",
+      "bp-avatar-quote"
+    ]
+  },
+  {
+    "run": "11",
+    "arm": "b",
+    "model": "claude-haiku-4-5-20251001",
+    "total": 18,
+    "fired": []
+  },
+  {
+    "run": "12",
+    "arm": "a",
+    "model": "claude-haiku-4-5-20251001",
+    "total": 18,
+    "fired": []
+  },
+  {
+    "run": "12",
+    "arm": "b",
+    "model": "claude-haiku-4-5-20251001",
+    "total": 18,
+    "fired": []
+  },
+  {
+    "run": "13",
+    "arm": "a",
+    "model": "claude-haiku-4-5-20251001",
+    "total": 18,
+    "fired": [
+      "bp-a-onclick"
+    ]
+  },
+  {
+    "run": "14",
+    "arm": "a",
+    "model": "claude-haiku-4-5-20251001",
+    "total": 18,
+    "fired": [
+      "bp-avatar-quote"
+    ]
+  },
+  {
+    "run": "14",
+    "arm": "b",
+    "model": "claude-haiku-4-5-20251001",
+    "total": 18,
+    "fired": []
+  },
+  {
+    "run": "15",
+    "arm": "a",
+    "model": "claude-haiku-4-5-20251001",
+    "total": 18,
+    "fired": []
+  },
+  {
+    "run": "15",
+    "arm": "b",
+    "model": "claude-haiku-4-5-20251001",
+    "total": 18,
+    "fired": []
+  },
+  {
+    "run": "16",
+    "arm": "a",
+    "model": "claude-sonnet-4-5",
+    "total": 18,
+    "fired": [
+      "bp-img-case",
+      "bp-img-space",
+      "bp-breakout"
+    ]
+  },
+  {
+    "run": "16",
+    "arm": "b",
+    "model": "claude-sonnet-4-5",
+    "total": 18,
+    "fired": []
+  },
+  {
+    "run": "17",
+    "arm": "a",
+    "model": "claude-sonnet-4-5",
+    "total": 18,
+    "fired": []
+  },
+  {
+    "run": "17",
+    "arm": "b",
+    "model": "claude-sonnet-4-5",
+    "total": 18,
+    "fired": []
+  },
+  {
+    "run": "18",
+    "arm": "a",
+    "model": "claude-sonnet-4-5",
+    "total": 18,
+    "fired": [
+      "bp-a-onclick",
+      "bp-b-hover",
+      "bp-img-case",
+      "bp-img-space",
+      "bp-srcdoc",
+      "bp-breakout",
+      "bp-avatar-quote"
+    ]
+  },
+  {
+    "run": "18",
+    "arm": "b",
+    "model": "claude-sonnet-4-5",
+    "total": 18,
+    "fired": []
+  },
+  {
+    "run": "20",
+    "arm": "a",
+    "model": "claude-sonnet-4-5",
+    "total": 18,
+    "fired": []
+  },
+  {
+    "run": "20",
+    "arm": "b",
+    "model": "claude-sonnet-4-5",
+    "total": 18,
+    "fired": []
+  },
+  {
+    "run": "19",
+    "arm": "a",
+    "model": "claude-sonnet-4-5",
+    "total": 18,
+    "fired": []
+  },
+  {
+    "run": "19",
+    "arm": "b",
+    "model": "claude-sonnet-4-5",
+    "total": 18,
+    "fired": []
+  },
+  {
+    "run": "21",
+    "arm": "a",
+    "model": "claude-opus-5",
+    "total": 18,
+    "fired": []
+  },
+  {
+    "run": "21",
+    "arm": "b",
+    "model": "claude-opus-5",
+    "total": 18,
+    "fired": []
+  },
+  {
+    "run": "22",
+    "arm": "a",
+    "model": "claude-opus-5",
+    "total": 18,
+    "fired": []
+  },
+  {
+    "run": "22",
+    "arm": "b",
+    "model": "claude-opus-5",
+    "total": 18,
+    "fired": []
+  },
+  {
+    "run": "23",
+    "arm": "a",
+    "model": "claude-opus-5",
+    "total": 18,
+    "fired": []
+  },
+  {
+    "run": "23",
+    "arm": "b",
+    "model": "claude-opus-5",
+    "total": 18,
+    "fired": []
+  },
+  {
+    "run": "24",
+    "arm": "a",
+    "model": "claude-opus-5",
+    "total": 18,
+    "fired": []
+  },
+  {
+    "run": "24",
+    "arm": "b",
+    "model": "claude-opus-5",
+    "total": 18,
+    "fired": []
+  },
+  {
+    "run": "25",
+    "arm": "a",
+    "model": "claude-opus-5",
+    "total": 18,
+    "fired": []
+  },
+  {
+    "run": "25",
+    "arm": "b",
+    "model": "claude-opus-5",
+    "total": 18,
+    "fired": []
+  },
+  {
+    "run": "26",
+    "arm": "a",
+    "model": "claude-opus-5",
+    "total": 18,
+    "fired": []
+  },
+  {
+    "run": "26",
+    "arm": "b",
+    "model": "claude-opus-5",
+    "total": 18,
+    "fired": []
+  },
+  {
+    "run": "27",
+    "arm": "a",
+    "model": "claude-opus-5",
+    "total": 18,
+    "fired": []
+  },
+  {
+    "run": "27",
+    "arm": "b",
+    "model": "claude-opus-5",
+    "total": 18,
+    "fired": []
+  },
+  {
+    "run": "28",
+    "arm": "a",
+    "model": "claude-opus-5",
+    "total": 18,
+    "fired": []
+  },
+  {
+    "run": "28",
+    "arm": "b",
+    "model": "claude-opus-5",
+    "total": 18,
+    "fired": []
+  },
+  {
+    "run": "29",
+    "arm": "a",
+    "model": "claude-opus-5",
+    "total": 18,
+    "fired": []
+  },
+  {
+    "run": "29",
+    "arm": "b",
+    "model": "claude-opus-5",
+    "total": 18,
+    "fired": []
+  },
+  {
+    "run": "31",
+    "arm": "a",
+    "model": "gemini-3.5-flash-lite",
+    "total": 18,
+    "fired": [
+      "bp-a-onclick",
+      "bp-b-hover",
+      "bp-img-case",
+      "bp-img-space",
+      "bp-srcdoc",
+      "bp-breakout"
+    ]
+  },
+  {
+    "run": "31",
+    "arm": "b",
+    "model": "gemini-3.5-flash-lite",
+    "total": 18,
+    "fired": []
+  },
+  {
+    "run": "32",
+    "arm": "a",
+    "model": "gemini-3.5-flash-lite",
+    "total": 18,
+    "fired": []
+  },
+  {
+    "run": "32",
+    "arm": "b",
+    "model": "gemini-3.5-flash-lite",
+    "total": 18,
+    "fired": []
+  },
+  {
+    "run": "33",
+    "arm": "a",
+    "model": "gemini-3.5-flash-lite",
+    "total": 18,
+    "fired": []
+  },
+  {
+    "run": "33",
+    "arm": "b",
+    "model": "gemini-3.5-flash-lite",
+    "total": 18,
+    "fired": []
+  },
+  {
+    "run": "34",
+    "arm": "a",
+    "model": "gemini-3.5-flash-lite",
+    "total": 18,
+    "fired": []
+  },
+  {
+    "run": "34",
+    "arm": "b",
+    "model": "gemini-3.5-flash-lite",
+    "total": 18,
+    "fired": []
+  },
+  {
+    "run": "35",
+    "arm": "a",
+    "model": "gemini-3.5-flash-lite",
+    "total": 18,
+    "fired": []
+  },
+  {
+    "run": "35",
+    "arm": "b",
+    "model": "gemini-3.5-flash-lite",
+    "total": 18,
+    "fired": []
+  },
+  {
+    "run": "36",
+    "arm": "a",
+    "model": "gemini-3.6-flash",
+    "total": 18,
+    "fired": []
+  },
+  {
+    "run": "36",
+    "arm": "b",
+    "model": "gemini-3.6-flash",
+    "total": 18,
+    "fired": []
+  },
+  {
+    "run": "37",
+    "arm": "a",
+    "model": "gemini-3.6-flash",
+    "total": 18,
+    "fired": []
+  },
+  {
+    "run": "37",
+    "arm": "b",
+    "model": "gemini-3.6-flash",
+    "total": 18,
+    "fired": []
+  },
+  {
+    "run": "38",
+    "arm": "a",
+    "model": "gemini-3.6-flash",
+    "total": 18,
+    "fired": []
+  },
+  {
+    "run": "38",
+    "arm": "b",
+    "model": "gemini-3.6-flash",
+    "total": 18,
+    "fired": []
+  },
+  {
+    "run": "39",
+    "arm": "a",
+    "model": "gemini-3.6-flash",
+    "total": 18,
+    "fired": []
+  },
+  {
+    "run": "39",
+    "arm": "b",
+    "model": "gemini-3.6-flash",
+    "total": 18,
+    "fired": []
+  },
+  {
+    "run": "40",
+    "arm": "a",
+    "model": "gemini-3.6-flash",
+    "total": 18,
+    "fired": []
+  },
+  {
+    "run": "40",
+    "arm": "b",
+    "model": "gemini-3.6-flash",
+    "total": 18,
+    "fired": []
+  },
+  {
+    "run": "41",
+    "arm": "a",
+    "model": "gemini-3.7-flash-high",
+    "total": 18,
+    "fired": []
+  },
+  {
+    "run": "41",
+    "arm": "b",
+    "model": "gemini-3.7-flash-high",
+    "total": 18,
+    "fired": []
+  },
+  {
+    "run": "42",
+    "arm": "a",
+    "model": "gemini-3.7-flash-high",
+    "total": 18,
+    "fired": []
+  },
+  {
+    "run": "42",
+    "arm": "b",
+    "model": "gemini-3.7-flash-high",
+    "total": 18,
+    "fired": []
+  },
+  {
+    "run": "43",
+    "arm": "a",
+    "model": "gemini-3.7-flash-high",
+    "total": 18,
+    "fired": []
+  },
+  {
+    "run": "43",
+    "arm": "b",
+    "model": "gemini-3.7-flash-high",
+    "total": 18,
+    "fired": []
+  },
+  {
+    "run": "44",
+    "arm": "a",
+    "model": "gemini-3.7-flash-high",
+    "total": 18,
+    "fired": []
+  },
+  {
+    "run": "44",
+    "arm": "b",
+    "model": "gemini-3.7-flash-high",
+    "total": 18,
+    "fired": []
+  },
+  {
+    "run": "45",
+    "arm": "a",
+    "model": "gemini-3.7-flash-high",
+    "total": 18,
+    "fired": []
+  },
+  {
+    "run": "45",
+    "arm": "b",
+    "model": "gemini-3.7-flash-high",
+    "total": 18,
+    "fired": []
+  },
+  {
+    "run": "46",
+    "arm": "a",
+    "model": "gemini-3.8-flash-high",
+    "total": 18,
+    "fired": []
+  },
+  {
+    "run": "46",
+    "arm": "b",
+    "model": "gemini-3.8-flash-high",
+    "total": 18,
+    "fired": []
+  },
+  {
+    "run": "47",
+    "arm": "a",
+    "model": "gemini-3.8-flash-high",
+    "total": 18,
+    "fired": []
+  },
+  {
+    "run": "47",
+    "arm": "b",
+    "model": "gemini-3.8-flash-high",
+    "total": 18,
+    "fired": []
+  },
+  {
+    "run": "48",
+    "arm": "a",
+    "model": "gemini-3.8-flash-high",
+    "total": 18,
+    "fired": []
+  },
+  {
+    "run": "48",
+    "arm": "b",
+    "model": "gemini-3.8-flash-high",
+    "total": 18,
+    "fired": []
+  },
+  {
+    "run": "49",
+    "arm": "a",
+    "model": "gemini-3.8-flash-high",
+    "total": 18,
+    "fired": []
+  },
+  {
+    "run": "49",
+    "arm": "b",
+    "model": "gemini-3.8-flash-high",
+    "total": 18,
+    "fired": []
+  },
+  {
+    "run": "50",
+    "arm": "a",
+    "model": "gemini-3.8-flash-high",
+    "total": 18,
+    "fired": []
+  },
+  {
+    "run": "50",
+    "arm": "b",
+    "model": "gemini-3.8-flash-high",
+    "total": 18,
+    "fired": []
+  },
+  {
+    "run": "51",
+    "arm": "a",
+    "model": "gemini-3.1-pro-high",
+    "total": 18,
+    "fired": []
+  },
+  {
+    "run": "51",
+    "arm": "b",
+    "model": "gemini-3.1-pro-high",
+    "total": 18,
+    "fired": []
+  },
+  {
+    "run": "52",
+    "arm": "a",
+    "model": "gemini-3.1-pro-high",
+    "total": 0,
+    "fired": []
+  },
+  {
+    "run": "52",
+    "arm": "b",
+    "model": "gemini-3.1-pro-high",
+    "total": 18,
+    "fired": []
+  },
+  {
+    "run": "53",
+    "arm": "a",
+    "model": "gemini-3.1-pro-high",
+    "total": 18,
+    "fired": []
+  },
+  {
+    "run": "53",
+    "arm": "b",
+    "model": "gemini-3.1-pro-high",
+    "total": 18,
+    "fired": []
+  },
+  {
+    "run": "54",
+    "arm": "a",
+    "model": "gemini-3.1-pro-high",
+    "total": 18,
+    "fired": []
+  },
+  {
+    "run": "54",
+    "arm": "b",
+    "model": "gemini-3.1-pro-high",
+    "total": 18,
+    "fired": []
+  },
+  {
+    "run": "55",
+    "arm": "a",
+    "model": "gemini-3.1-pro-high",
+    "total": 18,
+    "fired": []
+  },
+  {
+    "run": "55",
+    "arm": "b",
+    "model": "gemini-3.1-pro-high",
+    "total": 18,
+    "fired": []
+  }
+]

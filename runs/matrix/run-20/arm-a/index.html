@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Porto Notes</title>
+  </head>
+  <body>
+    <main id="app">
+      <h1>Porto Notes</h1>
+
+      <form id="note-form">
+        <div>
+          <label for="title">Title</label>
+          <input type="text" id="title" required />
+        </div>
+        <div>
+          <label for="body">Body</label>
+          <textarea id="body" rows="4" required></textarea>
+        </div>
+        <div>
+          <label for="avatar">Avatar URL (optional)</label>
+          <input type="text" id="avatar" />
+        </div>
+        <button type="submit">Add Note</button>
+      </form>
+
+      <div>
+        <label for="search">Search</label>
+        <input type="text" id="search" placeholder="Search notes..." />
+      </div>
+
+      <p id="results-line"></p>
+
+      <section id="feed"></section>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

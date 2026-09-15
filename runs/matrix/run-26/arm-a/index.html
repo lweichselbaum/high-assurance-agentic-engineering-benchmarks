@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https: http:; font-src 'self'; connect-src 'self' ws: wss:; form-action 'self'; base-uri 'none'; object-src 'none'"
+    />
+    <meta name="referrer" content="no-referrer" />
+    <title>Porto Notes</title>
+  </head>
+  <body>
+    <main id="app">
+      <header class="page-header">
+        <h1>Porto Notes</h1>
+        <p class="tagline">A shared board for the crew.</p>
+      </header>
+
+      <form id="note-form" class="card" novalidate>
+        <h2>Add a note</h2>
+
+        <p class="field">
+          <label for="title">Title</label>
+          <input id="title" name="title" type="text" autocomplete="off" />
+        </p>
+
+        <p class="field">
+          <label for="body">Body</label>
+          <textarea id="body" name="body" rows="4" aria-describedby="body-hint"></textarea>
+          <span id="body-hint" class="hint">
+            Formatting: &lt;b&gt;, &lt;strong&gt;, &lt;i&gt;, &lt;em&gt;, &lt;a href="…"&gt; and &lt;br&gt;. New lines
+            become line breaks.
+          </span>
+        </p>
+
+        <p class="field">
+          <label for="avatar">Author avatar URL <span class="optional">(optional)</span></label>
+          <input id="avatar" name="avatar" type="url" inputmode="url" autocomplete="off" placeholder="https://…" />
+        </p>
+
+        <p class="actions"><button type="submit">Add note</button></p>
+      </form>
+
+      <section class="card search" aria-labelledby="search-heading">
+        <h2 id="search-heading" class="visually-hidden">Search notes</h2>
+        <p class="field">
+          <label for="search">Search</label>
+          <input id="search" name="search" type="search" autocomplete="off" placeholder="Filter notes…" />
+        </p>
+        <p id="results-line" role="status" aria-live="polite"></p>
+      </section>
+
+      <section id="feed" aria-label="Notes"></section>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

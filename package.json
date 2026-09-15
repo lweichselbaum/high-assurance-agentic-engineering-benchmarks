@@ -1,0 +1,40 @@
+{
+  "name": "high-assurance-agentic-engineering-benchmarks",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A/B benchmark: the same coding agent builds the same app with no guardrails (arm A) and inside a strict-CSP + Trusted Types + safe-coding harness (arm B). A shared benchmark scores both.",
+  "type": "module",
+  "packageManager": "pnpm@10.33.0",
+  "engines": {
+    "node": "22.22.2",
+    "pnpm": "10.33.0"
+  },
+  "scripts": {
+    "agent:a": "node tools/run-agent-claude-code.mjs --arm a",
+    "agent:b": "node tools/run-agent-claude-code.mjs --arm b",
+    "bench:a": "bash bench/run.sh a",
+    "bench:b": "bash bench/run.sh b",
+    "score": "node bench/score.ts",
+    "results": "node bench/render-results.ts",
+    "manifest": "bash tools/harness-manifest.sh",
+    "matrix": "bash run-matrix.sh",
+    "verify:b": "bash arm-b-harness/verify.sh"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.56.1",
+    "@types/node": "22.20.1",
+    "csp_evaluator": "1.1.8",
+    "typescript": "5.9.3"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild"
+    ],
+    "peerDependencyRules": {
+      "ignoreMissing": [
+        "@bazel/bazelisk",
+        "@bazel/concatjs"
+      ]
+    }
+  }
+}

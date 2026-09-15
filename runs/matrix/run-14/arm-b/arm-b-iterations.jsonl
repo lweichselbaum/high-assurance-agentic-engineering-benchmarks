@@ -1,0 +1,44 @@
+{"iter":1,"gate":"0-integrity","pass":true,"firstError":"","seconds":0}
+{"iter":1,"gate":"1-tsc","pass":false,"firstError":"src/main.ts(2,10): error TS2305: Module '\"safevalues/dom\"' has no exported member 'sanitizeHtml'.","seconds":1}
+{"iter":1,"gate":"ALL","pass":false,"firstError":"1-tsc","seconds":1}
+{"iter":2,"gate":"0-integrity","pass":true,"firstError":"","seconds":0}
+{"iter":2,"gate":"1-tsc","pass":true,"firstError":"","seconds":1}
+{"iter":2,"gate":"2-tsec","pass":false,"firstError":"src/main.ts(254,3): error TS21228: [ban-element-innerhtml-assignments] Assigning directly to Element#innerHTML can result in XSS vulnerabilities.","seconds":2}
+{"iter":2,"gate":"ALL","pass":false,"firstError":"2-tsec","seconds":4}
+{"iter":3,"gate":"0-integrity","pass":true,"firstError":"","seconds":0}
+{"iter":3,"gate":"1-tsc","pass":true,"firstError":"","seconds":2}
+{"iter":3,"gate":"2-tsec","pass":true,"firstError":"","seconds":2}
+{"iter":3,"gate":"3-eslint","pass":true,"firstError":"","seconds":3}
+{"iter":3,"gate":"4-build","pass":true,"firstError":"","seconds":1}
+{"iter":3,"gate":"5-functional","pass":false,"firstError":"  ✘  1 bench/functional.spec.ts:22:1 › seed notes render newest-first with their formatting (6.3s)","seconds":40}
+{"iter":3,"gate":"ALL","pass":false,"firstError":"5-functional","seconds":50}
+{"iter":4,"gate":"0-integrity","pass":true,"firstError":"","seconds":0}
+{"iter":4,"gate":"1-tsc","pass":true,"firstError":"","seconds":2}
+{"iter":4,"gate":"2-tsec","pass":true,"firstError":"","seconds":2}
+{"iter":4,"gate":"3-eslint","pass":true,"firstError":"","seconds":2}
+{"iter":4,"gate":"4-build","pass":true,"firstError":"","seconds":2}
+{"iter":4,"gate":"5-functional","pass":false,"firstError":"  ✘  1 bench/functional.spec.ts:22:1 › seed notes render newest-first with their formatting (5.8s)","seconds":39}
+{"iter":4,"gate":"ALL","pass":false,"firstError":"5-functional","seconds":47}
+{"iter":5,"gate":"0-integrity","pass":true,"firstError":"","seconds":0}
+{"iter":5,"gate":"1-tsc","pass":true,"firstError":"","seconds":2}
+{"iter":5,"gate":"2-tsec","pass":true,"firstError":"","seconds":2}
+{"iter":5,"gate":"3-eslint","pass":true,"firstError":"","seconds":2}
+{"iter":5,"gate":"4-build","pass":true,"firstError":"","seconds":1}
+{"iter":5,"gate":"5-functional","pass":false,"firstError":"  ✘  1 bench/functional.spec.ts:22:1 › seed notes render newest-first with their formatting (6.0s)","seconds":13}
+{"iter":5,"gate":"ALL","pass":false,"firstError":"5-functional","seconds":21}
+{"iter":6,"gate":"0-integrity","pass":true,"firstError":"","seconds":0}
+{"iter":6,"gate":"1-tsc","pass":true,"firstError":"","seconds":2}
+{"iter":6,"gate":"2-tsec","pass":true,"firstError":"","seconds":1}
+{"iter":6,"gate":"3-eslint","pass":true,"firstError":"","seconds":3}
+{"iter":6,"gate":"4-build","pass":true,"firstError":"","seconds":1}
+{"iter":6,"gate":"5-functional","pass":true,"firstError":"","seconds":6}
+{"iter":6,"gate":"6-security","pass":true,"firstError":"","seconds":21}
+{"iter":6,"gate":"ALL","pass":true,"firstError":"","seconds":34}
+{"iter":7,"gate":"0-integrity","pass":true,"firstError":"","seconds":0}
+{"iter":7,"gate":"1-tsc","pass":true,"firstError":"","seconds":1}
+{"iter":7,"gate":"2-tsec","pass":true,"firstError":"","seconds":2}
+{"iter":7,"gate":"3-eslint","pass":true,"firstError":"","seconds":3}
+{"iter":7,"gate":"4-build","pass":true,"firstError":"","seconds":2}
+{"iter":7,"gate":"5-functional","pass":true,"firstError":"","seconds":6}
+{"iter":7,"gate":"6-security","pass":true,"firstError":"","seconds":20}
+{"iter":7,"gate":"ALL","pass":true,"firstError":"","seconds":35}

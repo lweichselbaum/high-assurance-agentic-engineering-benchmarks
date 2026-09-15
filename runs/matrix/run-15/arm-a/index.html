@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Porto Notes</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background: #f5f5f5;
+        padding: 1rem;
+      }
+      main {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+      h1 {
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+        color: #222;
+      }
+      #note-form {
+        background: white;
+        padding: 1.5rem;
+        border-radius: 8px;
+        margin-bottom: 2rem;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      }
+      #note-form > * {
+        margin-bottom: 1rem;
+      }
+      #note-form > *:last-child {
+        margin-bottom: 0;
+      }
+      label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: 500;
+        color: #222;
+      }
+      #title, #body, #avatar {
+        width: 100%;
+        padding: 0.5rem;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-family: inherit;
+        font-size: 1rem;
+      }
+      #body {
+        min-height: 100px;
+        resize: vertical;
+        font-family: monospace;
+      }
+      button {
+        background: #0f766e;
+        color: white;
+        border: none;
+        padding: 0.75rem 1.5rem;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 1rem;
+        font-weight: 500;
+      }
+      button:hover {
+        background: #0d5c56;
+      }
+      #search {
+        width: 100%;
+        max-width: 300px;
+        padding: 0.75rem;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 1rem;
+        margin-bottom: 1rem;
+      }
+      #results-line {
+        margin-bottom: 1rem;
+        color: #666;
+        font-size: 0.9rem;
+      }
+      #feed {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .note {
+        background: white;
+        padding: 1.5rem;
+        border-radius: 8px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        transition: box-shadow 0.2s, transform 0.2s;
+        border-left: 4px solid #0f766e;
+      }
+      .note:hover {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      }
+      .note[aria-current="true"] {
+        box-shadow: 0 4px 12px rgba(15, 118, 110, 0.3);
+        background: #f0fdf9;
+      }
+      .note-header {
+        display: flex;
+        gap: 1rem;
+        margin-bottom: 0.5rem;
+        align-items: flex-start;
+      }
+      .note-avatar {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        flex-shrink: 0;
+      }
+      .note-content {
+        flex: 1;
+      }
+      .note-title {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: #0f766e;
+        margin-bottom: 0.5rem;
+      }
+      .note-body {
+        color: #555;
+        word-break: break-word;
+      }
+      .note-body a {
+        color: #0f766e;
+        text-decoration: underline;
+      }
+      .note-body b, .note-body strong {
+        font-weight: 600;
+        color: #333;
+      }
+      .note-body i, .note-body em {
+        font-style: italic;
+      }
+    </style>
+  </head>
+  <body>
+    <main id="app">
+      <h1>Porto Notes</h1>
+
+      <form id="note-form">
+        <div>
+          <label for="title">Title</label>
+          <input id="title" type="text" required />
+        </div>
+        <div>
+          <label for="body">Body</label>
+          <textarea id="body" required></textarea>
+        </div>
+        <div>
+          <label for="avatar">Avatar URL (optional)</label>
+          <input id="avatar" type="text" />
+        </div>
+        <button type="submit">Add Note</button>
+      </form>
+
+      <div>
+        <input id="search" type="text" placeholder="Search notes..." />
+        <p id="results-line"></p>
+      </div>
+
+      <section id="feed"></section>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

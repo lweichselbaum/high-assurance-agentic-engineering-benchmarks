@@ -1,0 +1,25 @@
+body {
+    font-family: sans-serif;
+    margin: 2rem auto;
+    max-width: 600px;
+}
+.note {
+    border: 1px solid #ccc;
+    padding: 1rem;
+    margin: 1rem 0;
+}
+.note[aria-current="true"] {
+    background: #f0f8ff;
+    border-color: #007bff;
+}
+.note-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 1rem;
+    vertical-align: middle;
+}
+.note-title {
+    margin-top: 0;
+    cursor: pointer;
+}

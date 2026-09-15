@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Porto Notes</title>
+  </head>
+  <body>
+    <main id="app">
+      <header class="app-header">
+        <h1>Porto Notes</h1>
+        <p class="app-tagline">A shared board for the crew. Notes are kept in this browser.</p>
+      </header>
+
+      <section class="panel" aria-labelledby="compose-heading">
+        <h2 id="compose-heading">Add a note</h2>
+        <form id="note-form">
+          <div class="field">
+            <label for="title">Title</label>
+            <input id="title" name="title" type="text" autocomplete="off" required />
+          </div>
+          <div class="field">
+            <label for="body">Body</label>
+            <textarea id="body" name="body" rows="4" aria-describedby="body-hint"></textarea>
+            <p id="body-hint" class="hint">
+              Basic formatting: &lt;b&gt;, &lt;strong&gt;, &lt;i&gt;, &lt;em&gt;, &lt;a href="…"&gt; and &lt;br&gt;. New lines
+              become line breaks.
+            </p>
+          </div>
+          <div class="field">
+            <label for="avatar">Author avatar URL <span class="optional">(optional)</span></label>
+            <input id="avatar" name="avatar" type="text" inputmode="url" autocomplete="off" placeholder="https://…" />
+          </div>
+          <button type="submit">Add note</button>
+        </form>
+      </section>
+
+      <section class="panel" aria-labelledby="search-heading">
+        <h2 id="search-heading">Search</h2>
+        <div class="field">
+          <label for="search">Filter notes by title or body</label>
+          <input id="search" name="search" type="search" autocomplete="off" placeholder="Search…" />
+        </div>
+        <p id="results-line" role="status"></p>
+      </section>
+
+      <h2 id="feed-heading">Notes</h2>
+      <section id="feed" aria-labelledby="feed-heading"></section>
+    </main>
+    <!-- Harness entry: installs the Trusted Types boundary, then runs src/main.ts. Keep this tag as is. -->
+    <script type="module" src="/harness/entry.ts"></script>
+  </body>
+</html>

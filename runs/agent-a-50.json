@@ -1,0 +1,20 @@
+{
+  "arm": "a",
+  "label": "Arm A — vibe (no guardrails)",
+  "agent": "Google Antigravity",
+  "external": true,
+  "claudeCodeVersion": null,
+  "requestedModel": "gemini-3.8-flash-high",
+  "model": "gemini-3.8-flash-high",
+  "temperature": "not configurable (IDE default)",
+  "permissionMode": "IDE agent, operator-driven",
+  "instruction": "Make it work. Ship a build.",
+  "promptSha256": "0903e3f4535d310e018e31678f3db837cca9e97545c17a8d2c63a9323c88361a",
+  "promptBytes": 2402,
+  "startedAt": "2026-09-04T19:37:12Z",
+  "finishedAt": "2026-09-04T19:44:46.960Z",
+  "exitCode": 0,
+  "numTurns": 1,
+  "costUsd": null,
+  "verifyRuns": null
+}

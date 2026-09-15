@@ -1,0 +1,374 @@
+{
+  "generatedAt": "2026-09-04T15:18:38.528Z",
+  "run": "35",
+  "promptSha256": "0903e3f4535d310e018e31678f3db837cca9e97545c17a8d2c63a9323c88361a",
+  "fixturesSha256": "feedec7cd3fb58c651335f0174e4f83d2de5218f51e28e65668238ca337ab334",
+  "armA": {
+    "label": "Arm A — vibe (no guardrails)",
+    "xssFired": 0,
+    "xssTotal": 8,
+    "xssUntested": 0,
+    "firedIds": [],
+    "payloads": [
+      {
+        "id": "img-onerror",
+        "field": "body",
+        "fired": false,
+        "how": null,
+        "csp": [],
+        "pageErrors": []
+      },
+      {
+        "id": "script-tag",
+        "field": "body",
+        "fired": false,
+        "how": null,
+        "csp": [],
+        "pageErrors": []
+      },
+      {
+        "id": "svg-onload",
+        "field": "body",
+        "fired": false,
+        "how": null,
+        "csp": [],
+        "pageErrors": []
+      },
+      {
+        "id": "js-uri-link",
+        "field": "body",
+        "fired": false,
+        "how": null,
+        "csp": [],
+        "pageErrors": []
+      },
+      {
+        "id": "avatar-js",
+        "field": "avatar",
+        "fired": false,
+        "how": null,
+        "csp": [],
+        "pageErrors": []
+      },
+      {
+        "id": "title-break",
+        "field": "title",
+        "fired": false,
+        "how": null,
+        "csp": [],
+        "pageErrors": []
+      },
+      {
+        "id": "search-refl",
+        "field": "search",
+        "fired": false,
+        "how": null,
+        "csp": [],
+        "pageErrors": []
+      },
+      {
+        "id": "hash-dom",
+        "field": "hash",
+        "fired": false,
+        "how": null,
+        "csp": [],
+        "pageErrors": []
+      }
+    ],
+    "cspPresent": false,
+    "cspStrict": false,
+    "trustedTypes": false,
+    "csp": "",
+    "cspEvaluator": {
+      "high": 0,
+      "medium": 0,
+      "findings": []
+    },
+    "securityHeaders": {},
+    "ttEnforcedAtRuntime": false,
+    "cspViolationsObserved": 0,
+    "dangerousSinkAssignments": 3,
+    "urlSinkAssignments": 1,
+    "sinkFindings": [
+      {
+        "file": "src/main.ts",
+        "line": 187,
+        "kind": "innerHTML =",
+        "category": "html-sink",
+        "snippet": "this.feedEl.innerHTML = `<div class=\"no-notes\">No notes found.</div>`;"
+      },
+      {
+        "file": "src/main.ts",
+        "line": 191,
+        "kind": "innerHTML =",
+        "category": "html-sink",
+        "snippet": "this.feedEl.innerHTML = '';"
+      },
+      {
+        "file": "src/main.ts",
+        "line": 209,
+        "kind": "innerHTML =",
+        "category": "html-sink",
+        "snippet": "article.innerHTML = `"
+      },
+      {
+        "file": "src/main.ts",
+        "line": 269,
+        "kind": "setAttribute(href | src | action)",
+        "category": "url-sink",
+        "snippet": "el.setAttribute('href', href);"
+      }
+    ],
+    "sinksByKind": {
+      "innerHTML =": 3,
+      "setAttribute(href | src | action)": 1
+    },
+    "filesScanned": [
+      "index.html",
+      "src/main.ts"
+    ],
+    "lintErrors": null,
+    "tsecErrors": null,
+    "iterationsToGreen": null,
+    "iterations": null,
+    "trustedSurfaceLines": null,
+    "trustedSurfaceFiles": [],
+    "functionalPass": true,
+    "functional": {
+      "total": 5,
+      "passed": 5,
+      "failed": [],
+      "pass": true
+    },
+    "agent": {
+      "arm": "a",
+      "label": "Arm A — vibe (no guardrails)",
+      "agent": "Google Antigravity",
+      "external": true,
+      "claudeCodeVersion": null,
+      "requestedModel": "gemini-3.5-flash-lite",
+      "model": "gemini-3.5-flash-lite",
+      "temperature": "not configurable (IDE default)",
+      "permissionMode": "IDE agent, operator-driven",
+      "instruction": "Make it work. Ship a build.",
+      "promptSha256": "0903e3f4535d310e018e31678f3db837cca9e97545c17a8d2c63a9323c88361a",
+      "promptBytes": 2402,
+      "startedAt": "2026-09-04T15:11:07Z",
+      "finishedAt": "2026-09-04T15:13:19.105Z",
+      "exitCode": 0,
+      "numTurns": 1,
+      "costUsd": null,
+      "verifyRuns": null
+    }
+  },
+  "armB": {
+    "label": "Arm B — high-assurance harness",
+    "xssFired": 0,
+    "xssTotal": 8,
+    "xssUntested": 0,
+    "firedIds": [],
+    "payloads": [
+      {
+        "id": "img-onerror",
+        "field": "body",
+        "fired": false,
+        "how": null,
+        "csp": [],
+        "pageErrors": []
+      },
+      {
+        "id": "script-tag",
+        "field": "body",
+        "fired": false,
+        "how": null,
+        "csp": [],
+        "pageErrors": []
+      },
+      {
+        "id": "svg-onload",
+        "field": "body",
+        "fired": false,
+        "how": null,
+        "csp": [],
+        "pageErrors": []
+      },
+      {
+        "id": "js-uri-link",
+        "field": "body",
+        "fired": false,
+        "how": null,
+        "csp": [],
+        "pageErrors": []
+      },
+      {
+        "id": "avatar-js",
+        "field": "avatar",
+        "fired": false,
+        "how": null,
+        "csp": [],
+        "pageErrors": []
+      },
+      {
+        "id": "title-break",
+        "field": "title",
+        "fired": false,
+        "how": null,
+        "csp": [],
+        "pageErrors": []
+      },
+      {
+        "id": "search-refl",
+        "field": "search",
+        "fired": false,
+        "how": null,
+        "csp": [],
+        "pageErrors": []
+      },
+      {
+        "id": "hash-dom",
+        "field": "hash",
+        "fired": false,
+        "how": null,
+        "csp": [],
+        "pageErrors": []
+      }
+    ],
+    "cspPresent": true,
+    "cspStrict": true,
+    "trustedTypes": true,
+    "csp": "script-src 'nonce-dbYTfgJP776S+I+bCDhd2Q==' 'strict-dynamic'; object-src 'none'; base-uri 'none'; require-trusted-types-for 'script'; trusted-types default google#safe dompurify; report-uri /csp-report",
+    "cspEvaluator": {
+      "high": 0,
+      "medium": 0,
+      "findings": []
+    },
+    "securityHeaders": {
+      "x-content-type-options": "nosniff",
+      "x-frame-options": "DENY",
+      "cross-origin-opener-policy": "same-origin",
+      "cross-origin-resource-policy": "same-origin",
+      "referrer-policy": "no-referrer"
+    },
+    "ttEnforcedAtRuntime": true,
+    "cspViolationsObserved": 0,
+    "dangerousSinkAssignments": 0,
+    "urlSinkAssignments": 2,
+    "sinkFindings": [
+      {
+        "file": "src/feed.ts",
+        "line": 27,
+        "kind": "src = <non-literal>",
+        "category": "url-sink",
+        "snippet": "img.src = note.avatar;"
+      },
+      {
+        "file": "src/main.ts",
+        "line": 156,
+        "kind": "src = <non-literal>",
+        "category": "url-sink",
+        "snippet": "img.src = note.avatar;"
+      }
+    ],
+    "sinksByKind": {
+      "src = <non-literal>": 2
+    },
+    "filesScanned": [
+      "index.html",
+      "src/avatar.ts",
+      "src/feed.ts",
+      "src/hash.ts",
+      "src/layout.ts",
+      "src/main.ts",
+      "src/richtext.ts",
+      "src/storage.ts",
+      "src/types.ts"
+    ],
+    "lintErrors": 0,
+    "tsecErrors": 0,
+    "iterationsToGreen": 4,
+    "iterations": {
+      "total": 5,
+      "toGreen": 4,
+      "history": [
+        {
+          "iter": 1,
+          "green": false,
+          "firstFailingGate": "2-tsec",
+          "firstError": "src/main.ts(115,3): error TS21228: [ban-element-innerhtml-assignments] Assigning directly to Element#innerHTML can result in XSS vulnerabilities.",
+          "seconds": 3
+        },
+        {
+          "iter": 2,
+          "green": false,
+          "firstFailingGate": "2-tsec",
+          "firstError": "src/main.ts(194,3): error TS21228: [ban-element-innerhtml-assignments] Assigning directly to Element#innerHTML can result in XSS vulnerabilities.",
+          "seconds": 4
+        },
+        {
+          "iter": 3,
+          "green": false,
+          "firstFailingGate": "3-eslint",
+          "firstError": "  96:5  error  Navigating via location.* from a string can inject javascript: URLs. Use setLocationHref(location, url) from safevalues/dom (it rejects javascript: URLs). See harness/README.md  no-restricted-syntax",
+          "seconds": 6
+        },
+        {
+          "iter": 4,
+          "green": true,
+          "firstFailingGate": null,
+          "firstError": null,
+          "seconds": 34
+        },
+        {
+          "iter": 5,
+          "green": true,
+          "firstFailingGate": null,
+          "firstError": null,
+          "seconds": 33
+        }
+      ]
+    },
+    "trustedSurfaceLines": 29,
+    "trustedSurfaceFiles": [
+      "harness/trusted-boundary.ts"
+    ],
+    "functionalPass": true,
+    "functional": {
+      "total": 5,
+      "passed": 5,
+      "failed": [],
+      "pass": true
+    },
+    "agent": {
+      "arm": "b",
+      "label": "Arm B — high-assurance harness",
+      "agent": "Google Antigravity",
+      "external": true,
+      "claudeCodeVersion": null,
+      "requestedModel": "gemini-3.5-flash-lite",
+      "model": "gemini-3.5-flash-lite",
+      "temperature": "not configurable (IDE default)",
+      "permissionMode": "IDE agent, operator-driven",
+      "instruction": "Implement the feature. `./verify.sh` must pass. If it fails, fix your code and run it again. Do not modify config, tests, tsconfig, ESLint, or the CSP.",
+      "promptSha256": "0903e3f4535d310e018e31678f3db837cca9e97545c17a8d2c63a9323c88361a",
+      "promptBytes": 2402,
+      "startedAt": "2026-09-04T15:13:48Z",
+      "finishedAt": "2026-09-04T15:18:09.668Z",
+      "exitCode": 0,
+      "numTurns": 1,
+      "costUsd": null,
+      "verifyRuns": 5
+    }
+  },
+  "toolchain": {
+    "node": "v22.22.2",
+    "vite": "7.3.6",
+    "typescript": "5.9.3",
+    "tsec": "0.2.9",
+    "safetyWeb": "0.4.1-alpha.15",
+    "eslint": "9.39.5",
+    "safevalues": "1.2.0",
+    "dompurify": "3.4.14",
+    "playwright": "1.56.1",
+    "cspEvaluator": "1.1.8"
+  }
+}

@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Porto Notes</title>
+  </head>
+  <body>
+    <main id="app">
+      <header class="app-header">
+        <div class="header-container">
+          <div class="logo-area">
+            <span class="logo-icon" aria-hidden="true">🌊</span>
+            <div class="logo-text">
+              <h1>Porto Notes</h1>
+              <p class="subtitle">A shared board for the Porto community</p>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div class="app-layout">
+        <aside class="sidebar">
+          <section class="card form-section" aria-labelledby="form-heading">
+            <h2 id="form-heading" class="section-title">Add a Note</h2>
+            <form id="note-form">
+              <div class="field">
+                <label for="title">Title</label>
+                <input id="title" type="text" name="title" placeholder="Note title" required autocomplete="off" />
+              </div>
+
+              <div class="field">
+                <label for="body">Body (supports &lt;b&gt;, &lt;i&gt;, links, line breaks)</label>
+                <textarea id="body" name="body" rows="4" placeholder="Write rich text note body..." required></textarea>
+              </div>
+
+              <div class="field">
+                <label for="avatar">Avatar URL (optional)</label>
+                <input id="avatar" type="text" name="avatar" placeholder="https://... or data:image/..." autocomplete="off" />
+              </div>
+
+              <button type="submit" class="btn-primary">Add Note</button>
+            </form>
+          </section>
+        </aside>
+
+        <section class="main-content" aria-labelledby="feed-heading">
+          <div class="search-bar-wrapper">
+            <label for="search" class="visually-hidden">Search notes</label>
+            <div class="search-input-box">
+              <span class="search-icon" aria-hidden="true">🔍</span>
+              <input id="search" type="search" placeholder="Search notes by title or content..." autocomplete="off" />
+            </div>
+            <p id="results-line" role="status" aria-live="polite"></p>
+          </div>
+
+          <h2 id="feed-heading" class="visually-hidden">Notes Feed</h2>
+          <section id="feed" aria-label="Notes Feed"></section>
+        </section>
+      </div>
+    </main>
+    <!-- Harness entry: installs the Trusted Types boundary, then runs src/main.ts. Keep this tag as is. -->
+    <script type="module" src="/harness/entry.ts"></script>
+  </body>
+</html>

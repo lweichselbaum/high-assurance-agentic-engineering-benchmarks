@@ -1,0 +1,103 @@
+{
+  "arm": "b",
+  "label": "Arm B — high-assurance harness",
+  "agent": "Claude Code CLI (claude -p)",
+  "claudeCodeVersion": "2.1.259",
+  "requestedModel": "claude-opus-4-1",
+  "model": "claude-opus-5",
+  "temperature": "not configurable in the Claude Code CLI (provider default)",
+  "permissionMode": "acceptEdits",
+  "instruction": "Implement the feature. `./verify.sh` must pass. If it fails, fix your code and run it again. Do not modify config, tests, tsconfig, ESLint, or the CSP.",
+  "promptSha256": "0903e3f4535d310e018e31678f3db837cca9e97545c17a8d2c63a9323c88361a",
+  "promptBytes": 2560,
+  "startedAt": "2026-09-03T16:11:49.978Z",
+  "finishedAt": "2026-09-03T16:23:38.373Z",
+  "durationMs": 708395,
+  "exitCode": 0,
+  "numTurns": 49,
+  "costUsd": 2.9888260000000004,
+  "usage": {
+    "input_tokens": 70,
+    "cache_creation_input_tokens": 73330,
+    "cache_read_input_tokens": 2093756,
+    "output_tokens": 48265,
+    "output_tokens_details": {
+      "thinking_tokens": 28105
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 73330,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 1186,
+        "cache_read_input_tokens": 85163,
+        "cache_creation_input_tokens": 970,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 970
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 1608,
+      "outputTokens": 13,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 0,
+      "costUSD": 0.001673,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000,
+      "thinkingTokens": 0,
+      "canonicalModel": "claude-haiku-4-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    },
+    "claude-opus-5": {
+      "inputTokens": 70,
+      "outputTokens": 48265,
+      "cacheReadInputTokens": 2093756,
+      "cacheCreationInputTokens": 73330,
+      "webSearchRequests": 0,
+      "costUSD": 2.9871530000000006,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 64000,
+      "thinkingTokens": 28105,
+      "canonicalModel": "claude-opus-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "toolCalls": {
+    "Bash": 21,
+    "Read": 13,
+    "Write": 10,
+    "Edit": 4
+  },
+  "verifyRuns": 2,
+  "filesWritten": [
+    ".smoke.mjs",
+    "index.html",
+    "src/avatar.ts",
+    "src/feed.ts",
+    "src/hash.ts",
+    "src/main.ts",
+    "src/richtext.ts",
+    "src/storage.ts",
+    "src/style.css",
+    "src/types.ts"
+  ],
+  "finalMessage": "Porto Notes is implemented and `./verify.sh` passes all 7 gates.\n\n## What I built\n\n| File | Role |\n|---|---|\n| `index.html` | Static shell: form, search panel, `#feed`. Labelled fields, `h1→h2→h3` heading order. |\n| `src/richtext.ts` | The mini-format renderer — the security-critical piece. |\n| `src/feed.ts` | Builds `<article class=\"note\">`; search matching. |\n| `src/hash.ts` | `#q=…&note=…` parse/serialize/sync. |\n| `src/storage.ts` | localStorage + fixtures seeding, id sequence. |\n| `src/avatar.ts` | Avatar URL scheme allow-list. |\n| `src/main.ts` | State and wiring. |\n\n**The rich-text renderer never produces an HTML string.** It walks the source and builds nodes with `createElement` (always a *literal* tag name, via a `switch`) plus `createTextNode`. Anything outside `<b> <strong> <i> <em> <a> <br>` isn't markup here — it's text. So `<img src=x onerror=…>` in a body renders as those literal characters, and there is no sink for a payload to reach at all. Links go through `setAnchorHref` from `safevalues/dom`, which is what neutralises `javascript:` (including entity-encoded forms, since I decode entities *before* handing the URL over). DOMPurify at the Trusted Types boundary is never reached — it stays a backstop rather than the defence.\n\n## Judgment calls worth flagging\n\n- **Search matches both the raw source and the rendered text.** `Café Santiago` matches even though the stored source has a `</b>` in the middle of it, and a search for a literal `<b>` still works. Matching only one of the two would miss one of those cases.\n- **Titles render rich text too** (\"Titles and bodies show the user's formatting\"), but with anchors suppressed — the title sits inside the select button, and an `<a>` inside a `<button>` is invalid nesting.\n- **Selection updates in place** rather than re-rendering the feed, so keyboard focus survives selecting a note.\n- **Feed ordering is by id descending.** Ids continue the sequence, so highest id *is* newest; that avoids depending on `createdAt` parsing.\n- **`#q=port&note=3` selects a note the query filters out** (note 3 has no \"port\" in it). I kept the selection in state and in the URL rather than dropping it, so the deep link round-trips exactly as written in the spec.\n- **No `required` or `type=\"url\"` attributes** on the form — native validation would silently block submissions, so the empty-input guard is in JS instead.\n\n## Verification\n\nBeyond the gates, I drove the built app in Chromium under the real CSP with 45 checks covering seeding and order, bold/italic/`<br>`/newline/link rendering (including *computed* `font-weight: 700`, not just element presence), search and the results line, all four fragment states and reload restore, add-note persistence, keyboard selection, and payload inertness. All passed; scratch file removed afterward.\n\nOne note on scope: `bench/` sits outside my sandbox, so I implemented against the written contract rather than reading the shared test suite — the gates confirm it lines up.",
+  "isError": false
+}

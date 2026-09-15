@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Porto Notes</title>
+  </head>
+  <body>
+    <div class="app-wrapper">
+      <header class="app-header">
+        <div class="header-inner">
+          <div class="brand">
+            <div>
+              <h1 class="app-title">Porto Notes</h1>
+              <p class="app-subtitle">A shared notes board for the Porto crew</p>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main id="app" class="main-content">
+        <section class="card form-section" aria-labelledby="form-heading">
+          <h2 id="form-heading" class="section-title">Add a Note</h2>
+          <form id="note-form">
+            <div class="form-group">
+              <label for="title">Title</label>
+              <input id="title" type="text" placeholder="Note title" autocomplete="off" />
+            </div>
+            <div class="form-group">
+              <label for="body">Body</label>
+              <textarea id="body" rows="3" placeholder="Write your note... (supports <b>, <i>, <a href=&quot;...&quot;>, line breaks)"></textarea>
+            </div>
+            <div class="form-group">
+              <label for="avatar">Author Avatar URL</label>
+              <input id="avatar" type="text" placeholder="Optional avatar URL (e.g. https://... or data:image/...)" autocomplete="off" />
+            </div>
+            <div class="form-actions">
+              <button type="submit" class="btn-primary">Add Note</button>
+            </div>
+          </form>
+        </section>
+
+        <section class="card search-section" aria-label="Search notes">
+          <div class="search-box">
+            <label for="search" class="visually-hidden">Search notes</label>
+            <input id="search" type="search" placeholder="Search notes by title or content..." autocomplete="off" />
+          </div>
+          <p id="results-line" aria-live="polite"></p>
+        </section>
+
+        <section id="feed" aria-label="Notes feed">
+        </section>
+      </main>
+    </div>
+
+    <!-- Harness entry: installs the Trusted Types boundary, then runs src/main.ts. Keep this tag as is. -->
+    <script type="module" src="/harness/entry.ts"></script>
+  </body>
+</html>

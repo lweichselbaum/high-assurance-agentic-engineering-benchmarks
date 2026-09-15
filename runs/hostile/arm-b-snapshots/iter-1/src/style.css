@@ -1,0 +1,105 @@
+:root {
+  color-scheme: light dark;
+  font-family: system-ui, sans-serif;
+}
+
+body {
+  margin: 0 auto;
+  max-width: 42rem;
+  padding: 1.5rem;
+  line-height: 1.5;
+}
+
+form#note-form {
+  display: grid;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+form#note-form label {
+  font-weight: 600;
+}
+
+form#note-form input,
+form#note-form textarea {
+  font: inherit;
+  padding: 0.4rem 0.5rem;
+  border: 1px solid #8888;
+  border-radius: 0.35rem;
+}
+
+form#note-form textarea {
+  min-height: 5rem;
+  resize: vertical;
+}
+
+form#note-form button {
+  justify-self: start;
+  padding: 0.5rem 1rem;
+}
+
+.search-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.25rem;
+}
+
+#search {
+  flex: 1;
+  font: inherit;
+  padding: 0.4rem 0.5rem;
+  border: 1px solid #8888;
+  border-radius: 0.35rem;
+}
+
+#results-line {
+  min-height: 1.2em;
+  color: #666;
+}
+
+#feed {
+  display: grid;
+  gap: 1rem;
+}
+
+.note {
+  border: 1px solid #8885;
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.25rem 0.75rem;
+}
+
+.note-avatar {
+  grid-row: 1 / span 2;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.note h3 {
+  margin: 0;
+}
+
+.note-title {
+  font: inherit;
+  font-weight: 600;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: inherit;
+  text-decoration: underline;
+}
+
+.note[aria-current='true'] {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 1px #2563eb;
+}
+
+.note-body {
+  margin: 0;
+}

@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Porto Notes</title>
+  </head>
+  <body>
+    <main id="app">
+      <header class="app-header">
+        <h1>Porto Notes</h1>
+        <p class="tagline">OWASP AppSec Days Porto &mdash; Shared Notes Board</p>
+      </header>
+
+      <div class="controls-section">
+        <form id="note-form" class="note-form">
+          <div class="form-group">
+            <label for="title">Title</label>
+            <input id="title" name="title" type="text" placeholder="Note title" autocomplete="off" />
+          </div>
+          <div class="form-group">
+            <label for="body">Body <span class="help-text">(supports &lt;b&gt;, &lt;i&gt;, &lt;a href="..."&gt;, &lt;br&gt;)</span></label>
+            <textarea id="body" name="body" rows="3" placeholder="Write your note here..."></textarea>
+          </div>
+          <div class="form-group">
+            <label for="avatar">Avatar URL <span class="help-text">(optional)</span></label>
+            <input id="avatar" name="avatar" type="text" placeholder="https://... or data:image/..." autocomplete="off" />
+          </div>
+          <button type="submit" class="btn-submit">Add Note</button>
+        </form>
+
+        <div class="search-box">
+          <label for="search" class="visually-hidden">Search notes</label>
+          <input id="search" type="search" placeholder="Search notes..." autocomplete="off" />
+          <p id="results-line" class="results-line" aria-live="polite"></p>
+        </div>
+      </div>
+
+      <section id="feed" class="feed" aria-label="Notes feed"></section>
+    </main>
+    <!-- Harness entry: installs the Trusted Types boundary, then runs src/main.ts. Keep this tag as is. -->
+    <script type="module" src="/harness/entry.ts"></script>
+  </body>
+</html>

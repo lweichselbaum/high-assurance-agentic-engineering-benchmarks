@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Porto Notes</title>
+    <style>
+      :root {
+        color-scheme: light dark;
+        font-family: system-ui, sans-serif;
+      }
+      body {
+        margin: 0 auto;
+        max-width: 640px;
+        padding: 1.5rem 1rem 4rem;
+        line-height: 1.4;
+      }
+      h1 {
+        font-size: 1.5rem;
+      }
+      form#note-form {
+        display: grid;
+        gap: 0.5rem;
+        margin-bottom: 1.5rem;
+        padding: 1rem;
+        border: 1px solid #8884;
+        border-radius: 0.5rem;
+      }
+      form#note-form label {
+        font-size: 0.85rem;
+        font-weight: 600;
+      }
+      form#note-form input,
+      form#note-form textarea {
+        font: inherit;
+        padding: 0.4rem 0.5rem;
+        border: 1px solid #8888;
+        border-radius: 0.35rem;
+      }
+      form#note-form textarea {
+        resize: vertical;
+        min-height: 4.5rem;
+      }
+      form#note-form button {
+        justify-self: start;
+        font: inherit;
+        padding: 0.4rem 1rem;
+        border: 1px solid #8888;
+        border-radius: 0.35rem;
+        cursor: pointer;
+      }
+      .search-row {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-bottom: 0.25rem;
+      }
+      .search-row label {
+        font-weight: 600;
+        font-size: 0.85rem;
+      }
+      #search {
+        flex: 1;
+        font: inherit;
+        padding: 0.4rem 0.5rem;
+        border: 1px solid #8888;
+        border-radius: 0.35rem;
+      }
+      #results-line {
+        min-height: 1.2em;
+        font-size: 0.85rem;
+        color: #666;
+      }
+      #feed {
+        display: grid;
+        gap: 0.75rem;
+      }
+      .note {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 0.25rem 0.6rem;
+        padding: 0.75rem 1rem;
+        border: 1px solid #8884;
+        border-radius: 0.5rem;
+      }
+      .note[aria-current='true'] {
+        border-color: #0f766e;
+        box-shadow: 0 0 0 1px #0f766e;
+      }
+      .note-avatar {
+        grid-row: span 2;
+        width: 2.25rem;
+        height: 2.25rem;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+      .note-title {
+        grid-column: 2;
+        justify-self: start;
+        font: inherit;
+        font-size: 1.05rem;
+        font-weight: 700;
+        background: none;
+        border: none;
+        padding: 0;
+        color: inherit;
+        cursor: pointer;
+        text-align: left;
+      }
+      .note-title:hover,
+      .note-title:focus-visible {
+        text-decoration: underline;
+      }
+      .note-body {
+        grid-column: 2;
+      }
+      .note-body a {
+        color: #0f766e;
+      }
+    </style>
+  </head>
+  <body>
+    <main id="app">
+      <h1>Porto Notes</h1>
+
+      <form id="note-form">
+        <label for="title">Title</label>
+        <input id="title" name="title" type="text" required />
+
+        <label for="body">Body</label>
+        <textarea id="body" name="body" required></textarea>
+
+        <label for="avatar">Avatar URL (optional)</label>
+        <input id="avatar" name="avatar" type="text" placeholder="https://…" />
+
+        <button type="submit">Add note</button>
+      </form>
+
+      <div class="search-row">
+        <label for="search">Search</label>
+        <input id="search" name="search" type="search" autocomplete="off" />
+      </div>
+      <p id="results-line"></p>
+
+      <section id="feed" aria-live="polite"></section>
+    </main>
+    <!-- Harness entry: installs the Trusted Types boundary, then runs src/main.ts. Keep this tag as is. -->
+    <script type="module" src="/harness/entry.ts"></script>
+  </body>
+</html>

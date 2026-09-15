@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Porto Notes</title>
+  </head>
+  <body>
+    <div class="app-wrapper">
+      <header class="app-header">
+        <h1 class="brand-title">Porto Notes</h1>
+        <p class="brand-subtitle">A shared board for notes, ideas, and links.</p>
+        <div class="search-section">
+          <label for="search" class="sr-only">Search notes</label>
+          <input type="search" id="search" placeholder="Search notes by title or body..." autocomplete="off" />
+        </div>
+        <p id="results-line" aria-live="polite"></p>
+      </header>
+
+      <main class="content-grid">
+        <aside class="sidebar">
+          <form id="note-form">
+            <h2>Add a Note</h2>
+            <div class="form-group">
+              <label for="title">Title</label>
+              <input type="text" id="title" placeholder="Note title" />
+            </div>
+            <div class="form-group">
+              <label for="body">Body (supports basic rich text)</label>
+              <textarea id="body" rows="4" placeholder="Write your note here..."></textarea>
+            </div>
+            <div class="form-group">
+              <label for="avatar">Author Avatar URL (optional)</label>
+              <input type="text" id="avatar" placeholder="https://... or data:image/..." />
+            </div>
+            <button type="submit">Add Note</button>
+          </form>
+        </aside>
+
+        <section id="feed" aria-label="Notes feed">
+        </section>
+      </main>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

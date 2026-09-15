@@ -1,0 +1,7 @@
+{
+  "name": "high-assurance-agentic-engineering-benchmarks",
+  "build": { "dockerfile": "../Dockerfile", "context": ".." },
+  "workspaceFolder": "/work",
+  "postCreateCommand": "pnpm install --frozen-lockfile",
+  "customizations": { "vscode": { "extensions": ["dbaeumer.vscode-eslint", "ms-playwright.playwright"] } }
+}

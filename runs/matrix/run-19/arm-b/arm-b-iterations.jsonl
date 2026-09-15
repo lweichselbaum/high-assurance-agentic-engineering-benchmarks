@@ -1,0 +1,24 @@
+{"iter":1,"gate":"0-integrity","pass":true,"firstError":"","seconds":0}
+{"iter":1,"gate":"1-tsc","pass":true,"firstError":"","seconds":2}
+{"iter":1,"gate":"2-tsec","pass":false,"firstError":"src/main.ts(138,3): error TS21228: [ban-element-innerhtml-assignments] Assigning directly to Element#innerHTML can result in XSS vulnerabilities.","seconds":2}
+{"iter":1,"gate":"ALL","pass":false,"firstError":"2-tsec","seconds":4}
+{"iter":2,"gate":"0-integrity","pass":true,"firstError":"","seconds":0}
+{"iter":2,"gate":"1-tsc","pass":true,"firstError":"","seconds":1}
+{"iter":2,"gate":"2-tsec","pass":false,"firstError":"src/main.ts(113,15): error TS21228: [ban-domparser-parsefromstring] Using DOMParser#parseFromString to parse untrusted input into DOM elements can lead to XSS.","seconds":1}
+{"iter":2,"gate":"ALL","pass":false,"firstError":"2-tsec","seconds":2}
+{"iter":3,"gate":"0-integrity","pass":true,"firstError":"","seconds":0}
+{"iter":3,"gate":"1-tsc","pass":false,"firstError":"src/main.ts(125,21): error TS2532: Object is possibly 'undefined'.","seconds":2}
+{"iter":3,"gate":"ALL","pass":false,"firstError":"1-tsc","seconds":2}
+{"iter":4,"gate":"0-integrity","pass":true,"firstError":"","seconds":0}
+{"iter":4,"gate":"1-tsc","pass":true,"firstError":"","seconds":1}
+{"iter":4,"gate":"2-tsec","pass":true,"firstError":"","seconds":2}
+{"iter":4,"gate":"3-eslint","pass":false,"firstError":"  159:11  error  [ban-base-href-assignments] Do not modify HTMLBaseElement#href elements, as this can compromise all other efforts to sanitize unsafe URLs and lead to XSS. - confidence: VIOLATION  @safety-web/trusted-types-checks","seconds":4}
+{"iter":4,"gate":"ALL","pass":false,"firstError":"3-eslint","seconds":7}
+{"iter":5,"gate":"0-integrity","pass":true,"firstError":"","seconds":0}
+{"iter":5,"gate":"1-tsc","pass":true,"firstError":"","seconds":1}
+{"iter":5,"gate":"2-tsec","pass":true,"firstError":"","seconds":1}
+{"iter":5,"gate":"3-eslint","pass":true,"firstError":"","seconds":2}
+{"iter":5,"gate":"4-build","pass":true,"firstError":"","seconds":1}
+{"iter":5,"gate":"5-functional","pass":true,"firstError":"","seconds":4}
+{"iter":5,"gate":"6-security","pass":true,"firstError":"","seconds":17}
+{"iter":5,"gate":"ALL","pass":true,"firstError":"","seconds":26}

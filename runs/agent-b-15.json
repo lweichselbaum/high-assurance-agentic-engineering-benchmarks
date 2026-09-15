@@ -1,0 +1,81 @@
+{
+  "arm": "b",
+  "label": "Arm B — high-assurance harness",
+  "agent": "Claude Code CLI (claude -p)",
+  "claudeCodeVersion": "2.1.259",
+  "requestedModel": "claude-haiku-4-5-20251001",
+  "model": "claude-haiku-4-5-20251001",
+  "temperature": "not configurable in the Claude Code CLI (provider default)",
+  "permissionMode": "acceptEdits",
+  "instruction": "Implement the feature. `./verify.sh` must pass. If it fails, fix your code and run it again. Do not modify config, tests, tsconfig, ESLint, or the CSP.",
+  "promptSha256": "0903e3f4535d310e018e31678f3db837cca9e97545c17a8d2c63a9323c88361a",
+  "promptBytes": 2560,
+  "startedAt": "2026-09-03T12:20:19.313Z",
+  "finishedAt": "2026-09-03T12:24:41.104Z",
+  "durationMs": 261791,
+  "exitCode": 0,
+  "numTurns": 31,
+  "costUsd": 0.19978490000000002,
+  "usage": {
+    "input_tokens": 225,
+    "cache_creation_input_tokens": 29773,
+    "cache_read_input_tokens": 969829,
+    "output_tokens": 11973,
+    "output_tokens_details": {
+      "thinking_tokens": 2489
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 5097,
+      "ephemeral_5m_input_tokens": 24676
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 8,
+        "output_tokens": 417,
+        "cache_read_input_tokens": 46722,
+        "cache_creation_input_tokens": 647,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 647,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 1833,
+      "outputTokens": 11986,
+      "cacheReadInputTokens": 969829,
+      "cacheCreationInputTokens": 29773,
+      "webSearchRequests": 0,
+      "costUSD": 0.19978490000000002,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000,
+      "thinkingTokens": 2489,
+      "canonicalModel": "claude-haiku-4-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "toolCalls": {
+    "Bash": 10,
+    "Read": 11,
+    "Write": 2,
+    "Edit": 7
+  },
+  "verifyRuns": 6,
+  "filesWritten": [
+    "index.html",
+    "src/main.ts"
+  ],
+  "finalMessage": "Perfect! The Porto Notes app has been successfully built and all verification gates have passed. Here's what was implemented:\n\n## ✓ All Gates Passed\n\n1. **Integrity** — Harness files unchanged\n2. **TypeScript** — Strict type checking\n3. **tsec** — Security conformance (no unsafe DOM APIs)\n4. **ESLint** — Code quality and CSP compatibility\n5. **Build** — Vite production build\n6. **Functional** — All features working (seed data, search, deep links, persistence)\n7. **Security** — CSP and Trusted Types enforced\n\n## Features Implemented\n\n- **Rich text editor**: Support for `<b>`, `<strong>`, `<i>`, `<em>`, `<a>`, `<br>` tags and newlines\n- **Note form**: Title, body, optional avatar URL\n- **Feed**: Newest-first rendering with properly formatted content\n- **Search**: Real-time filtering with query display\n- **Deep linking**: URL fragments preserve search query and selected note ID\n- **Persistence**: Notes saved to localStorage, fixtures loaded on first run\n- **Security**: All content goes through the Trusted Types boundary with DOMPurify sanitization\n- **Accessibility**: Semantic HTML with proper ARIA attributes\n\nThe app runs in a high-assurance environment with:\n- Strict Content Security Policy (nonce-based, `'strict-dynamic'`)\n- Trusted Types enforcement\n- Safe DOM APIs only (no innerHTML/eval/etc)\n- Google's tsec conformance checking\n- Safety-web ESLint rules",
+  "isError": false
+}

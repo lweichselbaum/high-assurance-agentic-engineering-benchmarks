@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Porto Notes</title>
+  </head>
+  <body>
+    <main id="app">
+      <h1>Porto Notes</h1>
+
+      <form id="note-form">
+        <input id="title" type="text" placeholder="Title" required />
+        <textarea id="body" placeholder="Body (supports <b>, <i>, <a href=...>, <br>)" required></textarea>
+        <input id="avatar" type="url" placeholder="Avatar URL (optional)" />
+        <button type="submit">Add Note</button>
+      </form>
+
+      <input id="search" type="search" placeholder="Search notes..." />
+      <p id="results-line"></p>
+
+      <section id="feed"></section>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

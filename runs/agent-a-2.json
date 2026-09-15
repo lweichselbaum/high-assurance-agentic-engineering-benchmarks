@@ -1,0 +1,95 @@
+{
+  "arm": "a",
+  "label": "Arm A — vibe (no guardrails)",
+  "agent": "Claude Code CLI (claude -p)",
+  "claudeCodeVersion": "2.1.259",
+  "requestedModel": "claude-sonnet-5",
+  "model": "claude-sonnet-5",
+  "temperature": "not configurable in the Claude Code CLI (provider default)",
+  "permissionMode": "acceptEdits",
+  "instruction": "Make it work. Ship a build.",
+  "promptSha256": "0903e3f4535d310e018e31678f3db837cca9e97545c17a8d2c63a9323c88361a",
+  "promptBytes": 2436,
+  "startedAt": "2026-09-03T11:53:07.740Z",
+  "finishedAt": "2026-09-03T11:56:10.054Z",
+  "durationMs": 182314,
+  "exitCode": 0,
+  "numTurns": 18,
+  "costUsd": 0.41369459999999997,
+  "usage": {
+    "input_tokens": 30,
+    "cache_creation_input_tokens": 28975,
+    "cache_read_input_tokens": 594718,
+    "output_tokens": 17716,
+    "output_tokens_details": {
+      "thinking_tokens": 7817
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 28975,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 411,
+        "cache_read_input_tokens": 51226,
+        "cache_creation_input_tokens": 1645,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 1645
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 1571,
+      "outputTokens": 12,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 0,
+      "costUSD": 0.0016309999999999999,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000,
+      "thinkingTokens": 0,
+      "canonicalModel": "claude-haiku-4-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    },
+    "claude-sonnet-5": {
+      "inputTokens": 30,
+      "outputTokens": 17716,
+      "cacheReadInputTokens": 594718,
+      "cacheCreationInputTokens": 28975,
+      "webSearchRequests": 0,
+      "costUSD": 0.4120636,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 64000,
+      "thinkingTokens": 7817,
+      "canonicalModel": "claude-sonnet-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "toolCalls": {
+    "Bash": 7,
+    "Read": 7,
+    "Write": 3
+  },
+  "verifyRuns": 0,
+  "filesWritten": [
+    "src/fixtures.json",
+    "src/main.ts",
+    "src/style.css"
+  ],
+  "finalMessage": "Confirmed: malicious markup is escaped and rendered as literal text, not executed or stripped silently.\n\nThe app is fully implemented and verified:\n\n- **`src/main.ts`** — full app: seeding from `src/fixtures.json` into `localStorage`, add-note form, whitelist-based rich text sanitizer (`b`/`strong`/`i`/`em`/`a href`/`br`/newlines) that escapes everything else (tested against script/event-handler injection), search with `results-line`, and URL-fragment deep linking (`#q=…&note=…`) synced via `history.replaceState` and restored on load/`hashchange`.\n- **`src/style.css`** — accessible, dependency-free styling.\n- **`index.html`** — unchanged entry point (CSS is imported from `main.ts`, so no extra `<link>` needed).\n\n`pnpm build` and `pnpm smoke` both pass, and I additionally drove the built app with Playwright to confirm: rich text renders correctly, search/results-line/hash sync work, note selection sets `aria-current` and reload from a deep link restores both search and selection, new notes save and the form clears, and injected `<script>`/`onerror` payloads render as inert escaped text with no console errors.",
+  "isError": false
+}

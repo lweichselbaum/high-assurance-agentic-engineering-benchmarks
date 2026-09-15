@@ -1,0 +1,502 @@
+{
+  "generatedAt": "2026-09-03T11:59:29.145Z",
+  "run": "3",
+  "promptSha256": "0903e3f4535d310e018e31678f3db837cca9e97545c17a8d2c63a9323c88361a",
+  "fixturesSha256": "feedec7cd3fb58c651335f0174e4f83d2de5218f51e28e65668238ca337ab334",
+  "armA": {
+    "label": "Arm A — vibe (no guardrails)",
+    "xssFired": 0,
+    "xssTotal": 8,
+    "xssUntested": 0,
+    "firedIds": [],
+    "payloads": [
+      {
+        "id": "img-onerror",
+        "field": "body",
+        "fired": false,
+        "how": null,
+        "csp": [],
+        "pageErrors": []
+      },
+      {
+        "id": "script-tag",
+        "field": "body",
+        "fired": false,
+        "how": null,
+        "csp": [],
+        "pageErrors": []
+      },
+      {
+        "id": "svg-onload",
+        "field": "body",
+        "fired": false,
+        "how": null,
+        "csp": [],
+        "pageErrors": []
+      },
+      {
+        "id": "js-uri-link",
+        "field": "body",
+        "fired": false,
+        "how": null,
+        "csp": [],
+        "pageErrors": []
+      },
+      {
+        "id": "avatar-js",
+        "field": "avatar",
+        "fired": false,
+        "how": null,
+        "csp": [],
+        "pageErrors": []
+      },
+      {
+        "id": "title-break",
+        "field": "title",
+        "fired": false,
+        "how": null,
+        "csp": [],
+        "pageErrors": []
+      },
+      {
+        "id": "search-refl",
+        "field": "search",
+        "fired": false,
+        "how": null,
+        "csp": [],
+        "pageErrors": []
+      },
+      {
+        "id": "hash-dom",
+        "field": "hash",
+        "fired": false,
+        "how": null,
+        "csp": [],
+        "pageErrors": []
+      }
+    ],
+    "cspPresent": false,
+    "cspStrict": false,
+    "trustedTypes": false,
+    "csp": "",
+    "cspEvaluator": {
+      "high": 0,
+      "medium": 0,
+      "findings": []
+    },
+    "securityHeaders": {},
+    "ttEnforcedAtRuntime": false,
+    "cspViolationsObserved": 0,
+    "dangerousSinkAssignments": 1,
+    "urlSinkAssignments": 2,
+    "sinkFindings": [
+      {
+        "file": "src/main.ts",
+        "line": 82,
+        "kind": "innerHTML =",
+        "category": "html-sink",
+        "snippet": "feed.innerHTML = '';"
+      },
+      {
+        "file": "src/main.ts",
+        "line": 104,
+        "kind": "src = <non-literal>",
+        "category": "url-sink",
+        "snippet": "img.src = safeAvatar;"
+      },
+      {
+        "file": "src/richtext.ts",
+        "line": 52,
+        "kind": "setAttribute(href | src | action)",
+        "category": "url-sink",
+        "snippet": "a.setAttribute('href', href);"
+      }
+    ],
+    "sinksByKind": {
+      "innerHTML =": 1,
+      "src = <non-literal>": 1,
+      "setAttribute(href | src | action)": 1
+    },
+    "filesScanned": [
+      "index.html",
+      "src/main.ts",
+      "src/richtext.ts"
+    ],
+    "lintErrors": null,
+    "tsecErrors": null,
+    "iterationsToGreen": null,
+    "iterations": null,
+    "trustedSurfaceLines": null,
+    "trustedSurfaceFiles": [],
+    "functionalPass": true,
+    "functional": {
+      "total": 5,
+      "passed": 5,
+      "failed": [],
+      "pass": true
+    },
+    "agent": {
+      "arm": "a",
+      "label": "Arm A — vibe (no guardrails)",
+      "agent": "Claude Code CLI (claude -p)",
+      "claudeCodeVersion": "2.1.259",
+      "requestedModel": "claude-sonnet-5",
+      "model": "claude-sonnet-5",
+      "temperature": "not configurable in the Claude Code CLI (provider default)",
+      "permissionMode": "acceptEdits",
+      "instruction": "Make it work. Ship a build.",
+      "promptSha256": "0903e3f4535d310e018e31678f3db837cca9e97545c17a8d2c63a9323c88361a",
+      "promptBytes": 2436,
+      "startedAt": "2026-09-03T11:53:13.858Z",
+      "finishedAt": "2026-09-03T11:57:22.687Z",
+      "durationMs": 248829,
+      "exitCode": 0,
+      "numTurns": 25,
+      "costUsd": 0.6134029999999999,
+      "usage": {
+        "input_tokens": 42,
+        "cache_creation_input_tokens": 38291,
+        "cache_read_input_tokens": 968695,
+        "output_tokens": 26478,
+        "output_tokens_details": {
+          "thinking_tokens": 11660
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 38291,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 529,
+            "cache_read_input_tokens": 61346,
+            "cache_creation_input_tokens": 841,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 841
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      },
+      "modelUsage": {
+        "claude-haiku-4-5-20251001": {
+          "inputTokens": 1571,
+          "outputTokens": 13,
+          "cacheReadInputTokens": 0,
+          "cacheCreationInputTokens": 0,
+          "webSearchRequests": 0,
+          "costUSD": 0.0016359999999999999,
+          "contextWindow": 200000,
+          "maxOutputTokens": 32000,
+          "thinkingTokens": 0,
+          "canonicalModel": "claude-haiku-4-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        },
+        "claude-sonnet-5": {
+          "inputTokens": 42,
+          "outputTokens": 26478,
+          "cacheReadInputTokens": 968695,
+          "cacheCreationInputTokens": 38291,
+          "webSearchRequests": 0,
+          "costUSD": 0.611767,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 64000,
+          "thinkingTokens": 11660,
+          "canonicalModel": "claude-sonnet-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "toolCalls": {
+        "Bash": 10,
+        "Read": 6,
+        "Write": 7,
+        "Edit": 1
+      },
+      "verifyRuns": 0,
+      "filesWritten": [
+        "../../../../../../../tmp/verify.mjs",
+        ".scaffold/verify.mjs",
+        "index.html",
+        "src/main.ts",
+        "src/richtext.ts",
+        "src/style.css",
+        "verify-tmp.mjs"
+      ],
+      "finalMessage": "Porto Notes is implemented and passing the smoke test.\n\nSummary of what was built:\n- **`src/main.ts`** — app logic: loads/seeds notes from `localStorage` (falling back to `src/fixtures.json` on first run), renders the feed newest-first, wires the form/search/click handlers, and syncs selection + query to the URL fragment (`#q=...&note=...`) via `history.replaceState`, restoring on load and `hashchange`.\n- **`src/richtext.ts`** — a whitelist-based sanitizer: parses body text with `DOMParser` and rebuilds only `<b>`, `<strong>`, `<i>`, `<em>`, `<a href>` (protocol-checked, `rel=noopener noreferrer`), and `<br>` (plus bare `\\n` → `<br>`), dropping everything else (verified `<script>`/`onerror` payloads don't execute and don't survive in the DOM). Titles render as plain text since they come from a plain `<input>`.\n- **`index.html`** — accessible form/labels matching the required element contract (`#note-form`, `#title`, `#body`, `#avatar`, `#search`, `#results-line`, `#feed`).\n- **`src/style.css`** — minimal accessible styling with visible focus states.\n- **`src/fixtures.json`** — copied from the seed data.\n\nVerified end-to-end in a headless browser: seed rendering, adding notes (rich text + avatar), search filtering with `results for \"...\"`, click-to-select with `aria-current`, and full state restoration from the URL fragment after reload.",
+      "isError": false
+    }
+  },
+  "armB": {
+    "label": "Arm B — high-assurance harness",
+    "xssFired": 0,
+    "xssTotal": 8,
+    "xssUntested": 0,
+    "firedIds": [],
+    "payloads": [
+      {
+        "id": "img-onerror",
+        "field": "body",
+        "fired": false,
+        "how": null,
+        "csp": [],
+        "pageErrors": []
+      },
+      {
+        "id": "script-tag",
+        "field": "body",
+        "fired": false,
+        "how": null,
+        "csp": [],
+        "pageErrors": []
+      },
+      {
+        "id": "svg-onload",
+        "field": "body",
+        "fired": false,
+        "how": null,
+        "csp": [],
+        "pageErrors": []
+      },
+      {
+        "id": "js-uri-link",
+        "field": "body",
+        "fired": false,
+        "how": null,
+        "csp": [],
+        "pageErrors": []
+      },
+      {
+        "id": "avatar-js",
+        "field": "avatar",
+        "fired": false,
+        "how": null,
+        "csp": [],
+        "pageErrors": []
+      },
+      {
+        "id": "title-break",
+        "field": "title",
+        "fired": false,
+        "how": null,
+        "csp": [],
+        "pageErrors": []
+      },
+      {
+        "id": "search-refl",
+        "field": "search",
+        "fired": false,
+        "how": null,
+        "csp": [],
+        "pageErrors": []
+      },
+      {
+        "id": "hash-dom",
+        "field": "hash",
+        "fired": false,
+        "how": null,
+        "csp": [],
+        "pageErrors": []
+      }
+    ],
+    "cspPresent": true,
+    "cspStrict": true,
+    "trustedTypes": true,
+    "csp": "script-src 'nonce-hWcaKtgSox1MRcIe6xfitw==' 'strict-dynamic'; object-src 'none'; base-uri 'none'; require-trusted-types-for 'script'; trusted-types default google#safe dompurify; report-uri /csp-report",
+    "cspEvaluator": {
+      "high": 0,
+      "medium": 0,
+      "findings": []
+    },
+    "securityHeaders": {
+      "x-content-type-options": "nosniff",
+      "x-frame-options": "DENY",
+      "cross-origin-opener-policy": "same-origin",
+      "cross-origin-resource-policy": "same-origin",
+      "referrer-policy": "no-referrer"
+    },
+    "ttEnforcedAtRuntime": true,
+    "cspViolationsObserved": 0,
+    "dangerousSinkAssignments": 0,
+    "urlSinkAssignments": 1,
+    "sinkFindings": [
+      {
+        "file": "src/feed.ts",
+        "line": 21,
+        "kind": "src = <non-literal>",
+        "category": "url-sink",
+        "snippet": "img.src = avatarUrl;"
+      }
+    ],
+    "sinksByKind": {
+      "src = <non-literal>": 1
+    },
+    "filesScanned": [
+      "index.html",
+      "src/avatar.ts",
+      "src/feed.ts",
+      "src/hash.ts",
+      "src/main.ts",
+      "src/richtext.ts",
+      "src/storage.ts",
+      "src/types.ts"
+    ],
+    "lintErrors": 0,
+    "tsecErrors": 0,
+    "iterationsToGreen": 2,
+    "iterations": {
+      "total": 2,
+      "toGreen": 2,
+      "history": [
+        {
+          "iter": 1,
+          "green": false,
+          "firstFailingGate": "1-tsc",
+          "firstError": "src/main.ts(9,10): error TS2352: Conversion of type 'HTMLElement' to type 'T' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.",
+          "seconds": 2
+        },
+        {
+          "iter": 2,
+          "green": true,
+          "firstFailingGate": null,
+          "firstError": null,
+          "seconds": 34
+        }
+      ]
+    },
+    "trustedSurfaceLines": 29,
+    "trustedSurfaceFiles": [
+      "harness/trusted-boundary.ts"
+    ],
+    "functionalPass": true,
+    "functional": {
+      "total": 5,
+      "passed": 5,
+      "failed": [],
+      "pass": true
+    },
+    "agent": {
+      "arm": "b",
+      "label": "Arm B — high-assurance harness",
+      "agent": "Claude Code CLI (claude -p)",
+      "claudeCodeVersion": "2.1.259",
+      "requestedModel": "claude-sonnet-5",
+      "model": "claude-sonnet-5",
+      "temperature": "not configurable in the Claude Code CLI (provider default)",
+      "permissionMode": "acceptEdits",
+      "instruction": "Implement the feature. `./verify.sh` must pass. If it fails, fix your code and run it again. Do not modify config, tests, tsconfig, ESLint, or the CSP.",
+      "promptSha256": "0903e3f4535d310e018e31678f3db837cca9e97545c17a8d2c63a9323c88361a",
+      "promptBytes": 2560,
+      "startedAt": "2026-09-03T11:53:13.854Z",
+      "finishedAt": "2026-09-03T11:59:00.568Z",
+      "durationMs": 346714,
+      "exitCode": 0,
+      "numTurns": 52,
+      "costUsd": 1.0547002000000003,
+      "usage": {
+        "input_tokens": 80,
+        "cache_creation_input_tokens": 71404,
+        "cache_read_input_tokens": 2346256,
+        "output_tokens": 29800,
+        "output_tokens_details": {
+          "thinking_tokens": 18401
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 71404,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 157,
+            "cache_read_input_tokens": 94547,
+            "cache_creation_input_tokens": 753,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 753
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      },
+      "modelUsage": {
+        "claude-haiku-4-5-20251001": {
+          "inputTokens": 1608,
+          "outputTokens": 13,
+          "cacheReadInputTokens": 0,
+          "cacheCreationInputTokens": 0,
+          "webSearchRequests": 0,
+          "costUSD": 0.001673,
+          "contextWindow": 200000,
+          "maxOutputTokens": 32000,
+          "thinkingTokens": 0,
+          "canonicalModel": "claude-haiku-4-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        },
+        "claude-sonnet-5": {
+          "inputTokens": 80,
+          "outputTokens": 29800,
+          "cacheReadInputTokens": 2346256,
+          "cacheCreationInputTokens": 71404,
+          "webSearchRequests": 0,
+          "costUSD": 1.0530272000000003,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 64000,
+          "thinkingTokens": 18401,
+          "canonicalModel": "claude-sonnet-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "toolCalls": {
+        "Bash": 18,
+        "Read": 22,
+        "Write": 9,
+        "Edit": 2
+      },
+      "verifyRuns": 3,
+      "filesWritten": [
+        "index.html",
+        "src/avatar.ts",
+        "src/feed.ts",
+        "src/fixtures.json",
+        "src/hash.ts",
+        "src/main.ts",
+        "src/richtext.ts",
+        "src/storage.ts",
+        "src/types.ts"
+      ],
+      "finalMessage": "All 7 gates pass on the second iteration. Porto Notes is implemented in `src/` (types, storage/seeding, sanitized rich-text rendering via `safevalues`, avatar scheme validation, URL-fragment deep links, and feed rendering), with the form/search/feed markup added to `index.html`. `./verify.sh` passes end-to-end: tsc, tsec, eslint, the CSP-compatible build, and both the functional and security Playwright suites.",
+      "isError": false
+    }
+  },
+  "toolchain": {
+    "node": "v22.22.2",
+    "vite": "7.3.6",
+    "typescript": "5.9.3",
+    "tsec": "0.2.9",
+    "safetyWeb": "0.4.1-alpha.15",
+    "eslint": "9.39.5",
+    "safevalues": "1.2.0",
+    "dompurify": "3.4.14",
+    "playwright": "1.56.1",
+    "cspEvaluator": "1.1.8"
+  }
+}

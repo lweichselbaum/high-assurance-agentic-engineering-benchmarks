@@ -1,0 +1,18 @@
+{
+  "name": "arm-a-vibe",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Arm A: the same feature request, built with an off-the-shelf agent and no guardrails.",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "node server.mjs",
+    "smoke": "node smoke.mjs"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.56.1",
+    "typescript": "5.9.3",
+    "vite": "7.3.6"
+  }
+}

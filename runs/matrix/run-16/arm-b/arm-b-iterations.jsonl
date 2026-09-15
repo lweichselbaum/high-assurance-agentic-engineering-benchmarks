@@ -1,0 +1,30 @@
+{"iter":1,"gate":"0-integrity","pass":true,"firstError":"","seconds":0}
+{"iter":1,"gate":"1-tsc","pass":true,"firstError":"","seconds":1}
+{"iter":1,"gate":"2-tsec","pass":false,"firstError":"src/main.ts(41,3): error TS21228: [ban-element-innerhtml-assignments] Assigning directly to Element#innerHTML can result in XSS vulnerabilities.","seconds":2}
+{"iter":1,"gate":"ALL","pass":false,"firstError":"2-tsec","seconds":3}
+{"iter":2,"gate":"0-integrity","pass":true,"firstError":"","seconds":0}
+{"iter":2,"gate":"1-tsc","pass":false,"firstError":"src/main.ts(116,42): error TS2345: Argument of type 'string | undefined' is not assignable to parameter of type 'string'.","seconds":2}
+{"iter":2,"gate":"ALL","pass":false,"firstError":"1-tsc","seconds":2}
+{"iter":3,"gate":"0-integrity","pass":true,"firstError":"","seconds":0}
+{"iter":3,"gate":"1-tsc","pass":false,"firstError":"src/main.ts(116,42): error TS2345: Argument of type 'string | undefined' is not assignable to parameter of type 'string'.","seconds":1}
+{"iter":3,"gate":"ALL","pass":false,"firstError":"1-tsc","seconds":1}
+{"iter":4,"gate":"0-integrity","pass":true,"firstError":"","seconds":0}
+{"iter":4,"gate":"1-tsc","pass":true,"firstError":"","seconds":2}
+{"iter":4,"gate":"2-tsec","pass":true,"firstError":"","seconds":2}
+{"iter":4,"gate":"3-eslint","pass":false,"firstError":"  116:13  error  setAttribute on a URL/handler attribute bypasses type checks. Use the safevalues/dom setter for that element, or a validated URL. See harness/README.md  no-restricted-syntax","seconds":5}
+{"iter":4,"gate":"ALL","pass":false,"firstError":"3-eslint","seconds":9}
+{"iter":5,"gate":"0-integrity","pass":true,"firstError":"","seconds":0}
+{"iter":5,"gate":"1-tsc","pass":true,"firstError":"","seconds":3}
+{"iter":5,"gate":"2-tsec","pass":true,"firstError":"","seconds":4}
+{"iter":5,"gate":"3-eslint","pass":true,"firstError":"","seconds":4}
+{"iter":5,"gate":"4-build","pass":true,"firstError":"","seconds":2}
+{"iter":5,"gate":"5-functional","pass":false,"firstError":"  ✘  1 bench/functional.spec.ts:22:1 › seed notes render newest-first with their formatting (7.1s)","seconds":45}
+{"iter":5,"gate":"ALL","pass":false,"firstError":"5-functional","seconds":59}
+{"iter":6,"gate":"0-integrity","pass":true,"firstError":"","seconds":0}
+{"iter":6,"gate":"1-tsc","pass":true,"firstError":"","seconds":2}
+{"iter":6,"gate":"2-tsec","pass":true,"firstError":"","seconds":3}
+{"iter":6,"gate":"3-eslint","pass":true,"firstError":"","seconds":3}
+{"iter":6,"gate":"4-build","pass":true,"firstError":"","seconds":1}
+{"iter":6,"gate":"5-functional","pass":true,"firstError":"","seconds":7}
+{"iter":6,"gate":"6-security","pass":true,"firstError":"","seconds":23}
+{"iter":6,"gate":"ALL","pass":true,"firstError":"","seconds":41}

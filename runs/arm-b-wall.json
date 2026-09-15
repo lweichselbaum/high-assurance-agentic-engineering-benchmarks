@@ -1,0 +1,179 @@
+{
+  "source": {
+    "kind": "synthetic"
+  },
+  "model": "claude-sonnet-5",
+  "verifyBefore": 1,
+  "verifyAfter": 0,
+  "agentExit": 0,
+  "iterations": [
+    {
+      "iter": 1,
+      "gate": "0-integrity",
+      "pass": true,
+      "firstError": "",
+      "seconds": 0
+    },
+    {
+      "iter": 1,
+      "gate": "1-tsc",
+      "pass": true,
+      "firstError": "",
+      "seconds": 2
+    },
+    {
+      "iter": 1,
+      "gate": "2-tsec",
+      "pass": false,
+      "firstError": "src/richtext.ts(7,3): error TS21228: [ban-element-innerhtml-assignments] Assigning directly to Element#innerHTML can result in XSS vulnerabilities.",
+      "seconds": 2
+    },
+    {
+      "iter": 1,
+      "gate": "ALL",
+      "pass": false,
+      "firstError": "2-tsec",
+      "seconds": 4
+    },
+    {
+      "iter": 2,
+      "gate": "0-integrity",
+      "pass": true,
+      "firstError": "",
+      "seconds": 0
+    },
+    {
+      "iter": 2,
+      "gate": "1-tsc",
+      "pass": true,
+      "firstError": "",
+      "seconds": 1
+    },
+    {
+      "iter": 2,
+      "gate": "2-tsec",
+      "pass": false,
+      "firstError": "src/richtext.ts(7,3): error TS21228: [ban-element-innerhtml-assignments] Assigning directly to Element#innerHTML can result in XSS vulnerabilities.",
+      "seconds": 2
+    },
+    {
+      "iter": 2,
+      "gate": "ALL",
+      "pass": false,
+      "firstError": "2-tsec",
+      "seconds": 3
+    },
+    {
+      "iter": 3,
+      "gate": "0-integrity",
+      "pass": true,
+      "firstError": "",
+      "seconds": 0
+    },
+    {
+      "iter": 3,
+      "gate": "1-tsc",
+      "pass": true,
+      "firstError": "",
+      "seconds": 1
+    },
+    {
+      "iter": 3,
+      "gate": "2-tsec",
+      "pass": true,
+      "firstError": "",
+      "seconds": 2
+    },
+    {
+      "iter": 3,
+      "gate": "3-eslint",
+      "pass": true,
+      "firstError": "",
+      "seconds": 2
+    },
+    {
+      "iter": 3,
+      "gate": "4-build",
+      "pass": true,
+      "firstError": "",
+      "seconds": 2
+    },
+    {
+      "iter": 3,
+      "gate": "5-functional",
+      "pass": true,
+      "firstError": "",
+      "seconds": 5
+    },
+    {
+      "iter": 3,
+      "gate": "6-security",
+      "pass": true,
+      "firstError": "",
+      "seconds": 20
+    },
+    {
+      "iter": 3,
+      "gate": "ALL",
+      "pass": true,
+      "firstError": "",
+      "seconds": 32
+    },
+    {
+      "iter": 4,
+      "gate": "0-integrity",
+      "pass": true,
+      "firstError": "",
+      "seconds": 0
+    },
+    {
+      "iter": 4,
+      "gate": "1-tsc",
+      "pass": true,
+      "firstError": "",
+      "seconds": 1
+    },
+    {
+      "iter": 4,
+      "gate": "2-tsec",
+      "pass": true,
+      "firstError": "",
+      "seconds": 1
+    },
+    {
+      "iter": 4,
+      "gate": "3-eslint",
+      "pass": true,
+      "firstError": "",
+      "seconds": 3
+    },
+    {
+      "iter": 4,
+      "gate": "4-build",
+      "pass": true,
+      "firstError": "",
+      "seconds": 1
+    },
+    {
+      "iter": 4,
+      "gate": "5-functional",
+      "pass": true,
+      "firstError": "",
+      "seconds": 6
+    },
+    {
+      "iter": 4,
+      "gate": "6-security",
+      "pass": true,
+      "firstError": "",
+      "seconds": 19
+    },
+    {
+      "iter": 4,
+      "gate": "ALL",
+      "pass": true,
+      "firstError": "",
+      "seconds": 32
+    }
+  ]
+}

@@ -1,0 +1,202 @@
+:root {
+  --ink: #14201f;
+  --muted: #5a6b69;
+  --line: #d8e2e0;
+  --surface: #ffffff;
+  --bg: #f4f7f6;
+  --accent: #0f766e;
+  --accent-soft: #e3f1ef;
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 16px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+#app {
+  max-width: 46rem;
+  margin: 0 auto;
+  padding: 2rem 1rem 4rem;
+  display: grid;
+  gap: 1.5rem;
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 1.9rem;
+  letter-spacing: -0.01em;
+}
+
+.tagline {
+  margin: 0.25rem 0 0;
+  color: var(--muted);
+}
+
+/* ── form + search panel ─────────────────────────────────────────────── */
+
+#note-form,
+.search-panel {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 1.25rem;
+  display: grid;
+  gap: 1rem;
+}
+
+#note-form h2 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.field {
+  display: grid;
+  gap: 0.35rem;
+}
+
+label {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.optional {
+  font-weight: 400;
+  color: var(--muted);
+}
+
+input,
+textarea {
+  font: inherit;
+  color: inherit;
+  padding: 0.55rem 0.7rem;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  width: 100%;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 6rem;
+}
+
+input:focus-visible,
+textarea:focus-visible,
+button:focus-visible,
+.note-title:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.hint {
+  margin: 0;
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+
+button[type="submit"] {
+  justify-self: start;
+  font: inherit;
+  font-weight: 600;
+  color: #fff;
+  background: var(--accent);
+  border: 1px solid transparent;
+  border-radius: 8px;
+  padding: 0.55rem 1.1rem;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background: #0c5f59;
+}
+
+#results-line {
+  margin: 0;
+  min-height: 1.4rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+#results-line:empty {
+  min-height: 0;
+}
+
+/* ── feed ────────────────────────────────────────────────────────────── */
+
+#feed {
+  display: grid;
+  gap: 1rem;
+}
+
+.note {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-left: 4px solid transparent;
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+}
+
+.note[aria-current="true"] {
+  border-left-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.note-header {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.note-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: var(--line);
+  flex: none;
+}
+
+.note-title {
+  margin: 0;
+  font-size: 1.15rem;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.note-title:hover {
+  color: var(--accent);
+}
+
+.note-body {
+  margin-top: 0.5rem;
+  overflow-wrap: anywhere;
+}
+
+.note-body a,
+.note-title a {
+  color: var(--accent);
+}
+
+.note-date {
+  display: block;
+  margin-top: 0.6rem;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.feed-empty {
+  margin: 0;
+  padding: 1.5rem;
+  text-align: center;
+  color: var(--muted);
+  background: var(--surface);
+  border: 1px dashed var(--line);
+  border-radius: 12px;
+}

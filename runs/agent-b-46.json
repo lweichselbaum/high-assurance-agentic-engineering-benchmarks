@@ -1,0 +1,20 @@
+{
+  "arm": "b",
+  "label": "Arm B — high-assurance harness",
+  "agent": "Google Antigravity",
+  "external": true,
+  "claudeCodeVersion": null,
+  "requestedModel": "gemini-3.8-flash-high",
+  "model": "gemini-3.8-flash-high",
+  "temperature": "not configurable (IDE default)",
+  "permissionMode": "IDE agent, operator-driven",
+  "instruction": "Implement the feature. `./verify.sh` must pass. If it fails, fix your code and run it again. Do not modify config, tests, tsconfig, ESLint, or the CSP.",
+  "promptSha256": "0903e3f4535d310e018e31678f3db837cca9e97545c17a8d2c63a9323c88361a",
+  "promptBytes": 2402,
+  "startedAt": "2026-09-04T18:06:58Z",
+  "finishedAt": "2026-09-04T18:12:37.756Z",
+  "exitCode": 0,
+  "numTurns": 1,
+  "costUsd": null,
+  "verifyRuns": 2
+}

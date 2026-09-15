@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Porto Notes</title>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <div class="header-container">
+        <h1 class="app-title">Porto Notes</h1>
+        <p class="tagline">A shared board for the OWASP AppSec Days Porto crew</p>
+      </div>
+    </header>
+
+    <div class="app-layout">
+      <aside class="sidebar">
+        <section class="card">
+          <h2 class="card-title">Add a Note</h2>
+          <form id="note-form">
+            <div class="form-group">
+              <label for="title">Title</label>
+              <input type="text" id="title" class="form-control" placeholder="Title" required />
+            </div>
+            <div class="form-group">
+              <label for="body">Body (Rich text supported)</label>
+              <textarea id="body" class="form-control" placeholder="Write your note..." required></textarea>
+            </div>
+            <div class="form-group">
+              <label for="avatar">Avatar URL (optional)</label>
+              <input type="url" id="avatar" class="form-control" placeholder="https://example.com/avatar.png" />
+            </div>
+            <button type="submit" class="btn-primary">Add Note</button>
+          </form>
+        </section>
+      </aside>
+
+      <main class="main-content">
+        <section class="search-section">
+          <label for="search" class="visually-hidden">Search notes</label>
+          <input type="search" id="search" class="search-input" placeholder="Search notes by title or body..." />
+          <p id="results-line"></p>
+        </section>
+
+        <section id="feed" aria-label="Notes feed">
+          <!-- Feed items dynamically rendered -->
+        </section>
+      </main>
+    </div>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

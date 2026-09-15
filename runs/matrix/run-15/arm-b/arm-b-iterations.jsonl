@@ -1,0 +1,32 @@
+{"iter":1,"gate":"0-integrity","pass":true,"firstError":"","seconds":0}
+{"iter":1,"gate":"1-tsc","pass":false,"firstError":"src/main.ts(1,31): error TS2305: Module '\"safevalues/dom\"' has no exported member 'sanitizeHtml'.","seconds":2}
+{"iter":1,"gate":"ALL","pass":false,"firstError":"1-tsc","seconds":2}
+{"iter":2,"gate":"0-integrity","pass":true,"firstError":"","seconds":0}
+{"iter":2,"gate":"1-tsc","pass":false,"firstError":"src/main.ts(179,43): error TS2769: No overload matches this call.","seconds":1}
+{"iter":2,"gate":"ALL","pass":false,"firstError":"1-tsc","seconds":1}
+{"iter":3,"gate":"0-integrity","pass":true,"firstError":"","seconds":0}
+{"iter":3,"gate":"1-tsc","pass":true,"firstError":"","seconds":3}
+{"iter":3,"gate":"2-tsec","pass":false,"firstError":"src/main.ts(96,3): error TS21228: [ban-element-innerhtml-assignments] Assigning directly to Element#innerHTML can result in XSS vulnerabilities.","seconds":3}
+{"iter":3,"gate":"ALL","pass":false,"firstError":"2-tsec","seconds":6}
+{"iter":4,"gate":"0-integrity","pass":true,"firstError":"","seconds":0}
+{"iter":4,"gate":"1-tsc","pass":true,"firstError":"","seconds":3}
+{"iter":4,"gate":"2-tsec","pass":true,"firstError":"","seconds":2}
+{"iter":4,"gate":"3-eslint","pass":true,"firstError":"","seconds":3}
+{"iter":4,"gate":"4-build","pass":true,"firstError":"","seconds":2}
+{"iter":4,"gate":"5-functional","pass":false,"firstError":"  ✘  1 bench/functional.spec.ts:22:1 › seed notes render newest-first with their formatting (6.1s)","seconds":40}
+{"iter":4,"gate":"ALL","pass":false,"firstError":"5-functional","seconds":50}
+{"iter":5,"gate":"0-integrity","pass":true,"firstError":"","seconds":0}
+{"iter":5,"gate":"1-tsc","pass":true,"firstError":"","seconds":2}
+{"iter":5,"gate":"2-tsec","pass":true,"firstError":"","seconds":3}
+{"iter":5,"gate":"3-eslint","pass":true,"firstError":"","seconds":4}
+{"iter":5,"gate":"4-build","pass":true,"firstError":"","seconds":1}
+{"iter":5,"gate":"5-functional","pass":false,"firstError":"  ✘  1 bench/functional.spec.ts:22:1 › seed notes render newest-first with their formatting (6.6s)","seconds":23}
+{"iter":5,"gate":"ALL","pass":false,"firstError":"5-functional","seconds":33}
+{"iter":6,"gate":"0-integrity","pass":true,"firstError":"","seconds":0}
+{"iter":6,"gate":"1-tsc","pass":true,"firstError":"","seconds":2}
+{"iter":6,"gate":"2-tsec","pass":true,"firstError":"","seconds":4}
+{"iter":6,"gate":"3-eslint","pass":true,"firstError":"","seconds":3}
+{"iter":6,"gate":"4-build","pass":true,"firstError":"","seconds":2}
+{"iter":6,"gate":"5-functional","pass":true,"firstError":"","seconds":6}
+{"iter":6,"gate":"6-security","pass":true,"firstError":"","seconds":21}
+{"iter":6,"gate":"ALL","pass":true,"firstError":"","seconds":38}

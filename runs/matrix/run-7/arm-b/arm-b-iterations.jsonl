@@ -1,0 +1,11 @@
+{"iter":1,"gate":"0-integrity","pass":true,"firstError":"","seconds":0}
+{"iter":1,"gate":"1-tsc","pass":false,"firstError":"src/main.ts(11,10): error TS2352: Conversion of type 'HTMLElement' to type 'T' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.","seconds":2}
+{"iter":1,"gate":"ALL","pass":false,"firstError":"1-tsc","seconds":2}
+{"iter":2,"gate":"0-integrity","pass":true,"firstError":"","seconds":0}
+{"iter":2,"gate":"1-tsc","pass":true,"firstError":"","seconds":1}
+{"iter":2,"gate":"2-tsec","pass":true,"firstError":"","seconds":2}
+{"iter":2,"gate":"3-eslint","pass":true,"firstError":"","seconds":3}
+{"iter":2,"gate":"4-build","pass":true,"firstError":"","seconds":1}
+{"iter":2,"gate":"5-functional","pass":true,"firstError":"","seconds":8}
+{"iter":2,"gate":"6-security","pass":true,"firstError":"","seconds":22}
+{"iter":2,"gate":"ALL","pass":true,"firstError":"","seconds":38}

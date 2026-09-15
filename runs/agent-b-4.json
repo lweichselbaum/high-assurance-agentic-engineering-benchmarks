@@ -1,0 +1,101 @@
+{
+  "arm": "b",
+  "label": "Arm B — high-assurance harness",
+  "agent": "Claude Code CLI (claude -p)",
+  "claudeCodeVersion": "2.1.259",
+  "requestedModel": "claude-sonnet-5",
+  "model": "claude-sonnet-5",
+  "temperature": "not configurable in the Claude Code CLI (provider default)",
+  "permissionMode": "acceptEdits",
+  "instruction": "Implement the feature. `./verify.sh` must pass. If it fails, fix your code and run it again. Do not modify config, tests, tsconfig, ESLint, or the CSP.",
+  "promptSha256": "0903e3f4535d310e018e31678f3db837cca9e97545c17a8d2c63a9323c88361a",
+  "promptBytes": 2560,
+  "startedAt": "2026-09-03T11:53:19.997Z",
+  "finishedAt": "2026-09-03T11:58:16.852Z",
+  "durationMs": 296855,
+  "exitCode": 0,
+  "numTurns": 50,
+  "costUsd": 0.863485,
+  "usage": {
+    "input_tokens": 74,
+    "cache_creation_input_tokens": 57003,
+    "cache_read_input_tokens": 1889160,
+    "output_tokens": 25582,
+    "output_tokens_details": {
+      "thinking_tokens": 16195
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 57003,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 139,
+        "cache_read_input_tokens": 80134,
+        "cache_creation_input_tokens": 765,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 765
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 1608,
+      "outputTokens": 13,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 0,
+      "costUSD": 0.001673,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000,
+      "thinkingTokens": 0,
+      "canonicalModel": "claude-haiku-4-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    },
+    "claude-sonnet-5": {
+      "inputTokens": 74,
+      "outputTokens": 25582,
+      "cacheReadInputTokens": 1889160,
+      "cacheCreationInputTokens": 57003,
+      "webSearchRequests": 0,
+      "costUSD": 0.861812,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 64000,
+      "thinkingTokens": 16195,
+      "canonicalModel": "claude-sonnet-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "toolCalls": {
+    "Bash": 28,
+    "Read": 12,
+    "Write": 8,
+    "Edit": 1
+  },
+  "verifyRuns": 1,
+  "filesWritten": [
+    "index.html",
+    "src/fragment.ts",
+    "src/main.ts",
+    "src/render.ts",
+    "src/richtext.ts",
+    "src/storage.ts",
+    "src/style.css",
+    "src/types.ts"
+  ],
+  "finalMessage": "All 7 gates pass on the first iteration. Porto Notes is implemented in `src/` (types, storage, rich-text rendering via `safevalues`, URL fragment sync, feed rendering) with a static form/search skeleton in `index.html`, and `./verify.sh` passes end-to-end: tsc, tsec, eslint, build, functional tests, and the security suite (strict CSP + Trusted Types).",
+  "isError": false
+}

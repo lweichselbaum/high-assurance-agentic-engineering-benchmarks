@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!--
+      The app builds every note node itself and never uses innerHTML, so nothing here
+      needs inline script or style. Locking that in means a mistake in the rendering
+      path cannot become script execution.
+    -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data: https:; connect-src 'self'; font-src 'self'; form-action 'none'; base-uri 'none'"
+    />
+    <title>Porto Notes</title>
+    <meta name="description" content="A shared notes board for the Porto crew." />
+  </head>
+  <body>
+    <a class="skip-link" href="#feed">Skip to notes</a>
+    <main id="app">
+      <header class="app-header">
+        <h1>Porto Notes</h1>
+        <p class="tagline">A shared board. Add a note, search, share the link.</p>
+      </header>
+
+      <form id="note-form" class="note-form" novalidate>
+        <h2 class="form-heading">Add a note</h2>
+
+        <div class="field">
+          <label for="title">Title</label>
+          <input id="title" name="title" type="text" autocomplete="off" spellcheck="true" />
+        </div>
+
+        <div class="field">
+          <label for="body">Body</label>
+          <textarea id="body" name="body" rows="4" aria-describedby="body-hint"></textarea>
+          <p class="hint" id="body-hint">
+            Rich text: &lt;b&gt;, &lt;strong&gt;, &lt;i&gt;, &lt;em&gt;,
+            &lt;a href="https://…"&gt;, &lt;br&gt;. New lines are kept.
+          </p>
+        </div>
+
+        <div class="field">
+          <label for="avatar">Author avatar URL <span class="optional">(optional)</span></label>
+          <input id="avatar" name="avatar" type="url" autocomplete="off" placeholder="https://…" />
+        </div>
+
+        <button type="submit" class="primary">Add note</button>
+      </form>
+
+      <div class="search-row">
+        <div class="field">
+          <label for="search">Search notes</label>
+          <input id="search" name="search" type="search" autocomplete="off" placeholder="Search titles and bodies…" />
+        </div>
+        <p id="results-line" class="results-line" role="status" aria-live="polite"></p>
+      </div>
+
+      <section id="feed" class="feed" aria-label="Notes"></section>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

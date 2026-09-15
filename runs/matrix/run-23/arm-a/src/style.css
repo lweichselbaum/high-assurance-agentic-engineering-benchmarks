@@ -1,0 +1,262 @@
+:root {
+  --bg: #f6f5f2;
+  --surface: #ffffff;
+  --ink: #1c1b19;
+  --muted: #5f5b54;
+  --line: #ddd8d0;
+  --accent: #0f766e;
+  --accent-ink: #ffffff;
+  --danger: #b42318;
+  --radius: 10px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #161513;
+    --surface: #201f1c;
+    --ink: #f2efe9;
+    --muted: #a9a399;
+    --line: #37342f;
+    --accent: #2dd4bf;
+    --accent-ink: #10201e;
+    --danger: #fca5a5;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 16px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+#app {
+  max-width: 46rem;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 4rem;
+}
+
+h1 {
+  font-size: 1.75rem;
+  margin: 0;
+}
+
+h2 {
+  font-size: 1.1rem;
+  margin: 0 0 0.75rem;
+}
+
+.page-head {
+  margin-bottom: 1.5rem;
+}
+
+.tagline {
+  color: var(--muted);
+  margin: 0.25rem 0 0;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--surface);
+  color: var(--ink);
+  padding: 0.5rem 0.75rem;
+  z-index: 1;
+}
+
+.skip-link:focus {
+  left: 0.5rem;
+  top: 0.5rem;
+}
+
+/* Form */
+
+#note-form {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1rem;
+}
+
+.field {
+  margin-bottom: 0.85rem;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 0.25rem;
+}
+
+.optional {
+  font-weight: 400;
+  color: var(--muted);
+}
+
+input,
+textarea {
+  width: 100%;
+  font: inherit;
+  color: inherit;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 0.5rem 0.6rem;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 5.5rem;
+}
+
+input:focus-visible,
+textarea:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.hint {
+  color: var(--muted);
+  font-size: 0.82rem;
+  margin: 0.35rem 0 0;
+}
+
+.hint code {
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 0 0.2rem;
+}
+
+.form-error {
+  color: var(--danger);
+  font-size: 0.9rem;
+  margin: 0 0 0.75rem;
+}
+
+button.primary {
+  font: inherit;
+  font-weight: 600;
+  background: var(--accent);
+  color: var(--accent-ink);
+  border: 1px solid transparent;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+button.primary:hover {
+  filter: brightness(1.08);
+}
+
+/* Feed */
+
+.feed-head {
+  margin: 2rem 0 0.75rem;
+}
+
+.search-field {
+  margin-bottom: 0.5rem;
+}
+
+#results-line {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin: 0;
+  min-height: 1.4em;
+}
+
+#feed {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.feed-empty {
+  color: var(--muted);
+  margin: 0;
+}
+
+.note {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-left: 4px solid transparent;
+  border-radius: var(--radius);
+  padding: 0.85rem 1rem;
+}
+
+.note[aria-current='true'] {
+  border-left-color: var(--accent);
+  box-shadow: 0 1px 10px rgb(0 0 0 / 0.08);
+}
+
+.note-head {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.note-avatar {
+  width: 40px;
+  height: 40px;
+  flex: none;
+  border-radius: 50%;
+  object-fit: cover;
+  background: var(--bg);
+}
+
+.note-heading {
+  font-size: 1.05rem;
+  margin: 0;
+  min-width: 0;
+}
+
+button.note-title {
+  font: inherit;
+  font-weight: 600;
+  color: inherit;
+  background: none;
+  border: 0;
+  border-radius: 4px;
+  padding: 0;
+  text-align: left;
+  cursor: pointer;
+}
+
+button.note-title:hover {
+  color: var(--accent);
+}
+
+.note[aria-current='true'] button.note-title {
+  color: var(--accent);
+}
+
+.note-body {
+  margin: 0.5rem 0 0;
+  overflow-wrap: anywhere;
+}
+
+.note-body a {
+  color: var(--accent);
+}
+
+.note-time {
+  display: block;
+  margin-top: 0.5rem;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .note {
+    transition: border-left-color 120ms ease-out;
+  }
+}

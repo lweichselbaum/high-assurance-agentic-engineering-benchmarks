@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Porto Notes</title>
+  </head>
+  <body>
+    <main id="app">
+      <header class="app-header">
+        <h1>Porto Notes</h1>
+        <p class="tagline">A shared notes board for the Porto crew.</p>
+      </header>
+
+      <form id="note-form" class="card">
+        <h2>Add a note</h2>
+
+        <div class="field">
+          <label for="title">Title</label>
+          <input id="title" name="title" type="text" required autocomplete="off" />
+        </div>
+
+        <div class="field">
+          <label for="body">Body</label>
+          <textarea id="body" name="body" rows="4" required aria-describedby="body-hint"></textarea>
+          <p id="body-hint" class="hint">
+            Basic rich text: <code>&lt;b&gt;</code>, <code>&lt;i&gt;</code>,
+            <code>&lt;a href="…"&gt;</code> and <code>&lt;br&gt;</code>. New lines are line breaks.
+          </p>
+        </div>
+
+        <div class="field">
+          <label for="avatar">Author avatar URL <span class="optional">(optional)</span></label>
+          <input id="avatar" name="avatar" type="text" inputmode="url" autocomplete="off" />
+        </div>
+
+        <button type="submit">Add note</button>
+      </form>
+
+      <div class="field search-field">
+        <label for="search">Search notes</label>
+        <input id="search" name="search" type="search" autocomplete="off" placeholder="Search titles and bodies" />
+        <p id="results-line" class="results-line" role="status" aria-live="polite"></p>
+      </div>
+
+      <section id="feed" aria-label="Notes, newest first"></section>
+    </main>
+    <!-- Harness entry: installs the Trusted Types boundary, then runs src/main.ts. Keep this tag as is. -->
+    <script type="module" src="/harness/entry.ts"></script>
+  </body>
+</html>
